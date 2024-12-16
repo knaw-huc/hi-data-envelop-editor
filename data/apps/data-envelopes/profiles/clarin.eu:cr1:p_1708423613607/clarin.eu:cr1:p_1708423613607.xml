@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ComponentSpec isProfile="true" CMDVersion="1.2" CMDOriginalVersion="1.2" xsi:noNamespaceSchemaLocation="https://infra.clarin.eu/CMDI/1.x/xsd/cmd-component.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Header>
+        <ID>clarin.eu:cr1:p_1708423613607</ID>
+        <Name>DataEnvelope</Name>
+        <Description>Profile for Data Envelopes Editor</Description>
+        <Status>development</Status>
+    </Header>
+    <Component name="DataEnvelope" CardinalityMin="1" CardinalityMax="1">
+        <Component name="BasicInformation" CardinalityMin="1" CardinalityMax="1">
+            <Element name="title" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Multilingual="true" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            <Component name="ContactDetails" CardinalityMin="1" CardinalityMax="unbounded">
+                <Element name="name" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Element name="orcidID" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="roleInProject" CardinalityMin="0" CardinalityMax="unbounded">
+                    <ValueScheme>
+                        <Vocabulary>
+                            <enumeration>
+                                <item>Conceptualization</item>
+                                <item>Data Curation</item>
+                                <item>Formal Analysis</item>
+                                <item>Funding Acquisition</item>
+                                <item>Investigation</item>
+                                <item>Methodology</item>
+                                <item>Project Administration</item>
+                                <item>Resources</item>
+                                <item>Software</item>
+                                <item>Supervision</item>
+                                <item>Validation</item>
+                                <item>Visualisation</item>
+                                <item>Writing - original draft</item>
+                                <item>Writing - review &amp; editing</item>
+                            </enumeration>
+                        </Vocabulary>
+                    </ValueScheme>
+                </Element>
+                <Element name="email" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+            </Component>
+            <Component name="Dates" CardinalityMin="1" CardinalityMax="1">
+                <Element name="creationDateFrom" ValueScheme="date" CardinalityMin="1" CardinalityMax="1"/>
+                <Element name="creationDateTo" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="publicationDate" ValueScheme="date" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            </Component>
+            <Component name="authorDataEnvelope" CardinalityMin="1" CardinalityMax="unbounded">
+                <Element name="name" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Element name="orcidID" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="email" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+            </Component>
+            <Component name="feedbackElaboration" CardinalityMin="1" CardinalityMax="1">
+                <Element name="feedbackSectionOne" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            </Component>
+        </Component>
+        <Component name="BasicMetadata" CardinalityMin="1" CardinalityMax="1">
+            <Component name="Snapshot" CardinalityMin="1" CardinalityMax="1">
+                <Element name="title" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Multilingual="true" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Element name="version" ValueScheme="decimal" CardinalityMin="1" CardinalityMax="1"/>
+                <Element name="description" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                <Element name="genre" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+                <Element name="genreOther" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+                <Element name="topic" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded"/>
+                <Element name="topicOther" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Element name="languages" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded"/>
+                <Element name="languageOther" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+                <Element name="GeographicalCoverage" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                <Element name="GeographicalCoverageOther" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+                <Component name="TemporalCoverage" CardinalityMin="1" CardinalityMax="unbounded">
+                    <Element name="yearFrom" ValueScheme="gYear" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="yearTo" ValueScheme="gYear" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="year" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+                    <Element name="additionalNotes" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+            </Component>
+            <Component name="Dates" CardinalityMin="1" CardinalityMax="1">
+                <Element name="dateFrom" ValueScheme="date" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Element name="dateTo" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="datasetPublicationDate" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
+            </Component>
+            <Component name="CreatorsContributors" CardinalityMin="1" CardinalityMax="1">
+                <Component name="publishingOrganisation" CardinalityMin="1" CardinalityMax="unbounded">
+                    <Element name="Name" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="ROR" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="type" CardinalityMin="0" CardinalityMax="1">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item AppInfo="Universities, colleges, research laboratories, think tanks, etc.">Academic/Research Insitution</item>
+                                    <item AppInfo="">Government</item>
+                                    <item AppInfo="Advocacy groups, foundations, charities, NGOs, etc.">Non-Profit Organisation</item>
+                                    <item AppInfo="Corporations, startups, small-to-medium enterprises across various industries (e.g., technology, healthcare, finance, retail, etc.)">Business/Industry</item>
+                                    <item AppInfo="For datasets created by independent researchers or individuals not affiliated with a specific organization.">Independent Researcher/Individual</item>
+                                    <item AppInfo="United Nations agencies, World Bank, International Monetary Fund, etc.">Intergovernmental Organisation</item>
+                                    <item AppInfo="Please Specify">Other</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Element name="other" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+                <Component name="Creators" CardinalityMin="1" CardinalityMax="unbounded">
+                    <Element name="Name" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="ORCID" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="Organisation" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="ROR" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="Role" CardinalityMin="0" CardinalityMax="unbounded">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item>Conceptualisation</item>
+                                    <item>Data Curation</item>
+                                    <item>Formal Analysis</item>
+                                    <item>Funding Acquisition</item>
+                                    <item>Investigation</item>
+                                    <item>Methodology</item>
+                                    <item>Project Administration</item>
+                                    <item>Resources</item>
+                                    <item>Software Development</item>
+                                    <item>Supervision</item>
+                                    <item>Validation</item>
+                                    <item>Writing - original draft</item>
+                                    <item>Writing - review and editing</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Element name="email" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+                <Component name="contributors" CardinalityMin="1" CardinalityMax="unbounded">
+                    <Element name="name" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="organisation" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="descriptionContribution" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+                <Component name="funding" CardinalityMin="1" CardinalityMax="unbounded">
+                    <Element name="name" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="ROR" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="summary" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="link" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+            </Component>
+            <Component name="distribution" CardinalityMin="1" CardinalityMax="1">
+                <Element name="datasetlink" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Element name="repository" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="unbounded"/>
+                <Component name="download" CardinalityMin="1" CardinalityMax="unbounded">
+                    <Element name="link" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="unbounded"/>
+                    <Element name="filetype" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="filesize" ValueScheme="int" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                </Component>
+                <Component name="citation" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="citationInformation" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="true" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                </Component>
+            </Component>
+            <Component name="accessLicenses" CardinalityMin="1" CardinalityMax="unbounded">
+                <Component name="licensingInformation" CardinalityMin="1" CardinalityMax="unbounded">
+                    <Element name="identifier" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="url" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+                <Component name="access" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="accessLevel" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item AppInfo="No restrictions; available to everyone.">Open Access</item>
+                                    <item AppInfo="Requires user registration for access.">Registered Access</item>
+                                    <item AppInfo="Limited to users with specific authorisation or confidentiality agreements.">Restricted Access</item>
+                                    <item AppInfo="Accessible only to organization members.">Internal Access</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Component name="accessRestricted" CardinalityMin="1" CardinalityMax="1">
+                        <Element name="description" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Element name="url" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="contactEmail" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="accessPrerequisites" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    </Component>
+                </Component>
+            </Component>
+            <Component name="versionMaintenance" CardinalityMin="1" CardinalityMax="1">
+                <Component name="version" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="currentVersion" ValueScheme="decimal" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="lastUpdated" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="releaseDate" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+                <Component name="maintenance" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="maintenanceStatus" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item AppInfo="New versions with updates and enhancements will be made available.">Regularly maintained</item>
+                                    <item AppInfo="The data will not be updated, but any technical issues will be addressed">Limited Maintenance</item>
+                                    <item AppInfo="No longer updated or supported.">Deprecated</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                </Component>
+                <Component name="maintenancePlan" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="updates" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="feedback" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+                <Component name="nextUpdate" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="versionAffected" ValueScheme="decimal" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="nextUpdate" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="nextVersion" ValueScheme="decimal" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+            </Component>
+            <Component name="feedbackElaboration" CardinalityMin="1" CardinalityMax="unbounded">
+                <Element name="feedbackSectionTwo" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            </Component>
+        </Component>
+        <Component name="Data" CardinalityMin="1" CardinalityMax="unbounded">
+            <Component name="DataResourceDescription" CardinalityMin="1" CardinalityMax="1">
+                <Element name="nameOfResource" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Element name="Description" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                <Element name="path" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="format" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="size" ValueScheme="int" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="date" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="language" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="encoding" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Component name="dataSubjects" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="Subjects" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item>Sensitive data about people</item>
+                                    <item>	Non-sensitive data about people</item>
+                                    <item>	Data about natural phenomena</item>
+                                    <item>Data about places and object</item>
+                                    <item>Synthetically generated data</item>
+                                    <item>Data about systems or products and their behavior</item>
+                                    <item>Unknown</item>
+                                    <item>Others</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Element name="other" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+                <Component name="dataModality" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="modality" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item>Image Data</item>
+                                    <item>Text Data</item>
+                                    <item>Tabular Data</item>
+                                    <item>Audio Data</item>
+                                    <item>Video Data</item>
+                                    <item>Time Series</item>
+                                    <item>Graph Data</item>
+                                    <item>Geospatial Data</item>
+                                    <item AppInfo="(please specify)">Multimodal </item>
+                                    <item>Unknown</item>
+                                    <item AppInfo="Please specify">Other</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Element name="other" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+                <Component name="descriptiveStatistics" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="statistics" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                </Component>
+            </Component>
+            <Component name="dataFields" CardinalityMin="1" CardinalityMax="unbounded">
+                <Component name="dataField" CardinalityMin="1" CardinalityMax="unbounded">
+                    <Element name="dataFieldName" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="dataFieldType" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="descriptionField" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="sensitivity" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="notableFeatures" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Component name="usedVocabularies" CardinalityMin="1" CardinalityMax="1">
+                        <Element name="vocabulary" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Element name="vocabularyLink" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    </Component>
+                </Component>
+            </Component>
+            <Component name="dataExamples" CardinalityMin="1" CardinalityMax="1">
+                <Component name="typicalExample" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="description" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="link" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+                <Component name="atypicalExample" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="atypdescription" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="atyplink" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+            </Component>
+            <Component name="errors" CardinalityMin="1" CardinalityMax="1">
+                <Element name="errordescription" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            </Component>
+            <Component name="externalResources" CardinalityMin="1" CardinalityMax="1">
+                <Element name="resources" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                    <ValueScheme>
+                        <Vocabulary>
+                            <enumeration>
+                                <item>Yes</item>
+                                <item>No</item>
+                            </enumeration>
+                        </Vocabulary>
+                    </ValueScheme>
+                </Element>
+                <Element name="extResources" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+            </Component>
+            <Component name="annotations" CardinalityMin="1" CardinalityMax="1">
+                <Component name="annotationCharacteristics" CardinalityMin="1" CardinalityMax="unbounded">
+                    <Element name="annotationWorkforceType" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item>Human Annotations (Expert, Employees)</item>
+                                    <item>Human Annotations (Expert, Contractors)</item>
+                                    <item AppInfo="">Human Annotations (Expert, Crowdsourced)</item>
+                                    <item>Human Annotations (Non-expert, Employees)</item>
+                                    <item AppInfo="">Human Annotations (Non-expert, Contractors)</item>
+                                    <item>Human Annotations (Non-expert, Crowdsourcing)</item>
+                                    <item>Machine generated</item>
+                                    <item>Unlabeled (no annotations)</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Element name="others" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="description" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="totalAnnotations" ValueScheme="int" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="totalTokens" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="avgTokensAnnotations" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="metric" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+            </Component>
+            <Component name="socialImpact" CardinalityMin="1" CardinalityMax="1">
+                <Component name="safety" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="disclaimer" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item>Yes</item>
+                                    <item>No</item>
+                                    <item>Not sure</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Element name="specify" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+                <Component name="confidentiality" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="confidentialityBin" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item>Yes</item>
+                                    <item>No</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Element name="specify" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+                <Component name="biases" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="knownBiases" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="stepsToReduceBias" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Component name="sensAttributes" CardinalityMin="1" CardinalityMax="1">
+                        <Element name="sensitiveAttribute" CardinalityMin="1" CardinalityMax="1">
+                            <ValueScheme>
+                                <Vocabulary>
+                                    <enumeration>
+                                        <item>Gender</item>
+                                        <item>Sexuality</item>
+                                        <item>Marital Status</item>
+                                        <item>Socio-economic Status</item>
+                                        <item>Address/location</item>
+                                        <item>Religious Belief</item>
+                                        <item>Political Opinions</item>
+                                        <item>Race or  Ethnic Origins</item>
+                                        <item>Criminal History</item>
+                                        <item>Age</item>
+                                        <item>Others (please specify)</item>
+                                        <item>None</item>
+                                    </enumeration>
+                                </Vocabulary>
+                            </ValueScheme>
+                        </Element>
+                        <Element name="specify" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="unintentionalAttribute" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    </Component>
+                </Component>
+                <Component name="ethicalReview" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="review" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item>Yes</item>
+                                    <item>No</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Element name="description" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="outcomes" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="link" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="1"/>
+                    <Component name="reviewContact" CardinalityMin="1" CardinalityMax="1">
+                        <Element name="name" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Element name="affiliation" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="contact" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    </Component>
+                </Component>
+            </Component>
+            <Component name="dataProvenance" CardinalityMin="1" CardinalityMax="unbounded">
+                <Element name="Name" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Element name="path" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="description" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                <Element name="creatorName" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Element name="creatorOrganisation" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+                <Element name="yearPublication" ValueScheme="gYear" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="language" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="temporalScope" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="geographicalScope" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Element name="notableFeatures" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="datasheetEnvelope" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="dataSelection" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            </Component>
+            <Component name="digitisation" CardinalityMin="1" CardinalityMax="1">
+                <Element name="digitalisationPipeline" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            </Component>
+            <Component name="feedbackElaboration" CardinalityMin="1" CardinalityMax="1">
+                <Element name="feedbackSectionThree" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            </Component>
+        </Component>
+        <Component name="Uses" CardinalityMin="1" CardinalityMax="1">
+            <Element name="purposes" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                <ValueScheme>
+                    <Vocabulary>
+                        <enumeration>
+                            <item>Monitoring</item>
+                            <item>Research</item>
+                            <item>Production</item>
+                            <item>Others (please specify)</item>
+                        </enumeration>
+                    </Vocabulary>
+                </ValueScheme>
+            </Element>
+            <Element name="other" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+            <Element name="domains" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+            <Element name="motivation" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+            <Component name="Use" CardinalityMin="1" CardinalityMax="unbounded">
+                <Element name="datasetUse" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                    <ValueScheme>
+                        <Vocabulary>
+                            <enumeration>
+                                <item AppInfo="">Safe for production use</item>
+                                <item>Safe for research use</item>
+                                <item AppInfo="">Conditional use-some unsafe applications (Please specify below)</item>
+                                <item AppInfo="">Only approved use (Please specify below)</item>
+                                <item AppInfo="">Others (Please specify below</item>
+                            </enumeration>
+                        </Vocabulary>
+                    </ValueScheme>
+                </Element>
+                <Element name="datasetUseSpecify" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Component name="LinksToRelatedItems" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="publications" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="relatedDatasets" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="unbounded"/>
+                    <Element name="modelTrainedByDataset" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="unbounded"/>
+                </Component>
+                <Component name="SuitableUseCase" CardinalityMin="1" CardinalityMax="unbounded">
+                    <Element name="suitableUseCase" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="additionalNotes" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+                <Component name="UnsuitableUseCase" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="unsuitableUseCase" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="additionalNotes" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+            </Component>
+            <Component name="UseWithOtherData" CardinalityMin="1" CardinalityMax="1">
+                <Element name="SafetyLevel" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                    <ValueScheme>
+                        <Vocabulary>
+                            <enumeration>
+                                <item>Safe to use with other data</item>
+                                <item>Conditionally safe to use with other data</item>
+                                <item>Should not be used with other data</item>
+                                <item>Unknown - then skip the rest of this subsection</item>
+                                <item>Other (please specify)</item>
+                            </enumeration>
+                        </Vocabulary>
+                    </ValueScheme>
+                </Element>
+                <Element name="safetyLevelOther" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="knownSafeDatasetsDataTypes" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="KnownUnsafeDatasetsDataTypes" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+            </Component>
+            <Component name="UseInMLOrAISystems" CardinalityMin="1" CardinalityMax="1">
+                <Element name="datasetUses" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                    <ValueScheme>
+                        <Vocabulary>
+                            <enumeration>
+                                <item>Training </item>
+                                <item>Testing</item>
+                                <item>Validation</item>
+                                <item>Development or Production Use</item>
+                                <item>Fine Tuning</item>
+                                <item>Unknown - then skip the rest of this section</item>
+                                <item>Others (please specify)</item>
+                            </enumeration>
+                        </Vocabulary>
+                    </ValueScheme>
+                </Element>
+                <Element name="otherDatasetUses" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="notableFeatures" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="knownCorrelations" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="usageGuidelines" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="dataSplits" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+            </Component>
+            <Component name="Sampling" CardinalityMin="1" CardinalityMax="1">
+                <Element name="safetyLevel" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                    <ValueScheme>
+                        <Vocabulary>
+                            <enumeration>
+                                <item>Safe to sample</item>
+                                <item>Conditionally safe to sample</item>
+                                <item>Should not be sampled - then skip the rest of this section</item>
+                                <item>Unknown - then skip the rest of this section</item>
+                                <item>Others (please specify)</item>
+                            </enumeration>
+                        </Vocabulary>
+                    </ValueScheme>
+                </Element>
+                <Element name="otherSafetyLevel" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="acceptableSamplingMethods" CardinalityMin="0" CardinalityMax="unbounded">
+                    <ValueScheme>
+                        <Vocabulary>
+                            <enumeration>
+                                <item>Cluster Sampling</item>
+                                <item>Haphazard Sampling</item>
+                                <item>Multi-stage Sampling</item>
+                                <item>Random Sampling</item>
+                                <item>Retrospective Sampling</item>
+                                <item>Stratified Sampling</item>
+                                <item>Systematic Sampling</item>
+                                <item>Weighted Sampling</item>
+                                <item>Unknown</item>
+                                <item>Unsampled</item>
+                                <item>Others (Please specify)</item>
+                            </enumeration>
+                        </Vocabulary>
+                    </ValueScheme>
+                </Element>
+                <Element name="otherAcceptableSamplingMethods" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+                <Element name="bestPractices" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="risksAndMitigations" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+            </Component>
+            <Component name="feedbackElaboration" CardinalityMin="1" CardinalityMax="1">
+                <Element name="feedbackSectionFour" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            </Component>
+        </Component>
+        <Component name="HumanPerspective" CardinalityMin="1" CardinalityMax="1">
+            <Component name="HumanAnnotators" CardinalityMin="1" CardinalityMax="1">
+                <Element name="annotatorDescription" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Component name="AnnotationType" CardinalityMin="1" CardinalityMax="unbounded">
+                    <Element name="taskType" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="numberOfUniqueAnnotators" ValueScheme="int" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="avgannotations" ValueScheme="int" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="expertiseOfAnnotators" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="descriptionOfAnnotators" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="compensation" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="languageDistributionOfAnnotators" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+                    <Element name="numLanguageDistrib" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="ageDistributionOfAnnotators" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="numAgeDistrib" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="geographicDistributionOfAnnotators" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="genderDistributionOfAnnotators" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="socioEconomicDistribOfAnnotators" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="summaryOfAnnotationInstructions" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="annotationPlatforms" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="additionalNotes" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+            </Component>
+            <Component name="Creators" CardinalityMin="1" CardinalityMax="1">
+                <Element name="creatorPositionality" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            </Component>
+            <Component name="feedbackElaboration" CardinalityMin="1" CardinalityMax="1">
+                <Element name="feedbackSectionFive" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            </Component>
+        </Component>
+    </Component>
+</ComponentSpec>

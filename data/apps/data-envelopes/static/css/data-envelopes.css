@@ -1,0 +1,293 @@
+.compLevel2 {
+    opacity: 0.89 !important;
+}
+
+.compLevel3 {
+    opacity: 0.78 !important;
+}
+
+.compLevel4 {
+    opacity: 0.67 !important;
+}
+
+.compLevel5 {
+    opacity: 0.56 !important;
+}
+
+.compLevel6 {
+    opacity: 0.45 !important;
+}
+
+.compLevel7 {
+    opacity: 0.34 !important;
+}
+
+.compLevel8 {
+    opacity: 0.23 !important;
+}
+
+.compLevel9 {
+    opacity: 0.12 !important;
+}
+
+body {
+    font-family: Verdana;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    width: auto;
+    height: 28px;
+    color: #444;
+    background-color: #ccc;
+    font-family: Arial;
+    font-size: 20px;
+    padding: 14px 0 14px 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #aaa;
+}
+
+#user {
+    display: inline-block;
+    font-size: 14px;
+    text-align: right;
+    position: absolute;
+    right: 100px;
+    top: 20px;
+    background-image: url('../img/user.png');
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+h2 {
+    color: #444;
+    font-size: 18px;
+}
+
+#menu {
+    position: absolute;
+    left: 400px;
+    top: 20px;
+}
+
+a:link {
+    color: #000;
+    font-weight: bold;
+}
+
+a:visited {
+    color: #555;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.odd {
+    background-color: #ddd;
+}
+
+#content {
+    margin: 10px 20px;
+}
+
+.blader {
+    font-size: 12px;
+}
+
+#links {
+    text-align: right;
+}
+
+#nav {
+    height: 50px;
+}
+
+#lijst tr td {
+    padding: 2px 4px;
+}
+
+#lijst tr td .ext {
+    min-width: 300px;
+}
+
+#extStatusNewBtn,
+#extStatusForm {
+    margin-top: 20px;
+}
+
+#extStatusForm {
+    display: none;
+}
+
+th {
+    text-align: left;
+    font-family: arial;
+    font-size: 15px;
+}
+
+.label {
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+.inline_table {
+    border-collapse: collapse;
+}
+
+.inline_cell {
+    width: 160px;
+}
+
+table tr td {
+    vertical-align: top;
+}
+
+#resultTable {
+    border-collapse: collapse;
+}
+
+#resultTable tr {
+    border-top: 1px solid #555;
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+}
+
+#resultTable tr:hover {
+    color: #777;
+}
+
+#resultTable tr:last-child {
+    border-bottom: 1px solid #555;
+}
+
+#resultTable tr td,
+#resultTable tr th {
+    padding: 4px 16px 4px 6px;
+}
+
+#resultTable tr th {
+    color: #fff;
+    background-color: #444;
+}
+
+.itemGrid {
+    display: table;
+}
+
+.itemGridRow {
+    display: table-row;
+
+    margin: 1px;
+}
+
+.itemGridCell {
+    display: table-cell;
+    padding: 4px 6px;
+    border-top: 1px solid #555;
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+    background-color: #eee;
+}
+
+.itemGridRow:last-child .itemGridCell {
+    border-bottom: 1px solid #555;
+}
+
+.labelCell {
+    color: #fff;
+    background-color: #444;
+}
+
+.viewText {
+    width: 100%;
+    min-height: 100px;
+    height: 406px;
+}
+
+#profileDataNavigator {
+    border-bottom: 1px solid #999;
+    margin: 40px 0 20px 0;
+    list-style: none;
+}
+
+#profileDataNavigator li {
+    border-radius: 8px 8px 0 0;
+    border-left: 1px solid #999;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    display: inline-block;
+    padding: 2px 4px 0 4px;
+    background-color: #ddd;
+    color: #666;
+}
+
+.profileDataActiveTab {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+#metadataRecs {
+    margin-top: 40px;
+}
+
+.noView {
+    display: none;
+}
+
+#homeBtn {
+    position: absolute;
+    top: 15px;
+    right: 260px;
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/home.png');
+    background-repeat: no-repeat;
+}
+
+#addRec {
+    color: #fff;
+    font-size: 1.1em;
+}
+
+#newRecTab {
+    display: table;
+    margin: 30px 0 10px 0;
+}
+
+.newRecRow {
+    display: table-row;
+    height: 40px;
+}
+
+.newRecLab {
+    display: table-cell;
+    width: 80px;
+    font-weight: bold;
+}
+
+.newRecField {
+    display: table-cell;
+}
+
+
+table.sortable tbody tr:nth-child(2n) td {
+    background: white;
+}
+table.sortable tbody tr:nth-child(2n+1) td {
+    background: #ddd;
+}

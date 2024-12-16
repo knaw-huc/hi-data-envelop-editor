@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ComponentSpec xmlns:clariah="http://www.clariah.eu/" xmlns:cue="http://www.clarin.eu/cmd/cues/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isProfile="true" CMDVersion="1.2" CMDOriginalVersion="1.2" xsi:noNamespaceSchemaLocation="https://infra.clarin.eu/CMDI/1.x/xsd/cmd-component.xsd">
+    <Header>
+        <ID>clarin.eu:cr1:p_1708423613607</ID>
+        <Name>DataEnvelope</Name>
+        <Description>Profile for Data Envelopes Editor</Description>
+        <Status>development</Status>
+    </Header>
+    <Component name="DataEnvelope">
+        <Component name="BasicInformation">
+            <clariah:label xml:lang="en">Level 1: Basic Information </clariah:label>
+            <clariah:explanation>Basic Information on Data-Envelope</clariah:explanation>
+            <Element name="title">
+                <clariah:label xml:lang="en">1.1. Title of Data-Envelope</clariah:label>
+                <clariah:explanation>Follow the format: Dataset Name Version-X Data-Envelope Version-Y</clariah:explanation>
+                <!--cues-->
+            </Element>
+            <Component name="ContactDetails">
+                <clariah:label xml:lang="en">1.2. Contact Details </clariah:label>
+                <clariah:explanation>Provide contact information for the project.</clariah:explanation>
+                <Element name="name">
+                    <clariah:label xml:lang="en">Name </clariah:label>
+                    <clariah:explanation>Provide the full name.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="orcidID">
+                    <clariah:label xml:lang="en">ORCID ID</clariah:label>
+                    <!--cues-->
+                </Element>
+                <Element name="roleInProject"> </Element>
+                <Element name="email">
+                    <clariah:label xml:lang="en">Email</clariah:label>
+                    <!--cues-->
+                </Element>
+            </Component>
+            <Component name="Dates">
+                <clariah:label xml:lang="en">1.3. Data Envelope Dates</clariah:label>
+                <Element name="creationDateFrom">
+                    <clariah:label xml:lang="en">Data-Envelope Creation Date </clariah:label>
+                    <!--cues-->
+                </Element>
+                <Element name="creationDateTo">
+                    <clariah:label xml:lang="en">Data-Envelope Completion Date</clariah:label>
+                    <!--cues-->
+                </Element>
+                <Element name="publicationDate">
+                    <clariah:label xml:lang="en">Data-Envelope Publication Date</clariah:label>
+                    <!--cues-->
+                </Element>
+            </Component>
+            <Component name="authorDataEnvelope">
+                <clariah:label xml:lang="en">1.4 Author of Data-Envelope</clariah:label>
+                <clariah:explanation>Provide information on the author of the data-envelope.</clariah:explanation>
+                <Element name="name">
+                    <clariah:label xml:lang="en">Name </clariah:label>
+                    <clariah:explanation>Provide their full name.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="orcidID"><!--cues--></Element>
+                <Element name="email"><!--cues--></Element>
+            </Component>
+            <Component name="feedbackElaboration">
+                <clariah:label xml:lang="en">1.5 Feedback and Elaboration</clariah:label>
+                <Element name="feedbackSectionOne" cue:inputWidth="60" cue:inputHeight="8">
+                    <clariah:label xml:lang="en">Feedback </clariah:label>
+                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+            </Component>
+        </Component>
+        <Component name="BasicMetadata">
+            <clariah:label xml:lang="en">Level 2: Basic Metadata</clariah:label>
+            <Component name="Snapshot">
+                <clariah:label xml:lang="en">2.1 Snapshot</clariah:label>
+                <Element name="title">
+                    <clariah:label xml:lang="en">Dataset Title</clariah:label>
+                    <!--cues-->
+                </Element>
+                <Element name="version">
+                    <clariah:label xml:lang="en">Version</clariah:label>
+                    <!--cues-->
+                </Element>
+                <Element name="description" cue:inputWidth="60" cue:inputHeight="8">
+                    <clariah:label xml:lang="en">Description</clariah:label>
+                    <clariah:explanation>Provide a free text account of the dataset or resource (limit 200 words). Include information about the content and topic of the data, sources and motivations for dataset creation.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="genre" cue:class="skosType">
+                    <clariah:label xml:lang="en">Genre</clariah:label>
+                    <clariah:explanation>Choose one or more of the following genres that apply to the dataset/resources: </clariah:explanation>
+                    <clariah:autoCompleteURI>/proxy/skosmos/sd/ineo-informationtypes</clariah:autoCompleteURI>
+                    <!--cues-->
+                </Element>
+                <Element name="genreOther">
+                    <clariah:label xml:lang="en">Other Genre</clariah:label>
+                    <clariah:explanation>Specify the particular genre of the dataset if not included in the dropdown list above.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="topic" cue:class="skosType">
+                    <clariah:label xml:lang="en">Topic Classification</clariah:label>
+                    <clariah:explanation>Choose one or more of the following topics (from NWO research list) that apply to the dataset/resource: </clariah:explanation>
+                    <clariah:autoCompleteURI>/proxy/skosmos/sd/nwo-researchfields</clariah:autoCompleteURI>
+                    <!--cues-->
+                </Element>
+                <Element name="topicOther">
+                    <clariah:label xml:lang="en">Other Topic</clariah:label>
+                    <clariah:explanation>Specify topic(s) of the dataset if not included in the dropdown list above.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="languages" cue:class="skosType">
+                    <clariah:label xml:lang="en">Languages</clariah:label>
+                    <clariah:explanation>This refers to the natural language used for textual metadata (i.e., titles, descriptions, etc.) of a cataloged resource (i.e., dataset or service) or the textual values of a dataset distribution. Choose one or more of the following languages (from ISO 639-2) of the dataset/resource: </clariah:explanation>
+                    <clariah:autoCompleteURI>/proxy/skosmos/clavas/ISO639-3</clariah:autoCompleteURI>
+                    <!--cues-->
+                </Element>
+                <Element name="languageOther"><!--cues--></Element>
+                <Element name="GeographicalCoverage">
+                    <clariah:label xml:lang="en">Geographical Coverage</clariah:label>
+                    <clariah:explanation>This refers to the geographical area pertaining to the datasets. Choose one or more of the following geographies that apply to the dataset/resource:</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="GeographicalCoverageOther">
+                    <clariah:label xml:lang="en">Other Geographical Coverage</clariah:label>
+                    <!--cues-->
+                </Element>
+                <Component name="TemporalCoverage">
+                    <Element name="yearFrom">
+                        <clariah:label xml:lang="en">Temporal Coverage Start Date</clariah:label>
+                        <clariah:explanation>Provide start year of temporal scope of the dataset </clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="yearTo">
+                        <clariah:label xml:lang="en">Temporal Coverage End Date</clariah:label>
+                        <clariah:explanation>Provide end date of temporal scope of the dataset</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="year">
+                        <clariah:label xml:lang="en">Year</clariah:label>
+                        <clariah:explanation>In case temporal scope cannot be captured in a range, add relevant years</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="additionalNotes" cue:inputWidth="60" cue:inputHeight="8">
+                        <clariah:label xml:lang="en">Additional Notes</clariah:label>
+                        <clariah:explanation>Use this box to specify any additional information about temporal scope of the dataset.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                </Component>
+            </Component>
+            <Component name="Dates">
+                <clariah:label xml:lang="en">2.2 Dates</clariah:label>
+                <Element name="dateFrom"><!--cues--></Element>
+                <Element name="dateTo"><!--cues--></Element>
+                <Element name="datasetPublicationDate">
+                    <clariah:label xml:lang="en">Dataset Publication Date</clariah:label>
+                    <clariah:explanation>Provide the dataset publication date.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+            </Component>
+            <Component name="CreatorsContributors">
+                <clariah:label xml:lang="en">2.3 Creators and Contributors </clariah:label>
+                <clariah:explanation>Specify the individuals or organizations that created, contributed to, and are sharing the dataset. This information is essential in identifying the dataset's provenance.</clariah:explanation>
+                <Component name="publishingOrganisation">
+                    <clariah:label xml:lang="en">Publishing Organisation</clariah:label>
+                    <clariah:explanation>Provide information for each publishing organisation</clariah:explanation>
+                    <Element name="Name">
+                        <clariah:label xml:lang="en">Name</clariah:label>
+                        <clariah:explanation>Provide the name of the publishing organisation</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="ROR">
+                        <clariah:label xml:lang="en">ROR ID</clariah:label>
+                        <clariah:explanation>Provide the Research Organisation Registry (ROR) ID for the publishing organisation</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="type">
+                        <clariah:label xml:lang="en">Type</clariah:label>
+                        <clariah:explanation>Choose the type of publishing organisation </clariah:explanation>
+
+                    </Element>
+                    <Element name="other">
+                        <clariah:label xml:lang="en">Other</clariah:label>
+                        <clariah:explanation>If type of publishing organisation chosen as "Other", please specify here</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                </Component>
+                <Component name="Creators">
+                    <clariah:label xml:lang="en">Creators</clariah:label>
+                    <clariah:explanation>Provide the following information for each creator of the dataset.</clariah:explanation>
+                    <Element name="Name"><!--cues--></Element>
+                    <Element name="ORCID">
+                        <clariah:label xml:lang="en">ORCID ID</clariah:label>
+                        <!--cues-->
+                    </Element>
+                    <Element name="Organisation"><!--cues--></Element>
+                    <Element name="ROR">
+                        <clariah:label xml:lang="en">ROR ID</clariah:label>
+                        <clariah:explanation>Provide the Research Organisation Registry (ROR) ID for the affiliated organisation</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="Role">
+                        <clariah:label xml:lang="en">Role</clariah:label>
+                        <clariah:explanation>Specify the role in the project</clariah:explanation>
+
+                    </Element>
+                    <Element name="email">
+                        <clariah:label xml:lang="en">Email</clariah:label>
+                        <clariah:explanation>Provide the insitutional email of contributor</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                </Component>
+                <Component name="contributors">
+                    <Element name="name"><!--cues--></Element>
+                    <Element name="organisation"><!--cues--></Element>
+                    <Element name="descriptionContribution"><!--cues--></Element>
+                </Component>
+                <Component name="funding">
+                    <clariah:label xml:lang="en">Funding Source</clariah:label>
+                    <clariah:explanation>Provide information on each funding organisation </clariah:explanation>
+                    <Element name="name">
+                        <clariah:label xml:lang="en">Name</clariah:label>
+                        <clariah:explanation>Name of organisation </clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="ROR">
+                        <clariah:label xml:lang="en">ROR ID</clariah:label>
+                        <!--cues-->
+                    </Element>
+                    <Element name="summary" cue:inputWidth="60" cue:inputHeight="8">
+                        <clariah:label xml:lang="en">Funding or Grant Summary</clariah:label>
+                        <clariah:explanation>Provide a short summary of organisation and grant that may have funded the creation, collection, or curation of the dataset.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="link"><!--cues--></Element>
+                </Component>
+            </Component>
+            <Component name="distribution">
+                <clariah:label xml:lang="en">2.4 Distribution</clariah:label>
+                <Element name="datasetlink">
+                    <clariah:label xml:lang="en">Dataset Link </clariah:label>
+                    <clariah:explanation>For instance its DOI, Handle, or ARK</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="repository">
+                    <clariah:label xml:lang="en">Repository</clariah:label>
+                    <clariah:explanation>If the dataset has its own dedicated website(s) or is hosted on sites such as github, zenodo, dataverse, marketplace, provide the url(s) here:</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Component name="download">
+                    <clariah:label xml:lang="en">Download</clariah:label>
+                    <Element name="link">
+                        <clariah:label xml:lang="en">Link</clariah:label>
+                        <clariah:explanation>Provide link where dataset can be downloaded</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="filetype">
+                        <clariah:label xml:lang="en">File/Folder Type</clariah:label>
+                        <!--cues-->
+                    </Element>
+                    <Element name="filesize">
+                        <clariah:label xml:lang="en">File Size</clariah:label>
+                        <clariah:explanation>Provide file size in MB</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                </Component>
+                <Component name="citation">
+                    <clariah:label xml:lang="en">Citation</clariah:label>
+                    <Element name="citationInformation">
+                        <clariah:label xml:lang="en">Citation Information</clariah:label>
+                        <clariah:explanation>Provide dataset citation reference</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                </Component>
+            </Component>
+            <Component name="accessLicenses">
+                <clariah:label xml:lang="en">2.5 Licenses and Accesses</clariah:label>
+                <clariah:explanation>Specify the license(s) and access levels under which the dataset is shared. This information is crucial in determining the appropriate re-use of datasets and access information.</clariah:explanation>
+                <Component name="licensingInformation">
+                    <clariah:label xml:lang="en">Lincensing Information</clariah:label>
+                    <clariah:explanation>For every relevant license, provide the following information:</clariah:explanation>
+                    <Element name="identifier">
+                        <clariah:label xml:lang="en">Identifier </clariah:label>
+                        <clariah:explanation>Provide the identifier of the license(s) used.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="url">
+                        <clariah:label xml:lang="en">URL</clariah:label>
+                        <!--cues-->
+                    </Element>
+                </Component>
+                <Component name="access">
+                    <clariah:label xml:lang="en">Access </clariah:label>
+                    <clariah:explanation>This section details access rights for the dataset, indicating if it is open to all users or restricted to authorized individuals. It also specifies whether access is available anonymously or requires registration.</clariah:explanation>
+                    <Element name="accessLevel">
+                        <clariah:label xml:lang="en">Access Level</clariah:label>
+                        <clariah:explanation>Choose one of the following access levels</clariah:explanation>
+
+                    </Element>
+                    <Component name="accessRestricted">
+                        <clariah:label xml:lang="en">Access Restricted</clariah:label>
+                        <clariah:explanation>If access is restricted, please fill in this section.</clariah:explanation>
+                        <Element name="description">
+                            <clariah:label xml:lang="en">Description</clariah:label>
+                            <clariah:explanation>Provide a description of the access restriction. Include an explanation of why access controls are in place. Also highlight any restrictions or limitations such as geographic restrictions, time-limited access, or requirements of fees, national regulation, etc. Also provide any prerequisites for acceptable use, such as reading data usage policy.</clariah:explanation>
+                            <!--cues-->
+                        </Element>
+                        <Element name="url">
+                            <clariah:label xml:lang="en">URL</clariah:label>
+                            <clariah:explanation>Provide the link to insructions and/or page to request access.</clariah:explanation>
+                            <!--cues-->
+                        </Element>
+                        <Element name="contactEmail">
+                            <clariah:label xml:lang="en">Contact Email</clariah:label>
+                            <clariah:explanation>Provide email for users to reach out with any questions or concerns regarding data access.</clariah:explanation>
+                            <!--cues-->
+                        </Element>
+                        <Element name="accessPrerequisites"><!--cues--></Element>
+                    </Component>
+                </Component>
+            </Component>
+            <Component name="versionMaintenance">
+                <clariah:label xml:lang="en">2.6 Dataset Version and Maintenance</clariah:label>
+                <Component name="version">
+                    <clariah:label xml:lang="en">Version</clariah:label>
+                    <clariah:explanation>Provide details about this version of the dataset.</clariah:explanation>
+                    <Element name="currentVersion">
+                        <clariah:label xml:lang="en">Current Version</clariah:label>
+                        <!--cues-->
+                    </Element>
+                    <Element name="lastUpdated">
+                        <clariah:label xml:lang="en">Last Updated</clariah:label>
+                        <!--cues-->
+                    </Element>
+                    <Element name="releaseDate">
+                        <clariah:label xml:lang="en">Release Date </clariah:label>
+                        <clariah:explanation>Provide the publication date of this version of the dataset.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                </Component>
+                <Component name="maintenance">
+                    <clariah:label xml:lang="en">Maintenance</clariah:label>
+                    <Element name="maintenanceStatus">
+                        <clariah:label xml:lang="en">Maintenance Status</clariah:label>
+                        <clariah:explanation>Select one of the following:</clariah:explanation>
+
+                    </Element>
+                </Component>
+                <Component name="maintenancePlan">
+                    <clariah:label xml:lang="en">Maintenance Plan</clariah:label>
+                    <clariah:explanation>Summarize the maintenance plan for the dataset:</clariah:explanation>
+                    <Element name="updates" cue:inputWidth="60" cue:inputHeight="8">
+                        <clariah:label xml:lang="en">Updates</clariah:label>
+                        <clariah:explanation>Provide information about criteria for updating the dataset. Include information on how errors are triaged or handled, and criteria for updating the dataset.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="feedback" cue:inputWidth="60" cue:inputHeight="8">
+                        <clariah:label xml:lang="en">Feedback</clariah:label>
+                        <clariah:explanation>Provide email/contact information for users to communicate errors in data and technical issues: </clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                </Component>
+                <Component name="nextUpdate">
+                    <clariah:label xml:lang="en">Next Planned Update</clariah:label>
+                    <clariah:explanation>Provide details about the next planned update if known:</clariah:explanation>
+                    <Element name="versionAffected">
+                        <clariah:label xml:lang="en">Version Affected</clariah:label>
+                        <!--cues-->
+                    </Element>
+                    <Element name="nextUpdate">
+                        <clariah:label xml:lang="en">Date of next planned update</clariah:label>
+                        <!--cues-->
+                    </Element>
+                    <Element name="nextVersion">
+                        <clariah:label xml:lang="en">Next Version</clariah:label>
+                        <!--cues-->
+                    </Element>
+                </Component>
+            </Component>
+            <Component name="feedbackElaboration">
+                <clariah:label xml:lang="en">2.7 Feedback and Elaboration</clariah:label>
+                <Element name="feedbackSectionTwo" cue:inputWidth="60" cue:inputHeight="8">
+                    <clariah:label xml:lang="en">Feedback and Elaboration</clariah:label>
+                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+            </Component>
+        </Component>
+        <Component name="Data">
+            <clariah:label xml:lang="en">Level 3: Data </clariah:label>
+            <clariah:explanation>For each data resource/file in the dataset, fill in the following:</clariah:explanation>
+            <Component name="DataResourceDescription">
+                <clariah:label xml:lang="en">3.1 Data Resource Description</clariah:label>
+                <Element name="nameOfResource">
+                    <clariah:label xml:lang="en">Name of Resource</clariah:label>
+                    <!--cues-->
+                </Element>
+                <Element name="Description" cue:inputWidth="60" cue:inputHeight="8">
+                    <clariah:label xml:lang="en">Description </clariah:label>
+                    <clariah:explanation>Provide a description of the particular resource/file:</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="path">
+                    <clariah:label xml:lang="en">Path</clariah:label>
+                    <clariah:explanation>Provide resource url</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="format">
+                    <clariah:label xml:lang="en">Format</clariah:label>
+                    <clariah:explanation>Provide file extension for resource (such as csv, json, xls):</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="size">
+                    <clariah:label xml:lang="en">Size</clariah:label>
+                    <clariah:explanation>Provide file size:</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="date">
+                    <clariah:label xml:lang="en">Date</clariah:label>
+                    <clariah:explanation>Provide date of creation:</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="language">
+                    <clariah:label xml:lang="en">Language(s)</clariah:label>
+                    <clariah:explanation>provide language used in the dataset:</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="encoding">
+                    <clariah:label xml:lang="en">Encoding </clariah:label>
+                    <clariah:explanation>Specify character encoding of the resource's data file: </clariah:explanation>
+                    <clariah:autoCompleteURI>/proxy/skosmos/sd/encodings</clariah:autoCompleteURI>
+                    <!--cues-->
+                </Element>
+                <Component name="dataSubjects">
+                    <clariah:label xml:lang="en">Data Subject(s)</clariah:label>
+                    <Element name="Subjects">
+                        <clariah:label xml:lang="en">Subject(s)</clariah:label>
+                        <clariah:explanation>Choose one or more of the following subjects of the dataset resource:</clariah:explanation>
+
+                    </Element>
+                    <Element name="other">
+                        <clariah:label xml:lang="en">Other Data Subject(s)</clariah:label>
+                        <clariah:explanation>If "Other" was chosen, please speciify:</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                </Component>
+                <Component name="dataModality">
+                    <clariah:label xml:lang="en">Data Modality</clariah:label>
+                    <Element name="modality">
+                        <clariah:label xml:lang="en">Modality</clariah:label>
+                        <clariah:explanation>Choose one or more of the following modalities</clariah:explanation>
+
+                    </Element>
+                    <Element name="other">
+                        <clariah:label xml:lang="en">Other Modalities</clariah:label>
+                        <clariah:explanation>If "Other" or "Multimodal" was chosen, please specify:</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                </Component>
+                <Component name="descriptiveStatistics">
+                    <Element name="statistics"><!--cues--></Element>
+                </Component>
+            </Component>
+            <Component name="dataFields">
+                <clariah:label xml:lang="en">3.2 Data Fields </clariah:label>
+                <clariah:explanation>Describe every data field in the resource.</clariah:explanation>
+                <Component name="dataField">
+                    <clariah:explanation>Describe every data field in the resource:</clariah:explanation>
+                    <Element name="dataFieldName">
+                        <clariah:label xml:lang="en">Data Field Name</clariah:label>
+                        <clariah:explanation>Provide label or identifier for the data field.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="dataFieldType" cue:class="skosType">
+                        <clariah:label xml:lang="en">Data Field Type</clariah:label>
+                        <clariah:explanation>Specify the type of data in the filed. For instance, common data types are: string, integer, boolean, date, etc.</clariah:explanation>
+                        <clariah:autoCompleteURI>/proxy/skosmos/sd/xsd-datatypes</clariah:autoCompleteURI>
+                        <!--cues-->
+                    </Element>
+                    <Element name="descriptionField" cue:inputWidth="60" cue:inputHeight="8">
+                        <clariah:label xml:lang="en">Description of the Data Field</clariah:label>
+                        <clariah:explanation>Provide a description of what the field represents, including any specific details about the data format or structure. If the field involves complex data like span indices, explain whether these indices are based on characters or words, and whether they are contiguous (continuous without breaks) or not.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="sensitivity">
+                        <clariah:label xml:lang="en">Sensitivity</clariah:label>
+                        <clariah:explanation>Indicate whether the data stored in this field is sensitive. Sensitive data might include personal information that could be harmful if exposed, such as social security numbers, personal addresses, or health information.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="notableFeatures">
+                        <clariah:label xml:lang="en">Notable Features</clariah:label>
+                        <clariah:explanation>List any important or unique attributes of the field that might be relevant for users or systems interacting with the data. </clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Component name="usedVocabularies">
+                        <clariah:explanation>Provide information on linked open data schemes, controlled vocabularies, ontologies and taxonomies used during the establishment of the dataset.</clariah:explanation>
+                        <Element name="vocabulary">
+                            <clariah:label xml:lang="en">Vocabulary </clariah:label>
+                            <clariah:explanation>Summarise linked open data scheme, controlled vocabulary, ontology or taxonomy used during the establishment of the dataset. </clariah:explanation>
+                            <!--cues-->
+                        </Element>
+                        <Element name="vocabularyLink">
+                            <clariah:label xml:lang="en">Vocabulary Link</clariah:label>
+                            <clariah:explanation>Provide link to the taxonomy or relevant documentation that describes it.</clariah:explanation>
+                            <!--cues-->
+                        </Element>
+                    </Component>
+                </Component>
+            </Component>
+            <Component name="dataExamples">
+                <clariah:label xml:lang="en">3.3 Data Point Examples</clariah:label>
+                <Component name="typicalExample">
+                    <clariah:label xml:lang="en">Typical Example</clariah:label>
+                    <Element name="description" cue:inputWidth="60" cue:inputHeight="8">
+                        <clariah:label xml:lang="en">Description</clariah:label>
+                        <clariah:explanation>Provide a description of a typical example of a data point.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="link">
+                        <clariah:label xml:lang="en">Link</clariah:label>
+                        <clariah:explanation>Provide a link to this data point if possible.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                </Component>
+                <Component name="atypicalExample">
+                    <clariah:label xml:lang="en">Atypical Example</clariah:label>
+                    <Element name="atypdescription" cue:inputWidth="60" cue:inputHeight="8">
+                        <clariah:label xml:lang="en">Description</clariah:label>
+                        <clariah:explanation>Provide a description of an atypical example of a data point.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="atyplink">
+                        <clariah:label xml:lang="en">Link</clariah:label>
+                        <clariah:explanation>Provide a link to this data point if possible.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                </Component>
+            </Component>
+            <Component name="errors">
+                <clariah:label xml:lang="en">3.4 Errors, Noise, and Redundancies</clariah:label>
+                <clariah:explanation>Are there any errors, sources of noise, or redundancies in this resource?</clariah:explanation>
+                <Element name="errordescription" cue:inputWidth="60" cue:inputHeight="8">
+                    <clariah:label xml:lang="en">Description</clariah:label>
+                    <clariah:explanation>Provide a description of the errors, noise, and/or redundancies in this resource.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+            </Component>
+            <Component name="externalResources">
+                <clariah:label xml:lang="en">3.5 External Resources</clariah:label>
+                <Element name="resources">
+                    <clariah:label xml:lang="en">Resources</clariah:label>
+                    <clariah:explanation>Is the dataset self-contained, or does it link to or otherwise rely on external resources (e.g., websites, other datasets)?</clariah:explanation>
+
+                </Element>
+                <Element name="extResources">
+                    <clariah:label xml:lang="en">External Resources Description and Links</clariah:label>
+                    <clariah:explanation>If not, please specify what external resources (such as website, other datasets) it relies on and provide links to these resources. </clariah:explanation>
+                    <!--cues-->
+                </Element>
+            </Component>
+            <Component name="annotations">
+                <clariah:label xml:lang="en">3.6 Annotation and Labeling</clariah:label>
+                <clariah:explanation>Fill in this section to specify if any human or algorithmic annotation tasks were performed in the creation of your dataset resource. Repeat this section for every "annotation workforce type".</clariah:explanation>
+                <Component name="annotationCharacteristics">
+                    <clariah:label xml:lang="en">Annotation Characteristics</clariah:label>
+                    <clariah:explanation>Describe relevant characteristics of each annotation type as indicated.</clariah:explanation>
+                    <Element name="annotationWorkforceType"> </Element>
+                    <Element name="others"><!--cues--></Element>
+                    <Element name="description"><!--cues--></Element>
+                    <Element name="totalAnnotations"><!--cues--></Element>
+                    <Element name="totalTokens"><!--cues--></Element>
+                    <Element name="avgTokensAnnotations"><!--cues--></Element>
+                    <Element name="metric"><!--cues--></Element>
+                </Component>
+            </Component>
+            <Component name="socialImpact">
+                <clariah:label xml:lang="en">3.7 Social Impact, Sensitivity, and Biases</clariah:label>
+                <Component name="safety">
+                    <clariah:label xml:lang="en">Safety Consideration</clariah:label>
+                    <Element name="disclaimer">
+                        <clariah:label xml:lang="en">Does the resource contain data that, if viewed directly, might be offensive, insulting, threatening, or might otherwise cause anxiety?</clariah:label>
+
+                    </Element>
+                    <Element name="specify">
+                        <clariah:label xml:lang="en">If yes or you are not sure, please specify:</clariah:label>
+                        <!--cues-->
+                    </Element>
+                </Component>
+                <Component name="confidentiality">
+                    <clariah:label xml:lang="en">Confidentiality</clariah:label>
+                    <Element name="confidentialityBin"> </Element>
+                    <Element name="specify">
+                        <clariah:label xml:lang="en">Specify Measures</clariah:label>
+                        <clariah:explanation>If yes, specify what measures were taken to avoid disclosure of personal information.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                </Component>
+                <Component name="biases">
+                    <Element name="knownBiases" cue:inputWidth="60" cue:inputHeight="8">
+                        <clariah:label xml:lang="en">Known Biases in the Resource</clariah:label>
+                        <clariah:explanation>Identify any known biases present in this dataset, such as stereotyping, underrepresentation, overrepresentation, or misrepresentation of certain social groups. Briefly describe the nature and, if possible, the extent of these biases to help users make informed decisions and mitigate potential harms.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="stepsToReduceBias" cue:inputWidth="60" cue:inputHeight="8">
+                        <clariah:label xml:lang="en">Steps taken to Mitigate/Reduce Biases</clariah:label>
+                        <clariah:explanation>Describe the steps taken to reduce or mitigate biases in the dataset. </clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Component name="sensAttributes">
+                        <clariah:label xml:lang="en">Sensitive Attributes</clariah:label>
+                        <Element name="sensitiveAttribute">
+                            <clariah:label xml:lang="en">Sensitive Human Attributes</clariah:label>
+                            <clariah:explanation>Specify if the dataset contain data that might be considered sensitive in any way (e.g., data that reveals race, sexual orientation, age, ethnicity, disability status, political orientation, religious beliefs, union memberships; location; financial or health data; biometric or genetic data; criminal history).Select all attributes that are represented (directly or indirectly) in the dataset resource:</clariah:explanation>
+
+                        </Element>
+                        <Element name="specify">
+                            <clariah:label xml:lang="en">Specify</clariah:label>
+                            <clariah:explanation>Specify the kind of sensitive attribute in the resource or elaborate further.</clariah:explanation>
+                            <!--cues-->
+                        </Element>
+                        <Element name="unintentionalAttribute" cue:inputWidth="60" cue:inputHeight="8">
+                            <clariah:label xml:lang="en">Unintentionally Collected Attributes</clariah:label>
+                            <clariah:explanation>Specify whether there are any human attributes were not explicitly collected as a part of the dataset creation process but can be inferred using additional methods. </clariah:explanation>
+                            <!--cues-->
+                        </Element>
+                    </Component>
+                </Component>
+                <Component name="ethicalReview">
+                    <clariah:label xml:lang="en">Ethical Review</clariah:label>
+                    <Element name="review">
+                        <clariah:label xml:lang="en">Review</clariah:label>
+                        <clariah:explanation>Was an ethical review conducted in order to create this dataset?</clariah:explanation>
+
+                    </Element>
+                    <Element name="description"><!--cues--></Element>
+                    <Element name="outcomes" cue:inputWidth="60" cue:inputHeight="8">
+                        <clariah:label xml:lang="en">Outcomes </clariah:label>
+                        <clariah:explanation>Describe the outcomes of the ethical review, and how they influenced the dataset creation. </clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="link"><!--cues--></Element>
+                    <Component name="reviewContact">
+                        <clariah:label xml:lang="en">Ethical Review Contact</clariah:label>
+                        <Element name="name">
+                            <clariah:label xml:lang="en">Name</clariah:label>
+                            <clariah:explanation>Provide name of person who may be contacted in relation to questions on ethical review.</clariah:explanation>
+                            <!--cues-->
+                        </Element>
+                        <Element name="affiliation"><!--cues--></Element>
+                        <Element name="contact">
+                            <clariah:label xml:lang="en">Email</clariah:label>
+                            <clariah:explanation>Provide their email address.</clariah:explanation>
+                            <!--cues-->
+                        </Element>
+                    </Component>
+                </Component>
+            </Component>
+            <Component name="dataProvenance">
+                <clariah:label xml:lang="en">3.8 Data Provenance</clariah:label>
+                <clariah:explanation>For every source used to create this resource, provide the following information:</clariah:explanation>
+                <Element name="Name"><!--cues--></Element>
+                <Element name="path">
+                    <clariah:label xml:lang="en">URL</clariah:label>
+                    <clariah:explanation>Provide a URL of the source if available:</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="description" cue:inputWidth="60" cue:inputHeight="8">
+                    <clariah:label xml:lang="en">Description</clariah:label>
+                    <clariah:explanation>Provide a brief description of the source and why it was used?</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="creatorName">
+                    <clariah:label xml:lang="en">Creator Name(s)</clariah:label>
+                    <clariah:explanation>Provide name of individual creators of the source (if known)</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="creatorOrganisation">
+                    <clariah:label xml:lang="en">Creator Organisation(s)</clariah:label>
+                    <clariah:explanation>Provide name of affiliated organisations or creating organisation</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="yearPublication">
+                    <clariah:label xml:lang="en">Year of Publication</clariah:label>
+                    <!--cues-->
+                </Element>
+                <Element name="language">
+                    <clariah:label xml:lang="en">Language(s)</clariah:label>
+                    <clariah:explanation>Provide the languages of the source.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="temporalScope">
+                    <clariah:label xml:lang="en">Temporal Scope</clariah:label>
+                    <clariah:explanation>Provide the temporal scope of the resource (if known).</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="geographicalScope">
+                    <clariah:label xml:lang="en">Geographical Scope</clariah:label>
+                    <clariah:explanation>Provide the geographical scope of the resource (if known).</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="notableFeatures" cue:inputWidth="60" cue:inputHeight="8">
+                    <clariah:label xml:lang="en">Notable Features</clariah:label>
+                    <clariah:explanation>Provide any notable features and known biases and issues with the source.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="datasheetEnvelope">
+                    <clariah:label xml:lang="en">Datasheet/Data-Envelope</clariah:label>
+                    <clariah:explanation>Provide a link to a datasheet/data-envelope on the source if available.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="dataSelection"><!--cues--></Element>
+            </Component>
+            <Component name="digitisation">
+                <clariah:label xml:lang="en">3.9 Digitisation</clariah:label>
+                <Element name="digitalisationPipeline">
+                    <clariah:label xml:lang="en">Digitalisation Pipeline</clariah:label>
+                    <clariah:explanation>If applicable, describe in what way digitisation presents another layer of selection of the whole of a collection available in a cultural heritage institution; state if this is not the case. If applicable, provide selection criteria and metrics that demonstrate how this additional layer of selection has influenced the transformation of the original collection or dataset into the current dataset.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+            </Component>
+            <Component name="feedbackElaboration">
+                <clariah:label xml:lang="en">3.10 Feedback and Elaboration</clariah:label>
+                <Element name="feedbackSectionThree" cue:inputWidth="60" cue:inputHeight="8">
+                    <clariah:label xml:lang="en">Feedback and Elaboration</clariah:label>
+                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+            </Component>
+        </Component>
+        <Component name="Uses">
+            <clariah:label xml:lang="en">Level 4: Uses</clariah:label>
+            <Element name="purposes"> </Element>
+            <Element name="other">
+                <clariah:label xml:lang="en">Other</clariah:label>
+                <clariah:explanation>If "Other" was chosen above, please speciify</clariah:explanation>
+                <!--cues-->
+            </Element>
+            <Element name="domains" cue:class="skosType">
+                <clariah:label xml:lang="en">Domain(s) of Application</clariah:label>
+                <clariah:explanation>Provide list of key domains of application that dataset has been designed for. </clariah:explanation>
+                <clariah:autoCompleteURI>/proxy/skosmos/sd/tadirah</clariah:autoCompleteURI>
+                <!--cues-->
+            </Element>
+            <Element name="motivation" cue:inputWidth="80" cue:inputHeight="6">
+                <clariah:label xml:lang="en">Motivating Factor(s) and Problem Space(s)</clariah:label>
+                <clariah:explanation>What motivated the creation of this dataset? What were some of the reasons underlying the major choices involved in putting it together? Provide a description of the specific problem space that this dataset intends to to address</clariah:explanation>
+                <!--cues-->
+            </Element>
+            <Component name="Use">
+                <clariah:label xml:lang="en">4.1. Uses</clariah:label>
+                <Element name="datasetUse"> </Element>
+                <Element name="datasetUseSpecify">
+                    <clariah:label xml:lang="en">Explain for special cases chosen above</clariah:label>
+                    <!--cues-->
+                </Element>
+                <Component name="LinksToRelatedItems">
+                    <Element name="publications">
+                        <clariah:label xml:lang="en">Publications</clariah:label>
+                        <clariah:explanation>If the dataset was introduced by a paper or there was a paper written describing the dataset, add URL here</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="relatedDatasets"><!--cues--></Element>
+                    <Element name="modelTrainedByDataset"><!--cues--></Element>
+                </Component>
+                <Component name="SuitableUseCase">
+                    <clariah:label xml:lang="en">Suitable Use Case(s)</clariah:label>
+                    <clariah:explanation>Summarize known suitable and intended use cases of this dataset. </clariah:explanation>
+                    <Element name="suitableUseCase" cue:inputWidth="80" cue:inputHeight="6">
+                        <clariah:label xml:lang="en">Suitable Use Case</clariah:label>
+                        <clariah:explanation>Summarize here. Include links where necessary.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="additionalNotes" cue:inputWidth="80" cue:inputHeight="3">
+                        <clariah:label xml:lang="en">Additional Notes</clariah:label>
+                        <!--cues-->
+                    </Element>
+                </Component>
+                <Component name="UnsuitableUseCase">
+                    <clariah:label xml:lang="en">Unsuitable Use Case(s)</clariah:label>
+                    <clariah:explanation>Summarize known unsuitable and unintended use cases of this dataset. </clariah:explanation>
+                    <Element name="unsuitableUseCase"><!--cues--></Element>
+                    <Element name="additionalNotes"><!--cues--></Element>
+                </Component>
+            </Component>
+            <Component name="UseWithOtherData">
+                <clariah:label xml:lang="en">4.2. Use with Other Data</clariah:label>
+                <Element name="SafetyLevel">
+                    <clariah:label xml:lang="en">Safety Level</clariah:label>
+
+                </Element>
+                <Element name="safetyLevelOther">
+                    <clariah:label xml:lang="en">Other</clariah:label>
+                    <clariah:explanation>If "Other" was chosen above, please speciify</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="knownSafeDatasetsDataTypes" cue:inputWidth="80" cue:inputHeight="3">
+                    <clariah:label xml:lang="en">Known safe dataset(s) or data type(s)</clariah:label>
+                    <clariah:explanation>List the known datasets (provide link) or data types and corresponding transformations that are safe to join or aggregate this dataset with.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="KnownUnsafeDatasetsDataTypes" cue:inputWidth="80" cue:inputHeight="3">
+                    <clariah:label xml:lang="en">Known unsafe dataset(s) or Data Type(s)</clariah:label>
+                    <clariah:explanation>List the known datasets or data types and corresponding transformations that are unsafe to join or aggregate this dataset with.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+            </Component>
+            <Component name="UseInMLOrAISystems">
+                <clariah:label xml:lang="en">4.3 Use in ML or AI Systems</clariah:label>
+                <Element name="datasetUses">
+                    <clariah:label xml:lang="en">Dataset Uses</clariah:label>
+
+                </Element>
+                <Element name="otherDatasetUses" cue:inputWidth="80" cue:inputHeight="3">
+                    <clariah:label xml:lang="en">Other dataset use</clariah:label>
+                    <clariah:explanation>If dataset use chosen as "Other", please specify here</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="notableFeatures" cue:inputWidth="80" cue:inputHeight="3">
+                    <clariah:label xml:lang="en">Notable Feature(s)</clariah:label>
+                    <clariah:explanation>Describe any notable feature distributions or relationships between individual instances made explicit. </clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="knownCorrelations" cue:inputWidth="80" cue:inputHeight="3">
+                    <clariah:label xml:lang="en">Known Correlation(s)</clariah:label>
+                    <clariah:explanation>Summarize any known correlations with the indicated features in this dataset.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="usageGuidelines" cue:inputWidth="80" cue:inputHeight="3">
+                    <clariah:label xml:lang="en">Usage Guideline(s)</clariah:label>
+                    <clariah:explanation>Summarize or link to usage guidelines or policies that consumers should be aware of in using this dataset for ML purposes.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="dataSplits" cue:inputWidth="80" cue:inputHeight="3">
+                    <clariah:label xml:lang="en">Data splits</clariah:label>
+                    <clariah:explanation>Are there recommended data splits (e.g., training, development/validation, testing)? If so, please provide a description of these splits, explaining the rationale behind them. </clariah:explanation>
+                    <!--cues-->
+                </Element>
+            </Component>
+            <Component name="Sampling">
+                <clariah:label xml:lang="en">4.4. Sampling</clariah:label>
+                <Element name="safetyLevel"> </Element>
+                <Element name="otherSafetyLevel">
+                    <clariah:label xml:lang="en">Other</clariah:label>
+                    <clariah:explanation>If Safety Level chosen as "Other", please specify here</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="acceptableSamplingMethods">
+                    <clariah:label xml:lang="en">Acceptable Sampling Method(s)</clariah:label>
+                    <clariah:explanation>Select all applicable acceptable methods to sample this dataset</clariah:explanation>
+
+                </Element>
+                <Element name="otherAcceptableSamplingMethods">
+                    <clariah:label xml:lang="en">Other</clariah:label>
+                    <clariah:explanation>If Acceptable Sampling Method(s) chosen as "Other", please specify here</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Element name="bestPractices" cue:inputWidth="80" cue:inputHeight="3">
+                    <clariah:label xml:lang="en">Best Practice(s)</clariah:label>
+                    <!--cues-->
+                </Element>
+                <Element name="risksAndMitigations" cue:inputWidth="80" cue:inputHeight="3">
+                    <clariah:label xml:lang="en">Risk(s) and Mitigation(s)</clariah:label>
+                    <clariah:explanation>Summarize known or residual risks associated with sampling methods when applied to the dataset.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+            </Component>
+            <Component name="feedbackElaboration">
+                <clariah:label xml:lang="en">4.5. Feedback Elaboration</clariah:label>
+                <Element name="feedbackSectionFour" cue:inputWidth="80" cue:inputHeight="3">
+                    <clariah:label xml:lang="en">Feedback</clariah:label>
+                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+            </Component>
+        </Component>
+        <Component name="HumanPerspective">
+            <clariah:label xml:lang="en">Level 5: Human Perspective</clariah:label>
+            <Component name="HumanAnnotators">
+                <clariah:label xml:lang="en">5.1. Human Annotators</clariah:label>
+                <clariah:explanation>Fill this section if human annotators were used to create dataset/resource</clariah:explanation>
+                <Element name="annotatorDescription">
+                    <clariah:label xml:lang="en">Annotator description</clariah:label>
+                    <clariah:explanation>Provide a brief description for each annotator group performing the human annotation task</clariah:explanation>
+                    <!--cues-->
+                </Element>
+                <Component name="AnnotationType">
+                    <Element name="taskType">
+                        <clariah:label xml:lang="en">Task Type</clariah:label>
+                        <clariah:explanation>Summarize here. Include links if available. Ideally connect to some existing taxonomy: survey, video annotation, text annotation, image annotation, etc</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="numberOfUniqueAnnotators">
+                        <clariah:label xml:lang="en">Number of unique annotators</clariah:label>
+                        <!--cues-->
+                    </Element>
+                    <Element name="avgannotations">
+                        <clariah:label xml:lang="en">Average number of Annotations per Annotator</clariah:label>
+                        <!--cues-->
+                    </Element>
+                    <Element name="expertiseOfAnnotators">
+                        <clariah:label xml:lang="en">Expertise of annotators</clariah:label>
+                        <clariah:explanation>For example, archival and historical knowledge and reading and understanding historical Dutch.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="descriptionOfAnnotators" cue:inputWidth="80" cue:inputHeight="6">
+                        <clariah:label xml:lang="en">Description of annotators</clariah:label>
+                        <!--cues-->
+                    </Element>
+                    <Element name="compensation" cue:inputWidth="80" cue:inputHeight="3">
+                        <clariah:label xml:lang="en">Compensation</clariah:label>
+                        <clariah:explanation>Indicate here whether they were crowdsourced or not, and if not, what compensation they received. For example, 'compensated as per the Dutch CAO'.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="languageDistributionOfAnnotators">
+                        <clariah:label xml:lang="en">Language distribution of annotators</clariah:label>
+                        <!--cues-->
+                    </Element>
+                    <Element name="numLanguageDistrib"><!--cues--></Element>
+                    <Element name="ageDistributionOfAnnotators">
+                        <clariah:label xml:lang="en">Age distribution of annotators</clariah:label>
+                        <!--cues-->
+                    </Element>
+                    <Element name="numAgeDistrib">
+                        <clariah:label xml:lang="en">Number of each age group</clariah:label>
+                        <!--cues-->
+                    </Element>
+                    <Element name="geographicDistributionOfAnnotators" cue:inputWidth="80" cue:inputHeight="3">
+                        <clariah:label xml:lang="en">Geographic distribution of annotators</clariah:label>
+                        <clariah:explanation>For example, 100% reside in the Netherlands.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="genderDistributionOfAnnotators">
+                        <clariah:label xml:lang="en">Gender distribution of annotators</clariah:label>
+                        <clariah:explanation>For example, 60% identify as women, 40% as men.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="socioEconomicDistribOfAnnotators">
+                        <clariah:label xml:lang="en">Socio-economic distribution of annotators</clariah:label>
+                        <clariah:explanation>For example, 40% identify as lower middle class, 60% as middle class.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="summaryOfAnnotationInstructions" cue:inputWidth="80" cue:inputHeight="6">
+                        <clariah:label xml:lang="en">Summary of annotation instructions</clariah:label>
+                        <clariah:explanation>Summarize here. Include links if available, say to to the annotation instructions, readme.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="annotationPlatforms">
+                        <clariah:label xml:lang="en">Annotation platform(s)</clariah:label>
+                        <clariah:explanation>Include link(s) if available</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                    <Element name="additionalNotes" cue:inputWidth="80" cue:inputHeight="3">
+                        <clariah:label xml:lang="en">Additional Notes</clariah:label>
+                        <clariah:explanation>For example: During the annotation process all annotators were trained to read and understand the original texts by the archival expert and were invited to compare the HTR texts with the scans of the original. This way of working proved instrumental in overcoming limitations of HTR quality. Or any other comments.</clariah:explanation>
+                        <!--cues-->
+                    </Element>
+                </Component>
+            </Component>
+            <Component name="Creators">
+                <clariah:label xml:lang="en">5.2. Creators and Contributors</clariah:label>
+                <Element name="creatorPositionality" cue:inputWidth="80" cue:inputHeight="3">
+                    <clariah:label xml:lang="en">Description of potential positionality impact factors</clariah:label>
+                    <clariah:explanation>Think of aspects that could have impact on the work in terms of positionality, e.g. particular domain of expertise, gender, age, etc.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+            </Component>
+            <Component name="feedbackElaboration">
+                <clariah:label xml:lang="en">5.3. Feedback Elaboration</clariah:label>
+                <Element name="feedbackSectionFive" cue:inputWidth="80" cue:inputHeight="3">
+                    <clariah:label xml:lang="en">Feedback</clariah:label>
+                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level.</clariah:explanation>
+                    <!--cues-->
+                </Element>
+            </Component>
+        </Component>
+    </Component>
+</ComponentSpec>
