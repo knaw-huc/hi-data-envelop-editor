@@ -6,7 +6,7 @@ def_prof="clarin.eu:cr1:p_1708423613607"
 [app.access]
 users="./htp"
 read="users"
-write="users" 
+write="owner" 
 
 [app.html]
 style="data-envelopes.css"
