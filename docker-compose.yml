@@ -19,4 +19,5 @@ services:
 
 networks:
   sd-editor:
-    external: false
+    external:
+      name: traefik-public
