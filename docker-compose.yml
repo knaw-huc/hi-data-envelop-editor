@@ -2,14 +2,9 @@ version: '2'
 
 services:
   sd-editor:
-    image: ghcr.io/knaw-huc/service-huc-editor:2.0-RC5
+    image: registry.diginfra.net/tsd/huc-editor-services:2.0-RC5
     environment:
       - BASE_URL=http://localhost:1210
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.services.sd-editor.loadbalancer.server.port=1210"
-      - "traefik.http.routers.sd-editor.entrypoints=http"
-      - "traefik.http.routers.sd-editor.rule=Host(`editor.sd.di.huc.knaw.nl`)"
     volumes:
       - ./data:/home/huc/huc-editor-service/data
     networks:
@@ -19,5 +14,4 @@ services:
 
 networks:
   sd-editor:
-    external:
-      name: traefik-public
+    external: false
