@@ -2,6 +2,7 @@
 name="data-envelopes"
 title="HI Data Envelopes Editor"
 def_prof="clarin.eu:cr1:p_1708423613607"
+cmdi_version="1.2"
 
 [app.access]
 users="./htp"
@@ -13,18 +14,18 @@ style="data-envelopes.css"
 
 [app.prof.envelop]
 prof="clarin.eu:cr1:p_1708423613607"
-title="string(/cmd:CMD/cmd:Components/cmd:DataEnvelope/cmd:BasicInformation/(cmd:title[@xml:lang='en'],cmd:title)[1])"
+title="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:BasicInformation/(cmdp:title[@xml:lang='en'],cmdp:title)[1])"
 label_en="envelop"
 label_plural_en="envelopes"
 
 [app.prof.envelop.list.title]
-xpath="string(/cmd:CMD/cmd:Components/cmd:DataEnvelope/cmd:BasicInformation/(cmd:title[@xml:lang='en'],cmd:title)[1])"
+xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:BasicInformation/(cmdp:title[@xml:lang='en'],cmdp:title)[1])"
 label="Dataset"
 sort="true"
 filter="true"
 
 [app.prof.envelop.list.status]
-xpath="string(/cmd:CMD/cmd:Components/cmd:DataEnvelope/cmd:status)"
+xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:status)"
 label="Status"
 sort="true"
 filter="'select'"
