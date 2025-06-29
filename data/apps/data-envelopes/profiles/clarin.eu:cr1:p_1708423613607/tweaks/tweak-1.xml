@@ -7,6 +7,9 @@
         <Status>development</Status>
     </Header>
     <Component name="DataEnvelope">
+        <Element name="institute" cue:once="yes"/>
+        <Element name="ID" cue:post-xpath-value="concat(normalize-space(ancestor-or-self::*:DataEnvelope/*:institute),'-',lower-case(replace(replace(ancestor-or-self::*:DataEnvelope/*:BasicInformation/*:title,'(.*?)[vV]ersion.*','$1'),'[^\p{Lu}]','')))" cue:readonly="yes"/>
+        <Element name="status" cue:class="status" cue:readonly="yes"/>
         <Component name="BasicInformation">
             <clariah:label xml:lang="en">Level 1: Basic Information </clariah:label>
             <clariah:explanation>Basic Information on Data-Envelope</clariah:explanation>
