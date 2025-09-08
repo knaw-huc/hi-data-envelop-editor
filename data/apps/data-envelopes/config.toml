@@ -5,9 +5,9 @@ def_prof="clarin.eu:cr1:p_1708423613607"
 cmdi_version="1.2"
 
 [app.access]
-users="./htp"
+users="./htp.test"
 read="users"
-write="owner" 
+write="users" 
 
 [app.html]
 style="data-envelopes.css"
