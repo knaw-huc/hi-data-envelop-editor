@@ -2,7 +2,7 @@ version: '2'
 
 services:
   sd-editor:
-    image: registry.diginfra.net/tsd/huc-editor-services:2.0-RC9
+    image: ghcr.io/knaw-huc/service-huc-editor:2.0-RC9
     environment:
       - BASE_URL=http://localhost:1210
     volumes:
