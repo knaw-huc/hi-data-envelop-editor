@@ -5,7 +5,6 @@ __pycache__
 /venv/
 config.xml
 /data/backup
-#htp
-#htp.test
+htp
 /data/apps/data-envelopes/profiles/clarin.eu:cr1:p_1708423613607/records
 /data/apps/data-envelopes/trace
