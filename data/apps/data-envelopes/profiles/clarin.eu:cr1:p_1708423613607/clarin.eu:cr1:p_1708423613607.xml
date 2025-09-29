@@ -190,6 +190,11 @@
                             </Vocabulary>
                         </ValueScheme>
                     </Element>
+                    <Component name="accessOpen" CardinalityMin="1" CardinalityMax="1">
+                        <Element name="description" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Element name="url" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="contactEmail" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    </Component>
                     <Component name="accessRestricted" CardinalityMin="1" CardinalityMax="1">
                         <Element name="description" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
                         <Element name="url" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>

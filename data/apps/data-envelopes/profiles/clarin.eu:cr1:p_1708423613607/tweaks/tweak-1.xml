@@ -116,7 +116,10 @@
                     <clariah:autoCompleteURI>/proxy/skosmos/clavas/ISO639-3</clariah:autoCompleteURI>
                     <!--cues-->
                 </Element>
-                <Element name="languageOther"><!--cues--></Element>
+                <Element name="languageOther"><!--cues-->
+                    <clariah:label xml:lang="en">Other Language</clariah:label>
+                    <clariah:explanation>Specify language(s) of the dataset if not included in the dropdown list above.</clariah:explanation>
+                </Element>
                 <Element name="GeographicalCoverage">
                     <clariah:label xml:lang="en">Geographical Coverage</clariah:label>
                     <clariah:explanation>This refers to the geographical area pertaining to the datasets. Choose one or more of the following geographies that apply to the dataset/resource:</clariah:explanation>
@@ -124,6 +127,7 @@
                 </Element>
                 <Element name="GeographicalCoverageOther">
                     <clariah:label xml:lang="en">Other Geographical Coverage</clariah:label>
+                    <clariah:explanation>Specify geographical areas of the dataset if not included in the dropdown list above.</clariah:explanation>
                     <!--cues-->
                 </Element>
                 <Component name="TemporalCoverage">
@@ -298,10 +302,30 @@
                         <clariah:explanation>Choose one of the following access levels</clariah:explanation>
 
                     </Element>
+                    <Component name="accessOpen">
+                        <clariah:label xml:lang="en">Access Open</clariah:label>
+                        <clariah:explanation>If access is open, please fill in this section.</clariah:explanation>
+                        <Element name="description" cue:inputWidth="60" cue:inputHeight="8">
+                            <clariah:label xml:lang="en">Description</clariah:label>
+                            <clariah:explanation>Provide a description of how to access the data.</clariah:explanation>
+                            <!--cues-->
+                        </Element>
+                        <Element name="url">
+                            <clariah:label xml:lang="en">URL</clariah:label>
+                            <clariah:explanation>Provide the link to instructions.</clariah:explanation>
+                            <!--cues-->
+                        </Element>
+                        <Element name="contactEmail">
+                            <clariah:label xml:lang="en">Contact Email</clariah:label>
+                            <clariah:explanation>Provide email for users to reach out with any questions or concerns regarding data access.</clariah:explanation>
+                            <!--cues-->
+                        </Element>
+                        <Element name="accessPrerequisites"><!--cues--></Element>
+                    </Component>
                     <Component name="accessRestricted">
                         <clariah:label xml:lang="en">Access Restricted</clariah:label>
                         <clariah:explanation>If access is restricted, please fill in this section.</clariah:explanation>
-                        <Element name="description">
+                        <Element name="description" cue:inputWidth="60" cue:inputHeight="8">
                             <clariah:label xml:lang="en">Description</clariah:label>
                             <clariah:explanation>Provide a description of the access restriction. Include an explanation of why access controls are in place. Also highlight any restrictions or limitations such as geographical restrictions, time-limited access, or requirements of fees, national regulation, etc. Also provide any prerequisites for acceptable use, such as reading data usage policy.</clariah:explanation>
                             <!--cues-->
@@ -316,7 +340,10 @@
                             <clariah:explanation>Provide email for users to reach out with any questions or concerns regarding data access.</clariah:explanation>
                             <!--cues-->
                         </Element>
-                        <Element name="accessPrerequisites"><!--cues--></Element>
+                        <Element name="accessPrerequisites" cue:inputWidth="60" cue:inputHeight="8">
+                         <clariah:explanation>Describe the prerequisites for data access. E.g., users must be affiliated with a research organisation</clariah:explanation>
+                        <!--cues-->
+                        </Element>
                     </Component>
                 </Component>
             </Component>
