@@ -728,7 +728,7 @@
             </Component>
             <Component name="digitisation">
                 <clariah:label xml:lang="en">3.9 Digitisation</clariah:label>
-                <Element name="digitalisationPipeline">
+                <Element name="digitalisationPipeline" cue:inputWidth="60" cue:inputHeight="8">
                     <clariah:label xml:lang="en">Digitisation Pipeline</clariah:label>
                     <clariah:explanation>If applicable, describe in what way digitisation presents another layer of selection of the whole of a collection available in a cultural heritage institution; state if this is not the case. If applicable, provide selection criteria and metrics that demonstrate how this additional layer of selection has influenced the transformation of the original collection or dataset into the current dataset.</clariah:explanation>
                     <!--cues-->
