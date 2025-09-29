@@ -558,12 +558,17 @@
                 <clariah:label xml:lang="en">3.5 External Resources</clariah:label>
                 <Element name="resources">
                     <clariah:label xml:lang="en">Resources</clariah:label>
-                    <clariah:explanation>Is the dataset self-contained, or does it link to or otherwise rely on external resources (e.g., websites, other datasets)?</clariah:explanation>
+                    <clariah:explanation>Does the dataset link to or otherwise rely on external resources (e.g., websites, other datasets)?</clariah:explanation>
 
                 </Element>
+                <Element name="extResourcesDescription" cue:inputWidth="60" cue:inputHeight="8">
+                    <clariah:label xml:lang="en">External Resources Description</clariah:label>
+                    <clariah:explanation>If yes, please specify what external resources (such as website, other datasets) it relies on, and how and why it relies on them.</clariah:explanation>
+                    <!--cues-->
+                </Element>
                 <Element name="extResources">
-                    <clariah:label xml:lang="en">External Resources Description and Links</clariah:label>
-                    <clariah:explanation>If not, please specify what external resources (such as website, other datasets) it relies on and provide links to these resources. </clariah:explanation>
+                    <clariah:label xml:lang="en">External Resources Description Links</clariah:label>
+                    <clariah:explanation>If yes, provide links to these resources. </clariah:explanation>
                     <!--cues-->
                 </Element>
             </Component>
@@ -597,7 +602,9 @@
                 </Component>
                 <Component name="confidentiality">
                     <clariah:label xml:lang="en">Confidentiality</clariah:label>
-                    <Element name="confidentialityBin"> </Element>
+                    <Element name="confidentialityBin">
+                        <clariah:label xml:lang="en">Is the dataset confidential?</clariah:label>
+                    </Element>
                     <Element name="specify">
                         <clariah:label xml:lang="en">Specify Measures</clariah:label>
                         <clariah:explanation>If yes, specify what measures were taken to avoid disclosure of personal information.</clariah:explanation>

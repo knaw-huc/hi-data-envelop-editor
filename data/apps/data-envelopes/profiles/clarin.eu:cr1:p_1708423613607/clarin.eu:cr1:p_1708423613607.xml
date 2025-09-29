@@ -326,6 +326,7 @@
                         </Vocabulary>
                     </ValueScheme>
                 </Element>
+                <Element name="extResourcesDescription" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
                 <Element name="extResources" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
             </Component>
             <Component name="annotations" CardinalityMin="1" CardinalityMax="1">
