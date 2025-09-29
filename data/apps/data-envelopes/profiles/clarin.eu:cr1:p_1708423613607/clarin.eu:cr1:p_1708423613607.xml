@@ -106,7 +106,7 @@
                         <ValueScheme>
                             <Vocabulary>
                                 <enumeration>
-                                    <item AppInfo="Universities, colleges, research laboratories, think tanks, etc.">Academic/Research Insitution</item>
+                                    <item AppInfo="Universities, colleges, research laboratories, think tanks, etc.">Academic/Research Institution</item>
                                     <item AppInfo="">Government</item>
                                     <item AppInfo="Advocacy groups, foundations, charities, NGOs, etc.">Non-Profit Organisation</item>
                                     <item AppInfo="Corporations, startups, small-to-medium enterprises across various industries (e.g., technology, healthcare, finance, retail, etc.)">Business/Industry</item>
@@ -286,6 +286,10 @@
                 </Component>
             </Component>
             <Component name="dataFields" CardinalityMin="1" CardinalityMax="unbounded">
+                <Component name="ExternalSchema" CardinalityMin="0" CardinalityMax="1">
+                    <Element name="externalSchemaLink" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="externalSchemaNote" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
                 <Component name="dataField" CardinalityMin="1" CardinalityMax="unbounded">
                     <Element name="dataFieldName" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
                     <Element name="dataFieldType" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
@@ -382,7 +386,7 @@
                     <Element name="knownBiases" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
                     <Element name="stepsToReduceBias" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
                     <Component name="sensAttributes" CardinalityMin="1" CardinalityMax="1">
-                        <Element name="sensitiveAttribute" CardinalityMin="1" CardinalityMax="1">
+                        <Element name="sensitiveAttribute" CardinalityMin="1" CardinalityMax="unbounded">
                             <ValueScheme>
                                 <Vocabulary>
                                     <enumeration>
@@ -473,7 +477,7 @@
                                 <item>Safe for research use</item>
                                 <item AppInfo="">Conditional use-some unsafe applications (Please specify below)</item>
                                 <item AppInfo="">Only approved use (Please specify below)</item>
-                                <item AppInfo="">Others (Please specify below</item>
+                                <item AppInfo="">Others (Please specify below)</item>
                             </enumeration>
                         </Vocabulary>
                     </ValueScheme>
@@ -522,6 +526,7 @@
                                 <item>Development or Production Use</item>
                                 <item>Fine Tuning</item>
                                 <item>Unknown - then skip the rest of this section</item>
+                                <item>Not permitted</item>
                                 <item>Others (please specify)</item>
                             </enumeration>
                         </Vocabulary>
