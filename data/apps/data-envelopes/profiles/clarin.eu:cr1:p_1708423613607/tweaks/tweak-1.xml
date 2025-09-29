@@ -794,8 +794,10 @@
                 <Component name="UnsuitableUseCase">
                     <clariah:label xml:lang="en">Unsuitable Use Case(s)</clariah:label>
                     <clariah:explanation>Summarise known unsuitable and unintended use cases of this dataset. </clariah:explanation>
-                    <Element name="unsuitableUseCase"><!--cues--></Element>
-                    <Element name="additionalNotes"><!--cues--></Element>
+                    <Element name="unsuitableUseCase" cue:inputWidth="80" cue:inputHeight="6"><!--cues--> 
+                    <clariah:explanation>Summarise here. Include links where necessary.</clariah:explanation>
+                    </Element>
+                    <Element name="additionalNotes" cue:inputWidth="80" cue:inputHeight="6"><!--cues--></Element>
                 </Component>
             </Component>
             <Component name="UseWithOtherData">

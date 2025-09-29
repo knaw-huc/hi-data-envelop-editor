@@ -494,7 +494,7 @@
                     <Element name="suitableUseCase" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
                     <Element name="additionalNotes" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
                 </Component>
-                <Component name="UnsuitableUseCase" CardinalityMin="1" CardinalityMax="1">
+                <Component name="UnsuitableUseCase" CardinalityMin="1" CardinalityMax="unbounded">
                     <Element name="unsuitableUseCase" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
                     <Element name="additionalNotes" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
                 </Component>
