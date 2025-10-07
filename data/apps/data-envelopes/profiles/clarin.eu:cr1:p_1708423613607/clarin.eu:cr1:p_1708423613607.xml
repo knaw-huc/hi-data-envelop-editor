@@ -40,6 +40,7 @@
                         <Vocabulary>
                             <enumeration>
                                 <item>Conceptualization</item>
+                                <item>Coordination</item>
                                 <item>Data Curation</item>
                                 <item>Formal Analysis</item>
                                 <item>Funding Acquisition</item>
@@ -129,6 +130,7 @@
                             <Vocabulary>
                                 <enumeration>
                                     <item>Conceptualisation</item>
+                                    <item>Coordination</item>
                                     <item>Data Curation</item>
                                     <item>Formal Analysis</item>
                                     <item>Funding Acquisition</item>
@@ -146,6 +148,7 @@
                             </Vocabulary>
                         </ValueScheme>
                     </Element>
+                    <Element name="AdditionalInformation" CardinalityMin="0" CardinalityMax="1"/>
                     <Element name="email" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
                 </Component>
                 <Component name="contributors" CardinalityMin="1" CardinalityMax="unbounded">
@@ -241,7 +244,7 @@
             <Component name="DataResourceDescription" CardinalityMin="1" CardinalityMax="1">
                 <Element name="nameOfResource" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
                 <Element name="Description" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
-                <Element name="path" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="path" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="unbounded"/>
                 <Element name="format" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
                 <Element name="size" ValueScheme="int" CardinalityMin="0" CardinalityMax="1"/>
                 <Element name="date" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
@@ -253,8 +256,8 @@
                             <Vocabulary>
                                 <enumeration>
                                     <item>Sensitive data about people</item>
-                                    <item>	Non-sensitive data about people</item>
-                                    <item>	Data about natural phenomena</item>
+                                    <item>Non-sensitive data about people</item>
+                                    <item>Data about natural phenomena</item>
                                     <item>Data about places and object</item>
                                     <item>Synthetically generated data</item>
                                     <item>Data about systems or products and their behavior</item>

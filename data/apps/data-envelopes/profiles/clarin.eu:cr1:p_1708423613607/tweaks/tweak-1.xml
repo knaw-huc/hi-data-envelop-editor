@@ -15,7 +15,7 @@
             <clariah:explanation>Basic Information on Data-Envelope</clariah:explanation>
             <Element name="title">
                 <clariah:label xml:lang="en">1.1. Title of Data-Envelope</clariah:label>
-                <clariah:explanation>Follow the format: Dataset Name Version-X Data-Envelope Version-Y</clariah:explanation>
+                <clariah:explanation>Follow the format: Dataset Name Version-X Data-Envelope Version-Y. See https://tinyurl.com/data-envelope-d-e-title</clariah:explanation>
                 <!--cues-->
             </Element>
             <Component name="ContactDetails">
@@ -84,7 +84,7 @@
                     <!--cues-->
                 </Element>
                 <Element name="description" cue:inputWidth="60" cue:inputHeight="8">
-                    <clariah:label xml:lang="en">Description</clariah:label>
+                    <clariah:label xml:lang="en">Dataset Description</clariah:label>
                     <clariah:explanation>Provide a free text account of the dataset or resource (limit 200 words). Include information about the content and topic of the data, sources and motivations for dataset creation.</clariah:explanation>
                     <!--cues-->
                 </Element>
@@ -132,13 +132,13 @@
                 </Element>
                 <Component name="TemporalCoverage">
                     <Element name="yearFrom">
-                        <clariah:label xml:lang="en">Temporal Coverage Start Date</clariah:label>
+                        <clariah:label xml:lang="en">Temporal Coverage Start</clariah:label>
                         <clariah:explanation>Provide start year of temporal scope of the dataset </clariah:explanation>
                         <!--cues-->
                     </Element>
                     <Element name="yearTo">
-                        <clariah:label xml:lang="en">Temporal Coverage End Date</clariah:label>
-                        <clariah:explanation>Provide end date of temporal scope of the dataset</clariah:explanation>
+                        <clariah:label xml:lang="en">Temporal Coverage End</clariah:label>
+                        <clariah:explanation>Provide end year of temporal scope of the dataset</clariah:explanation>
                         <!--cues-->
                     </Element>
                     <Element name="year">
@@ -209,9 +209,14 @@
                         <clariah:explanation>Specify the role in the project</clariah:explanation>
 
                     </Element>
+                    <Element name="AdditionalInformation">
+                        <clariah:label xml:lang="en">Additional Information</clariah:label>
+                        <clariah:explanation>Any other information about the creator</clariah:explanation>
+                        <!--cues-->
+                    </Element>
                     <Element name="email">
                         <clariah:label xml:lang="en">Email</clariah:label>
-                        <clariah:explanation>Provide the institutional email of contributor</clariah:explanation>
+                        <clariah:explanation>Provide the institutional email of creator</clariah:explanation>
                         <!--cues-->
                     </Element>
                 </Component>
@@ -222,10 +227,10 @@
                 </Component>
                 <Component name="funding">
                     <clariah:label xml:lang="en">Funding Source</clariah:label>
-                    <clariah:explanation>Provide information on each funding organisation </clariah:explanation>
+                    <clariah:explanation>Provide information on each funding source </clariah:explanation>
                     <Element name="name">
                         <clariah:label xml:lang="en">Name</clariah:label>
-                        <clariah:explanation>Name of organisation </clariah:explanation>
+                        <clariah:explanation>Name of person or organisation </clariah:explanation>
                         <!--cues-->
                     </Element>
                     <Element name="ROR">
@@ -234,7 +239,7 @@
                     </Element>
                     <Element name="summary" cue:inputWidth="60" cue:inputHeight="8">
                         <clariah:label xml:lang="en">Funding or Grant Summary</clariah:label>
-                        <clariah:explanation>Provide a short summary of organisation and grant that may have funded the creation, collection, or curation of the dataset.</clariah:explanation>
+                        <clariah:explanation>Provide a short summary of organisation and grant that funded the creation, collection, or curation of the dataset.</clariah:explanation>
                         <!--cues-->
                     </Element>
                     <Element name="link"><!--cues--></Element>
@@ -279,14 +284,14 @@
                 </Component>
             </Component>
             <Component name="accessLicenses">
-                <clariah:label xml:lang="en">2.5 Licenses and Accesses</clariah:label>
-                <clariah:explanation>Specify the license(s) and access levels under which the dataset is shared. This information is crucial in determining the appropriate re-use of datasets and access information.</clariah:explanation>
+                <clariah:label xml:lang="en">2.5 Licences and Accesses</clariah:label>
+                <clariah:explanation>Specify the licence(s) and access levels under which the dataset is shared. This information is crucial in determining the appropriate re-use of datasets and access information.</clariah:explanation>
                 <Component name="licensingInformation">
                     <clariah:label xml:lang="en">Licensing Information</clariah:label>
-                    <clariah:explanation>For every relevant license, provide the following information:</clariah:explanation>
+                    <clariah:explanation>For every relevant licence, provide the following information:</clariah:explanation>
                     <Element name="identifier">
                         <clariah:label xml:lang="en">Identifier </clariah:label>
-                        <clariah:explanation>Provide the identifier of the license(s) used.</clariah:explanation>
+                        <clariah:explanation>Provide the identifier of the licence(s) used.</clariah:explanation>
                         <!--cues-->
                     </Element>
                     <Element name="url">
@@ -306,13 +311,13 @@
                         <clariah:label xml:lang="en">Access Open</clariah:label>
                         <clariah:explanation>If access is open, please fill in this section.</clariah:explanation>
                         <Element name="description" cue:inputWidth="60" cue:inputHeight="8">
-                            <clariah:label xml:lang="en">Description</clariah:label>
+                            <clariah:label xml:lang="en">Access Description</clariah:label>
                             <clariah:explanation>Provide a description of how to access the data.</clariah:explanation>
                             <!--cues-->
                         </Element>
                         <Element name="url">
                             <clariah:label xml:lang="en">URL</clariah:label>
-                            <clariah:explanation>Provide the link to instructions.</clariah:explanation>
+                            <clariah:explanation>Provide the link to access or a link to instructions for how to access.</clariah:explanation>
                             <!--cues-->
                         </Element>
                         <Element name="contactEmail">
@@ -326,7 +331,7 @@
                         <clariah:label xml:lang="en">Access Restricted</clariah:label>
                         <clariah:explanation>If access is restricted, please fill in this section.</clariah:explanation>
                         <Element name="description" cue:inputWidth="60" cue:inputHeight="8">
-                            <clariah:label xml:lang="en">Description</clariah:label>
+                            <clariah:label xml:lang="en">Access Description</clariah:label>
                             <clariah:explanation>Provide a description of the access restriction. Include an explanation of why access controls are in place. Also highlight any restrictions or limitations such as geographical restrictions, time-limited access, or requirements of fees, national regulation, etc. Also provide any prerequisites for acceptable use, such as reading data usage policy.</clariah:explanation>
                             <!--cues-->
                         </Element>
@@ -390,7 +395,7 @@
                 </Component>
                 <Component name="nextUpdate">
                     <clariah:label xml:lang="en">Next Planned Update</clariah:label>
-                    <clariah:explanation>Provide details about the next planned update if known:</clariah:explanation>
+                    <clariah:explanation>Provide details about the next planned update:</clariah:explanation>
                     <Element name="versionAffected">
                         <clariah:label xml:lang="en">Version Affected</clariah:label>
                         <!--cues-->
@@ -424,7 +429,7 @@
                     <!--cues-->
                 </Element>
                 <Element name="Description" cue:inputWidth="60" cue:inputHeight="8">
-                    <clariah:label xml:lang="en">Description </clariah:label>
+                    <clariah:label xml:lang="en">Resource Description </clariah:label>
                     <clariah:explanation>Provide a description of the particular resource/file:</clariah:explanation>
                     <!--cues-->
                 </Element>
@@ -486,7 +491,7 @@
                     </Element>
                 </Component>
                 <Component name="descriptiveStatistics">
-                    <Element name="statistics"><!--cues--></Element>
+                    <Element name="statistics" cue:inputWidth="60" cue:inputHeight="8"><!--cues--></Element>
                 </Component>
             </Component>
             <Component name="dataFields">
@@ -494,7 +499,7 @@
                 <clariah:explanation>Describe every data field in the resource.</clariah:explanation>
                 <Component name="ExternalSchema">
                     <Element name="externalSchemaLink">
-                        <clariah:explanation>If you have an external document describing your dataset structure, please add a link to the document here</clariah:explanation>
+                        <clariah:explanation>Please add a link to the external schema describing your dataset structure here</clariah:explanation>
                     </Element>
                     <Element name="externalSchemaNote">
                         <clariah:explanation>Any notes about the link</clariah:explanation>
@@ -548,7 +553,7 @@
                 <Component name="typicalExample">
                     <clariah:label xml:lang="en">Typical Example</clariah:label>
                     <Element name="description" cue:inputWidth="60" cue:inputHeight="8">
-                        <clariah:label xml:lang="en">Description</clariah:label>
+                        <clariah:label xml:lang="en">Data point Description</clariah:label>
                         <clariah:explanation>Provide a description of a typical example of a data point.</clariah:explanation>
                         <!--cues-->
                     </Element>
@@ -594,7 +599,7 @@
                     <!--cues-->
                 </Element>
                 <Element name="extResources">
-                    <clariah:label xml:lang="en">External Resources Description Links</clariah:label>
+                    <clariah:label xml:lang="en">External Resources Links</clariah:label>
                     <clariah:explanation>If yes, provide links to these resources. </clariah:explanation>
                     <!--cues-->
                 </Element>
@@ -704,7 +709,7 @@
                 <Element name="Name"><!--cues--></Element>
                 <Element name="path">
                     <clariah:label xml:lang="en">URL</clariah:label>
-                    <clariah:explanation>Provide a URL of the source if available:</clariah:explanation>
+                    <clariah:explanation>Provide a URL of the source:</clariah:explanation>
                     <!--cues-->
                 </Element>
                 <Element name="description" cue:inputWidth="60" cue:inputHeight="8">
@@ -714,7 +719,7 @@
                 </Element>
                 <Element name="creatorName">
                     <clariah:label xml:lang="en">Creator Name(s)</clariah:label>
-                    <clariah:explanation>Provide name of individual creators of the source (if known)</clariah:explanation>
+                    <clariah:explanation>Provide name of individual creators of the source</clariah:explanation>
                     <!--cues-->
                 </Element>
                 <Element name="creatorOrganisation">
@@ -733,12 +738,12 @@
                 </Element>
                 <Element name="temporalScope">
                     <clariah:label xml:lang="en">Temporal Scope</clariah:label>
-                    <clariah:explanation>Provide the temporal scope of the resource.</clariah:explanation>
+                    <clariah:explanation>Provide the temporal scope of the source.</clariah:explanation>
                     <!--cues-->
                 </Element>
                 <Element name="geographicalScope">
                     <clariah:label xml:lang="en">Geographical Scope</clariah:label>
-                    <clariah:explanation>Provide the geographical scope of the resource.</clariah:explanation>
+                    <clariah:explanation>Provide the geographical scope of the source.</clariah:explanation>
                     <!--cues-->
                 </Element>
                 <Element name="notableFeatures" cue:inputWidth="60" cue:inputHeight="8">
@@ -748,7 +753,7 @@
                 </Element>
                 <Element name="datasheetEnvelope">
                     <clariah:label xml:lang="en">Datasheet/Data-Envelope</clariah:label>
-                    <clariah:explanation>Provide a link to a datasheet/data-envelope on the source if available.</clariah:explanation>
+                    <clariah:explanation>Provide a link to a datasheet/data-envelope on the source.</clariah:explanation>
                     <!--cues-->
                 </Element>
                 <Element name="dataSelection"><!--cues--></Element>
@@ -791,7 +796,9 @@
             </Element>
             <Component name="Use">
                 <clariah:label xml:lang="en">4.1. Uses</clariah:label>
-                <Element name="datasetUse"> </Element>
+                <Element name="datasetUse">
+                    <clariah:label xml:lang="en">Safe types of use</clariah:label>
+                </Element>
                 <Element name="datasetUseSpecify">
                     <clariah:label xml:lang="en">Explain for special cases chosen above</clariah:label>
                     <!--cues-->
@@ -799,7 +806,7 @@
                 <Component name="LinksToRelatedItems">
                     <Element name="publications">
                         <clariah:label xml:lang="en">Publications</clariah:label>
-                        <clariah:explanation>If the dataset was introduced by a paper or there was a paper written describing the dataset, add the URL here</clariah:explanation>
+                        <clariah:explanation>If the dataset was introduced by a publication or a publication was written describing the dataset, add the URL here, or otherwise a description</clariah:explanation>
                         <!--cues-->
                     </Element>
                     <Element name="relatedDatasets"><!--cues--></Element>
@@ -810,7 +817,7 @@
                     <clariah:explanation>Summarise known suitable and intended use cases of this dataset. </clariah:explanation>
                     <Element name="suitableUseCase" cue:inputWidth="80" cue:inputHeight="6">
                         <clariah:label xml:lang="en">Suitable Use Case</clariah:label>
-                        <clariah:explanation>Summarise here. Include links where necessary.</clariah:explanation>
+                        <clariah:explanation>Summarise existing or potential suitable use cases here. Include links where necessary.</clariah:explanation>
                         <!--cues-->
                     </Element>
                     <Element name="additionalNotes" cue:inputWidth="80" cue:inputHeight="3">
@@ -872,7 +879,7 @@
                 </Element>
                 <Element name="usageGuidelines" cue:inputWidth="80" cue:inputHeight="3">
                     <clariah:label xml:lang="en">Usage Guideline(s)</clariah:label>
-                    <clariah:explanation>Summarise or link to usage guidelines or policies that consumers should be aware of in using this dataset for ML purposes.</clariah:explanation>
+                    <clariah:explanation>Summarise or link to usage guidelines or policies that users should be aware of in using this dataset for ML purposes.</clariah:explanation>
                     <!--cues-->
                 </Element>
                 <Element name="dataSplits" cue:inputWidth="80" cue:inputHeight="3">
@@ -924,14 +931,14 @@
                 <clariah:label xml:lang="en">5.1. Human Annotators</clariah:label>
                 <clariah:explanation>Fill this section if human annotators were used to create dataset/resource</clariah:explanation>
                 <Element name="annotatorDescription">
-                    <clariah:label xml:lang="en">Annotator description</clariah:label>
+                    <clariah:label xml:lang="en">Annotator group description</clariah:label>
                     <clariah:explanation>Provide a brief description for each annotator group performing the human annotation task</clariah:explanation>
                     <!--cues-->
                 </Element>
                 <Component name="AnnotationType">
                     <Element name="taskType">
                         <clariah:label xml:lang="en">Task Type</clariah:label>
-                        <clariah:explanation>Summarise here. Include links if available. Ideally connect to some existing taxonomy: survey, video annotation, text annotation, image annotation, etc</clariah:explanation>
+                        <clariah:explanation>Summarise here. Include links. Ideally connect to some existing taxonomy: survey, video annotation, text annotation, image annotation, etc</clariah:explanation>
                         <!--cues-->
                     </Element>
                     <Element name="numberOfUniqueAnnotators">
@@ -986,17 +993,17 @@
                     </Element>
                     <Element name="summaryOfAnnotationInstructions" cue:inputWidth="80" cue:inputHeight="6">
                         <clariah:label xml:lang="en">Summary of annotation instructions</clariah:label>
-                        <clariah:explanation>Summarise here. Include links if available, say to the annotation instructions, readme.</clariah:explanation>
+                        <clariah:explanation>Summarise here. Include links, say to the annotation instructions, readme.</clariah:explanation>
                         <!--cues-->
                     </Element>
                     <Element name="annotationPlatforms">
                         <clariah:label xml:lang="en">Annotation platform(s)</clariah:label>
-                        <clariah:explanation>Include link(s) if available</clariah:explanation>
+                        <clariah:explanation>Include link(s)</clariah:explanation>
                         <!--cues-->
                     </Element>
                     <Element name="additionalNotes" cue:inputWidth="80" cue:inputHeight="3">
                         <clariah:label xml:lang="en">Additional Notes</clariah:label>
-                        <clariah:explanation>For example: During the annotation process all annotators were trained to read and understand the original texts by the archival expert and were invited to compare the HTR texts with the scans of the original. This way of working proved instrumental in overcoming limitations of HTR quality. Or any other comments.</clariah:explanation>
+                        <clariah:explanation>Any other comments. For example: During the annotation process all annotators were trained to read and understand the original texts by the archival expert and were invited to compare the HTR texts with the scans of the original. This way of working proved instrumental in overcoming limitations of HTR quality.</clariah:explanation>
                         <!--cues-->
                     </Element>
                 </Component>
