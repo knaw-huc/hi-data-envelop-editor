@@ -15,12 +15,12 @@
             <clariah:explanation>Basic Information on Data-Envelope</clariah:explanation>
             <Element name="title">
                 <clariah:label xml:lang="en">1.1. Title of Data-Envelope</clariah:label>
-                <clariah:explanation>Follow the format: Dataset Name Version-X Data-Envelope Version-Y. See https://tinyurl.com/data-envelope-d-e-title</clariah:explanation>
+                <clariah:explanation>Follow the format: Dataset Name Version-X Data-Envelope Version-Y. See https://tinyurl.com/level-1-title for help.</clariah:explanation>
                 <!--cues-->
             </Element>
             <Component name="ContactDetails">
-                <clariah:label xml:lang="en">1.2. Contact Details </clariah:label>
-                <clariah:explanation>Provide contact information for the project.</clariah:explanation>
+                <clariah:label xml:lang="en">1.2. Contact Details (See https://tinyurl.com/level-1-contact for help)</clariah:label>
+                <clariah:explanation>Provide contact information for the project. </clariah:explanation>
                 <Element name="name">
                     <clariah:label xml:lang="en">Name </clariah:label>
                     <clariah:explanation>Provide the full name.</clariah:explanation>
@@ -37,9 +37,9 @@
                 </Element>
             </Component>
             <Component name="Dates">
-                <clariah:label xml:lang="en">1.3. Data Envelope Dates</clariah:label>
+                <clariah:label xml:lang="en">1.3. Data Envelope Dates (See https://tinyurl.com/level-1-dates for help)</clariah:label>
                 <Element name="creationDateFrom">
-                    <clariah:label xml:lang="en">Data-Envelope Creation Date </clariah:label>
+                    <clariah:label xml:lang="en">Data-Envelope Creation Date</clariah:label>
                     <!--cues-->
                 </Element>
                 <Element name="creationDateTo">
@@ -52,8 +52,8 @@
                 </Element>
             </Component>
             <Component name="authorDataEnvelope">
-                <clariah:label xml:lang="en">1.4 Author of Data-Envelope</clariah:label>
-                <clariah:explanation>Provide information on the author of the data-envelope.</clariah:explanation>
+                <clariah:label xml:lang="en">1.4 Author of Data-Envelope (See https://tinyurl.com/level-1-author for help)</clariah:label>
+                <clariah:explanation>Provide information on the author of the data-envelope</clariah:explanation>
                 <Element name="name">
                     <clariah:label xml:lang="en">Name </clariah:label>
                     <clariah:explanation>Provide their full name.</clariah:explanation>
@@ -66,7 +66,7 @@
                 <clariah:label xml:lang="en">1.5 Feedback and Elaboration</clariah:label>
                 <Element name="feedbackSectionOne" cue:inputWidth="60" cue:inputHeight="8">
                     <clariah:label xml:lang="en">Feedback </clariah:label>
-                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level.</clariah:explanation>
+                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level. (See https://tinyurl.com/level-1-feedback for help)</clariah:explanation>
                     <!--cues-->
                 </Element>
             </Component>
@@ -74,7 +74,7 @@
         <Component name="BasicMetadata">
             <clariah:label xml:lang="en">Level 2: Basic Metadata</clariah:label>
             <Component name="Snapshot">
-                <clariah:label xml:lang="en">2.1 Snapshot</clariah:label>
+                <clariah:label xml:lang="en">2.1 Snapshot (See https://tinyurl.com/level-2-snapshot for help)</clariah:label>
                 <Element name="title">
                     <clariah:label xml:lang="en">Dataset Title</clariah:label>
                     <!--cues-->
@@ -154,8 +154,9 @@
                 </Component>
             </Component>
             <Component name="Dates">
-                <clariah:label xml:lang="en">2.2 Dates</clariah:label>
-                <Element name="dateFrom"><!--cues--></Element>
+                <clariah:label xml:lang="en">2.2 Dates (See https://tinyurl.com/level-2-dates for help)</clariah:label>
+                <Element name="dateFrom"><!--cues-->
+                </Element>     
                 <Element name="dateTo"><!--cues--></Element>
                 <Element name="datasetPublicationDate">
                     <clariah:label xml:lang="en">Dataset Publication Date</clariah:label>
@@ -164,7 +165,7 @@
                 </Element>
             </Component>
             <Component name="CreatorsContributors">
-                <clariah:label xml:lang="en">2.3 Creators and Contributors </clariah:label>
+                <clariah:label xml:lang="en">2.3 Creators and Contributors (See https://tinyurl.com/level-2-contributor for help)</clariah:label>
                 <clariah:explanation>Specify the individuals or organizations that created, contributed to, and are sharing the dataset. This information is essential in identifying the dataset's provenance.</clariah:explanation>
                 <Component name="publishingOrganisation">
                     <clariah:label xml:lang="en">Publishing Organisation</clariah:label>
@@ -246,7 +247,7 @@
                 </Component>
             </Component>
             <Component name="distribution">
-                <clariah:label xml:lang="en">2.4 Distribution</clariah:label>
+                <clariah:label xml:lang="en">2.4 Distribution (See https://tinyurl.com/level-2-distribution for help)</clariah:label>
                 <Element name="datasetlink">
                     <clariah:label xml:lang="en">Dataset Link </clariah:label>
                     <clariah:explanation>For instance its DOI, Handle, or ARK</clariah:explanation>
@@ -284,7 +285,7 @@
                 </Component>
             </Component>
             <Component name="accessLicenses">
-                <clariah:label xml:lang="en">2.5 Licences and Accesses</clariah:label>
+                <clariah:label xml:lang="en">2.5 Licences and Accesses (See https://tinyurl.com/level-2-licence for help)</clariah:label>
                 <clariah:explanation>Specify the licence(s) and access levels under which the dataset is shared. This information is crucial in determining the appropriate re-use of datasets and access information.</clariah:explanation>
                 <Component name="licensingInformation">
                     <clariah:label xml:lang="en">Licensing Information</clariah:label>
@@ -353,7 +354,7 @@
                 </Component>
             </Component>
             <Component name="versionMaintenance">
-                <clariah:label xml:lang="en">2.6 Dataset Version and Maintenance</clariah:label>
+                <clariah:label xml:lang="en">2.6 Dataset Version and Maintenance (See https://tinyurl.com/level-2-version for help)</clariah:label>
                 <Component name="version">
                     <clariah:label xml:lang="en">Version</clariah:label>
                     <clariah:explanation>Provide details about this version of the dataset.</clariah:explanation>
@@ -414,7 +415,7 @@
                 <clariah:label xml:lang="en">2.7 Feedback and Elaboration</clariah:label>
                 <Element name="feedbackSectionTwo" cue:inputWidth="60" cue:inputHeight="8">
                     <clariah:label xml:lang="en">Feedback and Elaboration</clariah:label>
-                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level.</clariah:explanation>
+                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level.  (See https://tinyurl.com/level-2-feedback for help)</clariah:explanation>
                     <!--cues-->
                 </Element>
             </Component>
@@ -423,7 +424,7 @@
             <clariah:label xml:lang="en">Level 3: Data </clariah:label>
             <clariah:explanation>For each data resource/file in the dataset, fill in the following:</clariah:explanation>
             <Component name="DataResourceDescription">
-                <clariah:label xml:lang="en">3.1 Data Resource Description</clariah:label>
+                <clariah:label xml:lang="en">3.1 Data Resource Description (See https://tinyurl.com/level-3-drd for help)</clariah:label>
                 <Element name="nameOfResource">
                     <clariah:label xml:lang="en">Name of Resource</clariah:label>
                     <!--cues-->
@@ -495,7 +496,7 @@
                 </Component>
             </Component>
             <Component name="dataFields">
-                <clariah:label xml:lang="en">3.2 Data Fields </clariah:label>
+                <clariah:label xml:lang="en">3.2 Data Fields (See https://tinyurl.com/level-3-data-fields for help)</clariah:label>
                 <clariah:explanation>Describe every data field in the resource.</clariah:explanation>
                 <Component name="ExternalSchema">
                     <Element name="externalSchemaLink">
@@ -549,7 +550,7 @@
                 </Component>
             </Component>
             <Component name="dataExamples">
-                <clariah:label xml:lang="en">3.3 Data Point Examples</clariah:label>
+                <clariah:label xml:lang="en">3.3 Data Point Examples (See https://tinyurl.com/level-3-examples for help)</clariah:label>
                 <Component name="typicalExample">
                     <clariah:label xml:lang="en">Typical Example</clariah:label>
                     <Element name="description" cue:inputWidth="60" cue:inputHeight="8">
@@ -578,7 +579,7 @@
                 </Component>
             </Component>
             <Component name="errors">
-                <clariah:label xml:lang="en">3.4 Errors, Noise, and Redundancies</clariah:label>
+                <clariah:label xml:lang="en">3.4 Errors, Noise, and Redundancies (See https://tinyurl.com/level-3-errors for help)</clariah:label>
                 <clariah:explanation>Are there any errors, sources of noise, or redundancies in this resource?</clariah:explanation>
                 <Element name="errordescription" cue:inputWidth="60" cue:inputHeight="8">
                     <clariah:label xml:lang="en">Description</clariah:label>
@@ -587,7 +588,7 @@
                 </Element>
             </Component>
             <Component name="externalResources">
-                <clariah:label xml:lang="en">3.5 External Resources</clariah:label>
+                <clariah:label xml:lang="en">3.5 External Resources (See https://tinyurl.com/level-3-external for help)</clariah:label>
                 <Element name="resources">
                     <clariah:label xml:lang="en">Resources</clariah:label>
                     <clariah:explanation>Does the dataset link to or otherwise rely on external resources (e.g., websites, other datasets)?</clariah:explanation>
@@ -605,7 +606,7 @@
                 </Element>
             </Component>
             <Component name="annotations">
-                <clariah:label xml:lang="en">3.6 Annotation and Labeling</clariah:label>
+                <clariah:label xml:lang="en">3.6 Annotation and Labeling (See https://tinyurl.com/level-3-annotation for help)</clariah:label>
                 <clariah:explanation>Fill in this section to specify if any human or algorithmic annotation tasks were performed in the creation of your dataset resource. Repeat this section for every "annotation workforce type".</clariah:explanation>
                 <Component name="annotationCharacteristics">
                     <clariah:label xml:lang="en">Annotation Characteristics</clariah:label>
@@ -620,7 +621,7 @@
                 </Component>
             </Component>
             <Component name="socialImpact">
-                <clariah:label xml:lang="en">3.7 Social Impact, Sensitivity, and Biases</clariah:label>
+                <clariah:label xml:lang="en">3.7 Social Impact, Sensitivity, and Biases (See https://tinyurl.com/level-3-social for help)</clariah:label>
                 <Component name="safety">
                     <clariah:label xml:lang="en">Safety Consideration</clariah:label>
                     <Element name="disclaimer">
@@ -704,7 +705,7 @@
                 </Component>
             </Component>
             <Component name="dataProvenance">
-                <clariah:label xml:lang="en">3.8 Data Provenance</clariah:label>
+                <clariah:label xml:lang="en">3.8 Data Provenance (See https://tinyurl.com/level-3-prov for help)</clariah:label>
                 <clariah:explanation>For every source used to create this resource, provide the following information:</clariah:explanation>
                 <Element name="Name"><!--cues--></Element>
                 <Element name="path">
@@ -759,7 +760,7 @@
                 <Element name="dataSelection"><!--cues--></Element>
             </Component>
             <Component name="digitisation">
-                <clariah:label xml:lang="en">3.9 Digitisation</clariah:label>
+                <clariah:label xml:lang="en">3.9 Digitisation (See https://tinyurl.com/level-3-digitisation for help)</clariah:label>
                 <Element name="digitalisationPipeline" cue:inputWidth="60" cue:inputHeight="8">
                     <clariah:label xml:lang="en">Digitisation Pipeline</clariah:label>
                     <clariah:explanation>If applicable, describe in what way digitisation presents another layer of selection of the whole of a collection available in a cultural heritage institution; state if this is not the case. If applicable, provide selection criteria and metrics that demonstrate how this additional layer of selection has influenced the transformation of the original collection or dataset into the current dataset.</clariah:explanation>
@@ -770,13 +771,13 @@
                 <clariah:label xml:lang="en">3.10 Feedback and Elaboration</clariah:label>
                 <Element name="feedbackSectionThree" cue:inputWidth="60" cue:inputHeight="8">
                     <clariah:label xml:lang="en">Feedback and Elaboration</clariah:label>
-                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level.</clariah:explanation>
+                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level. (See https://tinyurl.com/level-3-feedback for help)</clariah:explanation>
                     <!--cues-->
                 </Element>
             </Component>
         </Component>
         <Component name="Uses">
-            <clariah:label xml:lang="en">Level 4: Uses</clariah:label>
+            <clariah:label xml:lang="en">Level 4: Uses (See https://tinyurl.com/level-4-uses for help)</clariah:label>
             <Element name="purposes"> </Element>
             <Element name="other">
                 <clariah:label xml:lang="en">Other</clariah:label>
@@ -795,7 +796,7 @@
                 <!--cues-->
             </Element>
             <Component name="Use">
-                <clariah:label xml:lang="en">4.1. Uses</clariah:label>
+                <clariah:label xml:lang="en">4.1. Uses (See https://tinyurl.com/level-4-1-uses for help)</clariah:label>
                 <Element name="datasetUse">
                     <clariah:label xml:lang="en">Safe types of use</clariah:label>
                 </Element>
@@ -835,7 +836,7 @@
                 </Component>
             </Component>
             <Component name="UseWithOtherData">
-                <clariah:label xml:lang="en">4.2. Use with Other Data</clariah:label>
+                <clariah:label xml:lang="en">4.2. Use with Other Data (See https://tinyurl.com/level-4-2-uses for help)</clariah:label>
                 <Element name="SafetyLevel">
                     <clariah:label xml:lang="en">Safety Level</clariah:label>
 
@@ -857,7 +858,7 @@
                 </Element>
             </Component>
             <Component name="UseInMLOrAISystems">
-                <clariah:label xml:lang="en">4.3 Use in ML or AI Systems</clariah:label>
+                <clariah:label xml:lang="en">4.3 Use in ML or AI Systems (See https://tinyurl.com/level-4-ai for help)</clariah:label>
                 <Element name="datasetUses">
                     <clariah:label xml:lang="en">Dataset Uses</clariah:label>
 
@@ -889,7 +890,7 @@
                 </Element>
             </Component>
             <Component name="Sampling">
-                <clariah:label xml:lang="en">4.4. Sampling</clariah:label>
+                <clariah:label xml:lang="en">4.4. Sampling (See https://tinyurl.com/level-4-sampling for help)</clariah:label>
                 <Element name="safetyLevel"> </Element>
                 <Element name="otherSafetyLevel">
                     <clariah:label xml:lang="en">Other</clariah:label>
@@ -920,7 +921,7 @@
                 <clariah:label xml:lang="en">4.5. Feedback and Elaboration</clariah:label>
                 <Element name="feedbackSectionFour" cue:inputWidth="80" cue:inputHeight="3">
                     <clariah:label xml:lang="en">Feedback</clariah:label>
-                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level.</clariah:explanation>
+                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level. (See https://tinyurl.com/level-4-feedback for help)</clariah:explanation>
                     <!--cues-->
                 </Element>
             </Component>
@@ -928,7 +929,7 @@
         <Component name="HumanPerspective">
             <clariah:label xml:lang="en">Level 5: Human Perspective</clariah:label>
             <Component name="HumanAnnotators">
-                <clariah:label xml:lang="en">5.1. Human Annotators</clariah:label>
+                <clariah:label xml:lang="en">5.1. Human Annotators (See https://tinyurl.com/level-5-annotator for help)</clariah:label>
                 <clariah:explanation>Fill this section if human annotators were used to create dataset/resource</clariah:explanation>
                 <Element name="annotatorDescription">
                     <clariah:label xml:lang="en">Annotator group description</clariah:label>
@@ -1009,7 +1010,7 @@
                 </Component>
             </Component>
             <Component name="Creators">
-                <clariah:label xml:lang="en">5.2. Creators and Contributors</clariah:label>
+                <clariah:label xml:lang="en">5.2. Creators and Contributors  (See https://tinyurl.com/level-5-contributor for help)</clariah:label>
                 <Element name="creatorPositionality" cue:inputWidth="80" cue:inputHeight="3">
                     <clariah:label xml:lang="en">Description of potential positionality impact factors</clariah:label>
                     <clariah:explanation>Think of aspects that could have impact on the work in terms of positionality, e.g. particular domain of expertise, gender, age, etc.</clariah:explanation>
@@ -1020,7 +1021,7 @@
                 <clariah:label xml:lang="en">5.3. Feedback and Elaboration</clariah:label>
                 <Element name="feedbackSectionFive" cue:inputWidth="80" cue:inputHeight="3">
                     <clariah:label xml:lang="en">Feedback</clariah:label>
-                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level.</clariah:explanation>
+                    <clariah:explanation>Please use this space to provide any feedback on this section and to share any other insights or information you think would be useful for this level.  (See https://tinyurl.com/level-5-feedback for help)</clariah:explanation>
                     <!--cues-->
                 </Element>
             </Component>
