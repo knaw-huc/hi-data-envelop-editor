@@ -20,7 +20,7 @@
             </Element>
             <Component name="ContactDetails">
                 <clariah:label xml:lang="en">1.2. Contact Details (See https://tinyurl.com/level-1-contact for help)</clariah:label>
-                <clariah:explanation>Provide contact information for the project. </clariah:explanation>
+                <clariah:explanation>Provide contact information for the dataset. </clariah:explanation>
                 <Element name="name">
                     <clariah:label xml:lang="en">Name </clariah:label>
                     <clariah:explanation>Provide the full name.</clariah:explanation>
@@ -28,9 +28,10 @@
                 </Element>
                 <Element name="orcidID">
                     <clariah:label xml:lang="en">ORCID ID</clariah:label>
+                    <clariah:explanation>Provide the ORCID ID of the contact person.</clariah:explanation>
                     <!--cues-->
                 </Element>
-                <Element name="roleInProject"> </Element>
+                <Element name="roleInDatasetCreation"> </Element>
                 <Element name="email">
                     <clariah:label xml:lang="en">Email</clariah:label>
                     <!--cues-->
@@ -59,7 +60,10 @@
                     <clariah:explanation>Provide their full name.</clariah:explanation>
                     <!--cues-->
                 </Element>
-                <Element name="orcidID"><!--cues--></Element>
+                <Element name="orcidID"><!--cues-->
+                    <clariah:label xml:lang="en">ORCID ID</clariah:label>
+                    <clariah:explanation>Provide the ORCID ID of the author.</clariah:explanation>
+                </Element>    
                 <Element name="email"><!--cues--></Element>
             </Component>
             <Component name="feedbackElaboration">
@@ -79,10 +83,6 @@
                     <clariah:label xml:lang="en">Dataset Title</clariah:label>
                     <!--cues-->
                 </Element>
-                <Element name="version">
-                    <clariah:label xml:lang="en">Version</clariah:label>
-                    <!--cues-->
-                </Element>
                 <Element name="description" cue:inputWidth="60" cue:inputHeight="8">
                     <clariah:label xml:lang="en">Dataset Description</clariah:label>
                     <clariah:explanation>Provide a free text account of the dataset or resource (limit 200 words). Include information about the content and topic of the data, sources and motivations for dataset creation.</clariah:explanation>
@@ -96,7 +96,7 @@
                 </Element>
                 <Element name="genreOther">
                     <clariah:label xml:lang="en">Other Genre</clariah:label>
-                    <clariah:explanation>Specify the particular genre of the dataset if not included in the dropdown list above.</clariah:explanation>
+                    <clariah:explanation>Specify genre(s) of the dataset if not included in the dropdown list above.</clariah:explanation>
                     <!--cues-->
                 </Element>
                 <Element name="topic" cue:class="skosType">
@@ -156,8 +156,11 @@
             <Component name="Dates">
                 <clariah:label xml:lang="en">2.2 Dates (See https://tinyurl.com/level-2-dates for help)</clariah:label>
                 <Element name="dateFrom"><!--cues-->
+                    <clariah:explanation>The date when creation of this dataset began</clariah:explanation>
                 </Element>     
-                <Element name="dateTo"><!--cues--></Element>
+                <Element name="dateTo"><!--cues-->
+                    <clariah:explanation>The date when creation of this dataset was completed</clariah:explanation>
+                </Element>
                 <Element name="datasetPublicationDate">
                     <clariah:label xml:lang="en">Dataset Publication Date</clariah:label>
                     <clariah:explanation>Provide the dataset publication date.</clariah:explanation>
@@ -197,6 +200,7 @@
                     <Element name="Name"><!--cues--></Element>
                     <Element name="ORCID">
                         <clariah:label xml:lang="en">ORCID ID</clariah:label>
+                        <clariah:explanation>Provide the ORCID ID of the creator.</clariah:explanation>
                         <!--cues-->
                     </Element>
                     <Element name="Organisation"><!--cues--></Element>
@@ -207,7 +211,7 @@
                     </Element>
                     <Element name="Role">
                         <clariah:label xml:lang="en">Role</clariah:label>
-                        <clariah:explanation>Specify the role in the project</clariah:explanation>
+                        <clariah:explanation>Specify the role in the creation of the dataset</clariah:explanation>
 
                     </Element>
                     <Element name="AdditionalInformation">
@@ -236,6 +240,7 @@
                     </Element>
                     <Element name="ROR">
                         <clariah:label xml:lang="en">ROR ID</clariah:label>
+                        <clariah:explanation>Provide the Research Organisation Registry (ROR) ID for the funding source</clariah:explanation>
                         <!--cues-->
                     </Element>
                     <Element name="summary" cue:inputWidth="60" cue:inputHeight="8">
@@ -368,7 +373,7 @@
                     </Element>
                     <Element name="releaseDate">
                         <clariah:label xml:lang="en">Release Date </clariah:label>
-                        <clariah:explanation>Provide the publication date of this version of the dataset.</clariah:explanation>
+                        <clariah:explanation>Provide the publication date of the current version of the dataset.</clariah:explanation>
                         <!--cues-->
                     </Element>
                 </Component>
@@ -456,7 +461,7 @@
                 </Element>
                 <Element name="language">
                     <clariah:label xml:lang="en">Language(s)</clariah:label>
-                    <clariah:explanation>provide language used in the dataset:</clariah:explanation>
+                    <clariah:explanation>Provide language used in the dataset:</clariah:explanation>
                     <!--cues-->
                 </Element>
                 <Element name="encoding">
@@ -681,7 +686,9 @@
                         <clariah:explanation>Was an ethical review conducted in order to create this dataset?</clariah:explanation>
 
                     </Element>
-                    <Element name="description"><!--cues--></Element>
+                    <Element name="description"><!--cues-->
+                        <clariah:explanation>Describe what type of ethical review was performed, by whom and when. </clariah:explanation>
+                    </Element>
                     <Element name="outcomes" cue:inputWidth="60" cue:inputHeight="8">
                         <clariah:label xml:lang="en">Outcomes </clariah:label>
                         <clariah:explanation>Describe the outcomes of the ethical review, and how they influenced the dataset creation. </clariah:explanation>
@@ -715,7 +722,7 @@
                 </Element>
                 <Element name="description" cue:inputWidth="60" cue:inputHeight="8">
                     <clariah:label xml:lang="en">Description</clariah:label>
-                    <clariah:explanation>Provide a brief description of the source and why it was used?</clariah:explanation>
+                    <clariah:explanation>Provide a brief description of the source and why it was used</clariah:explanation>
                     <!--cues-->
                 </Element>
                 <Element name="creatorName">
@@ -852,7 +859,7 @@
                     <!--cues-->
                 </Element>
                 <Element name="KnownUnsafeDatasetsDataTypes" cue:inputWidth="80" cue:inputHeight="3">
-                    <clariah:label xml:lang="en">Known unsafe dataset(s) or Data Type(s)</clariah:label>
+                    <clariah:label xml:lang="en">Known unsafe dataset(s) or data type(s)</clariah:label>
                     <clariah:explanation>List the known datasets or data types and corresponding transformations that are unsafe to join or aggregate this dataset with.</clariah:explanation>
                     <!--cues-->
                 </Element>
@@ -947,7 +954,7 @@
                         <!--cues-->
                     </Element>
                     <Element name="avgannotations">
-                        <clariah:label xml:lang="en">Average number of Annotations per Annotator</clariah:label>
+                        <clariah:label xml:lang="en">Average number of annotations per annotator</clariah:label>
                         <!--cues-->
                     </Element>
                     <Element name="expertiseOfAnnotators">
