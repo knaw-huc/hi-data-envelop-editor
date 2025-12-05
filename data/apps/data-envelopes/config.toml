@@ -17,6 +17,7 @@ prof="clarin.eu:cr1:p_1708423613607"
 title="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:BasicInformation/(cmdp:title[@xml:lang='en'],cmdp:title)[1])"
 label_en="envelop"
 label_plural_en="envelopes"
+html="toHTML.xsl"
 
 [app.prof.envelop.list.title]
 xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:BasicInformation/(cmdp:title[@xml:lang='en'],cmdp:title)[1])"
