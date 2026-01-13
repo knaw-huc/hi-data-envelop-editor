@@ -210,7 +210,6 @@
             <Component name="versionMaintenance" CardinalityMin="1" CardinalityMax="1">
                 <Component name="version" CardinalityMin="1" CardinalityMax="1">
                     <Element name="currentVersion" ValueScheme="decimal" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
-                    <Element name="lastUpdated" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
                     <Element name="releaseDate" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
                 </Component>
                 <Component name="maintenance" CardinalityMin="1" CardinalityMax="1">
