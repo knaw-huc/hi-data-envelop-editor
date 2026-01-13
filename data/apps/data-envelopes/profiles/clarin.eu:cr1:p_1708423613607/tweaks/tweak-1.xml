@@ -367,10 +367,6 @@
                         <clariah:label xml:lang="en">Current Version</clariah:label>
                         <!--cues-->
                     </Element>
-                    <Element name="lastUpdated">
-                        <clariah:label xml:lang="en">Last Updated</clariah:label>
-                        <!--cues-->
-                    </Element>
                     <Element name="releaseDate">
                         <clariah:label xml:lang="en">Release Date </clariah:label>
                         <clariah:explanation>Provide the publication date of the current version of the dataset.</clariah:explanation>
@@ -601,7 +597,7 @@
                 </Element>
                 <Element name="extResourcesDescription" cue:inputWidth="60" cue:inputHeight="8">
                     <clariah:label xml:lang="en">External Resources Description</clariah:label>
-                    <clariah:explanation>If yes, please specify what external resources (such as website, other datasets) it relies on, and how and why it relies on them.</clariah:explanation>
+                    <clariah:explanation>If yes, please specify what external resources (such as website, other datasets) it relies on or links to, and how and why it relies on them.</clariah:explanation>
                     <!--cues-->
                 </Element>
                 <Element name="extResources">
