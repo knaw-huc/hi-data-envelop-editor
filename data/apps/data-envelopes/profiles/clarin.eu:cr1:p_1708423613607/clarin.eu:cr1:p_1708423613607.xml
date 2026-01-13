@@ -594,7 +594,7 @@
         </Component>
         <Component name="HumanPerspective" CardinalityMin="1" CardinalityMax="1">
             <Component name="HumanAnnotators" CardinalityMin="1" CardinalityMax="1">
-                <Element name="annotatorDescription" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Element name="annotatorDescription" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
                 <Component name="AnnotationType" CardinalityMin="1" CardinalityMax="unbounded">
                     <Element name="taskType" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
                     <Element name="numberOfUniqueAnnotators" ValueScheme="int" CardinalityMin="0" CardinalityMax="1"/>
