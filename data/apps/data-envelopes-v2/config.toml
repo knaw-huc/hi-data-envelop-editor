@@ -1,0 +1,60 @@
+
+[app]
+name="data-envelopes-v2"
+title="Data-envelopes-v2 Editor"
+def_prof="clarin.eu:cr1:p_1770289476181"
+cmdi_version="1.2"
+
+[app.access]
+#users="./htp.test" # location of the htpassword file, i.e. the "users" and "owner"
+read="any" # or "users" or "owner"
+write="any" # or "users" or "owner"
+
+[app.prof.envelopv2]
+prof="clarin.eu:cr1:p_1770289476181"
+title="string((/cmd:CMD/cmd:Components//cmdp:*[empty(cmdp:*)][normalize-space(text())!=''])[1])"
+label_en="envelop"
+label_plural_en="envelopes"
+
+[app.prof.envelopv2.list.nr]
+xpath="replace(//*:MdSelfLink,'unl://','')"
+label="nr"
+sort="true"
+filter="true"
+
+#[app.prof.envelopv2.list.status]
+#xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:status)"
+#label="Status"
+#sort="true"
+#filter="'select'"
+
+[app.prof.envelopv2.list.titleEnvelope]
+xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DataEnvelopeMetadata/(cmdp:title[@xml:lang='en'],cmdp:title)[1])"
+label="DataEnvelope Title"
+sort="true"
+filter="true"
+
+[app.prof.envelopv2.list.titleDataset]
+xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/(cmdp:title[@xml:lang='en'],cmdp:title)[1])"
+label="Dataset Title"
+sort="true"
+filter="true"
+
+[app.prof.envelopv2.list.versionEnvelope]
+xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DataEnvelopeMetadata/cmdp:Version/cmdp:versionNumber)"
+label="Envelope Version"
+sort="true"
+filter="'select'"
+
+[app.prof.envelopv2.list.versionDataset]
+xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:VersionMaintenance/cmdp:Version/cmdp:currentVersion)"
+label="Dataset Version"
+sort="true"
+filter="'select'"
+#
+#[app.prof.envelop.list.temporalyear]
+#xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:BasicMetadata/cmdp:Snapshot/cmdp:TemporalCoverage/cmdp:year)"
+#label="year"
+#sort="true"
+#filter="'select'"
+                
