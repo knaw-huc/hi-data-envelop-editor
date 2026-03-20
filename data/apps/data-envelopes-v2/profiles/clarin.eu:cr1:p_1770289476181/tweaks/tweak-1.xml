@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><ComponentSpec xmlns:clariah="http://www.clariah.eu/" xmlns:cue="http://www.clarin.eu/cmd/cues/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isProfile="true" CMDVersion="1.2" CMDOriginalVersion="1.2" xsi:noNamespaceSchemaLocation="https://infra.clarin.eu/CMDI/1.x/xsd/cmd-component.xsd">
+<?xml version='1.0' encoding='UTF-8'?>
+<ComponentSpec xmlns:clariah="http://www.clariah.eu/" xmlns:cue="http://www.clarin.eu/cmd/cues/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isProfile="true" CMDVersion="1.2" CMDOriginalVersion="1.2" xsi:noNamespaceSchemaLocation="https://infra.clarin.eu/CMDI/1.x/xsd/cmd-component.xsd">
     <Header>
         <ID>clarin.eu:cr1:p_1770289476181</ID>
         <Name>DataEnvelope_v2.0</Name>
@@ -6,395 +7,957 @@
         <Status>development</Status>
     </Header>
     <Component name="DataEnvelope">
-        <Element name="institute"/>
+        <Element name="institute">
+            
+        </Element>
         <Element name="ID"><!--cues--></Element>
-        <Element name="status"/>
+        <Element name="status">
+            
+        </Element>
         <Component name="DataEnvelopeMetadata">
-			<clariah:label xml:lang="en">Level 1: Data envelope metadata </clariah:label>
-			<clariah:explanation>Basic metadata describing the Data Envelope, not the dataset</clariah:explanation>
-            <Element name="title">
-				<clariah:label xml:lang="en">1.1. Title of the Data Envelope</clariah:label>
-				<clariah:explanation>t.b.d.</clariah:explanation>
+            <clariah:label xml:lang="en">Level 1: Data Envelope Metadata</clariah:label>
+			<clariah:explanation>See documentation at: https://edu.nl/atqm8#Data-Envelope-Metadata</clariah:explanation>
+			<Element name="title">
+				<clariah:label xml:lang="en">Level 1.1: Title</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Title</clariah:explanation>
+				<Documentation>For describing the internal curation/editorial process.</Documentation>
 			</Element>
             <Component name="Version">
-				<clariah:label xml:lang="en">1.2. Version and Dates of the Data Envelope</clariah:label>
-                <Element name="versionNumber"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 1.2: Version</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Version</clariah:explanation>
+				<Element name="versionNumber"><clariah:label xml:lang="en">Level 1.2.1: Version Number</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Version-Number</clariah:explanation>
+					<!--cues--></Element>
 				<Component name="Dates">
-					<Element name="creationDateFrom"><!--cues--></Element>
-					<Element name="creationDateTo"><!--cues--></Element>
-					<Element name="publicationDate"><!--cues--></Element>
+					<clariah:label xml:lang="en">Level 1.2.2: Dates</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Dates</clariah:explanation>
+					<Element name="creationDateFrom"><clariah:label xml:lang="en">Level 1.2.2.1: Creation Date From</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Creation-Date-From</clariah:explanation>
+						<!--cues--></Element>
+					<Element name="creationDateTo"><clariah:label xml:lang="en">Level 1.2.2.2: Creation Date To</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Creation-Date-To</clariah:explanation>
+						<!--cues--></Element>
+					<Element name="publicationDate"><clariah:label xml:lang="en">Level 1.2.2.3: Publication Date</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Publication-Date</clariah:explanation>
+						<!--cues--></Element>
 				</Component>
             </Component>
             <Component name="AuthorDataEnvelope">
-				<clariah:label xml:lang="en">1.3. Author of the Data Envelope</clariah:label>
-                <Element name="personName"><!--cues--></Element>
-                <Element name="orcidId"><!--cues--></Element>
-                <Element name="email"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 1.3: Author Data Envelope</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Author-Data-Envelope</clariah:explanation>
+				<Element name="personName"><clariah:label xml:lang="en">Level 1.3.1: Person Name</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Person-Name</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="orcidId"><clariah:label xml:lang="en">Level 1.3.2: Orcid Id</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Orcid-Id</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="email"><clariah:label xml:lang="en">Level 1.3.3: Email</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Email</clariah:explanation>
+					<!--cues--></Element>
             </Component>
             <Component name="Comments">
-				<clariah:label xml:lang="en">1.4. General comments about the Data Envelope</clariah:label>
-                <Element name="comment"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 1.4: Comments</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comments</clariah:explanation>
+				<Element name="comment" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 1.4.1: Comment</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comment</clariah:explanation>
+					<!--cues--></Element>
             </Component>
         </Component>
         <Component name="DatasetMetadata">
-			<clariah:label xml:lang="en">Level 2: Dataset metadata</clariah:label>
-            <Element name="title"><!--cues--></Element>
-			<clariah:label xml:lang="en">2.1. Title of the Dataset</clariah:label>
-            <Element name="description"><!--cues--></Element>
-			<clariah:label xml:lang="en">2.2. Description of the Dataset</clariah:label>
-            <Component name="Genre">
-				<clariah:label xml:lang="en">2.3. Genre of the Dataset</clariah:label>
-                <Element name="controlledTerm"><!--cues--></Element>
+            <clariah:label xml:lang="en">Level 2: Dataset Metadata</clariah:label>
+			<clariah:explanation>See documentation at: https://edu.nl/atqm8#Dataset-Metadata</clariah:explanation>
+			<Element name="title"><clariah:label xml:lang="en">Level 2.1: Title</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Title</clariah:explanation>
+				<!--cues--></Element>
+            <Element name="description" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 2.2: Description</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Description</clariah:explanation>
+				<!--cues--></Element>
+			<Component name="Genre">
+                <clariah:label xml:lang="en">Level 2.3: Genre</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Genre</clariah:explanation>
+				<Element name="controlledTerm"><clariah:label xml:lang="en">Level 2.3.1: Controlled Term</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Controlled-Term</clariah:explanation>
+					<!--cues--></Element>
                 <Component name="otherTerm">
-                    <Element name="term"><!--cues--></Element>
-                    <Element name="termUri"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 2.3.2: Other Term</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Other-Term</clariah:explanation>
+					<Element name="term"><clariah:label xml:lang="en">Level 2.3.2.1: Term</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Term</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="termUri"><clariah:label xml:lang="en">Level 2.3.2.2: Term Uri</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Term-Uri</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
             </Component>
             <Component name="Topic">
-				<clariah:label xml:lang="en">2.4. Topic of the Dataset</clariah:label>
-                <Element name="controlledTerm"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 2.4: Topic</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Topic</clariah:explanation>
+				<Element name="controlledTerm"><clariah:label xml:lang="en">Level 2.4.1: Controlled Term</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Controlled-Term</clariah:explanation>
+					<!--cues--></Element>
                 <Component name="otherTerm">
-                    <Element name="term"><!--cues--></Element>
-                    <Element name="termUri"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 2.4.2: Other Term</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Other-Term</clariah:explanation>
+					<Element name="term"><clariah:label xml:lang="en">Level 2.4.2.1: Term</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Term</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="termUri"><clariah:label xml:lang="en">Level 2.4.2.2: Term Uri</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Term-Uri</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
             </Component>
+			<Component name="Dates">
+				<clariah:label xml:lang="en">Level 2.5: Dates</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Dates</clariah:explanation>
+				<Element name="dateFrom"><clariah:label xml:lang="en">Level 2.5.1: Date From</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Date-From</clariah:explanation>
+					<!--cues--></Element>
+				<Element name="dateTo"><clariah:label xml:lang="en">Level 2.5.2: Date To</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Date-To</clariah:explanation>
+					<!--cues--></Element>
+				<Element name="datePublished"><clariah:label xml:lang="en">Level 2.5.3: Date Published</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Date-Published</clariah:explanation>
+					<!--cues--></Element>
+			</Component>
             <Component name="TemporalCoverage">
-				<clariah:label xml:lang="en">2.5. Temporal coverage of the Dataset</clariah:label>
+				<clariah:label xml:lang="en">Level 2.6: Temporal Coverage</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Temporal-Coverage</clariah:explanation>
 				<Component name="CoveragePeriod">
-					<Element name="dateStart"><!--cues--></Element>
-					<Element name="dateEnd"><!--cues--></Element>
+					<clariah:label xml:lang="en">Level 2.6.1: Coverage Period</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Coverage-Period</clariah:explanation>
+					<Element name="dateStart"><clariah:label xml:lang="en">Level 2.6.1.1: Date Start</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Date-Start</clariah:explanation>
+						<!--cues--></Element>
+					<Element name="dateEnd"><clariah:label xml:lang="en">Level 2.6.1.2: Date End</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Date-End</clariah:explanation>
+						<!--cues--></Element>
 				</Component>
-                <Element name="dateRangeUnstructured"><!--cues--></Element>
+                <Element name="dateRangeUnstructured"><clariah:label xml:lang="en">Level 2.6.2: Date Range Unstructured</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Date-Range-Unstructured</clariah:explanation>
+					<!--cues--></Element>
                 <Component name="Comments">
-                    <Element name="comment"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 2.6.3: Comments</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comments</clariah:explanation>
+					<Element name="comment" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 2.6.3.1: Comment</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comment</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
-				<Component name="DatesToCheckOrMove">
-					<Element name="dateFrom"><!--cues--></Element>
-					<Element name="dateTo"><!--cues--></Element>
-					<Element name="datePublished"><!--cues--></Element>
-				</Component>
             </Component>
             <Component name="GeographicalCoverage">
-				<clariah:label xml:lang="en">2.6. Geographic coverage of the Dataset</clariah:label>
-                <Element name="controlledTerm"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 2.7: Geographical Coverage</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Geographical-Coverage</clariah:explanation>
+				<Element name="controlledTerm"><clariah:label xml:lang="en">Level 2.7.1: Controlled Term</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Controlled-Term</clariah:explanation>
+					<!--cues--></Element>
                 <Component name="otherTerm">
-                    <Element name="term"><!--cues--></Element>
-                    <Element name="termUri"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 2.7.2: Other Term</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Other-Term</clariah:explanation>
+					<Element name="term"><clariah:label xml:lang="en">Level 2.7.2.1: Term</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Term</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="termUri"><clariah:label xml:lang="en">Level 2.7.2.2: Term Uri</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Term-Uri</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
             </Component>
             <Component name="Languages">
-				<clariah:label xml:lang="en">2.7. Languages of the Dataset</clariah:label>
-                <Element name="controlledTerm"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 2.8: Languages</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Languages</clariah:explanation>
+				<Element name="controlledTerm"><clariah:label xml:lang="en">Level 2.8.1: Controlled Term</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Controlled-Term</clariah:explanation>
+					<!--cues--></Element>
                 <Component name="otherTerm">
-                    <Element name="term"><!--cues--></Element>
-                    <Element name="termUri"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 2.8.2: Other Term</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Other-Term</clariah:explanation>
+					<Element name="term"><clariah:label xml:lang="en">Level 2.8.2.1: Term</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Term</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="termUri"><clariah:label xml:lang="en">Level 2.8.2.2: Term Uri</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Term-Uri</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
             </Component>
             <Component name="ResponsibleAgents">
-				<clariah:label xml:lang="en">2.8. Responsible agents for the Dataset</clariah:label>
-                <Component name="ContactPoint">
-					<clariah:label xml:lang="en">2.8.1. Contact point</clariah:label>
-                    <Element name="personName"><!--cues--></Element>
-                    <Element name="orcidId"><!--cues--></Element>
-                    <Element name="role"/>
-                    <Element name="email"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 2.9: Responsible Agents</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Responsible-Agents</clariah:explanation>
+				<Component name="ContactPoint">
+                    <clariah:label xml:lang="en">Level 2.9.1: Contact Point</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Contact-Point</clariah:explanation>
+					<Element name="personName"><clariah:label xml:lang="en">Level 2.9.1.1: Person Name</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Person-Name</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="orcidId"><clariah:label xml:lang="en">Level 2.9.1.2: Orcid Id</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Orcid-Id</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="role">
+                        
+                    <clariah:label xml:lang="en">Level 2.9.1.3: Role</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Role</clariah:explanation>
+						</Element>
+                    <Element name="email"><clariah:label xml:lang="en">Level 2.9.1.4: Email</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Email</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
                 <Component name="Creators">
-					<clariah:label xml:lang="en">2.8.2. Creators</clariah:label>
-                    <Element name="personName"><!--cues--></Element>
-                    <Element name="orcidId"><!--cues--></Element>
-                    <Element name="organisationName"><!--cues--></Element>
-                    <Element name="rorId"><!--cues--></Element>
-                    <Element name="role"/>
-                    <Element name="email"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 2.9.2: Creators</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Creators</clariah:explanation>
+					<Element name="personName"><clariah:label xml:lang="en">Level 2.9.2.1: Person Name</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Person-Name</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="orcidId"><clariah:label xml:lang="en">Level 2.9.2.2: Orcid Id</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Orcid-Id</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="organisationName"><clariah:label xml:lang="en">Level 2.9.2.3: Organisation Name</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Organisation-Name</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="rorId"><clariah:label xml:lang="en">Level 2.9.2.4: Ror Id</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Ror-Id</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="role">
+                        
+                    <clariah:label xml:lang="en">Level 2.9.2.5: Role</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Role</clariah:explanation>
+						</Element>
+                    <Element name="email"><clariah:label xml:lang="en">Level 2.9.2.6: Email</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Email</clariah:explanation>
+						<!--cues--></Element>
                     <Component name="Comments">
-                        <Element name="comment"><!--cues--></Element>
+                        <clariah:label xml:lang="en">Level 2.9.2.7: Comments</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comments</clariah:explanation>
+						<Element name="comment"><clariah:label xml:lang="en">Level 2.9.2.7.1: Comment</clariah:label>
+							<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comment</clariah:explanation>
+							<!--cues--></Element>
                     </Component>                    
                 </Component>
                 <Component name="Contributors">
-                    <clariah:label xml:lang="en">2.8.3. Contributors</clariah:label>
-                    <Element name="personName"><!--cues--></Element>
-                    <Element name="organisationName"><!--cues--></Element>
-                    <Element name="descriptionContribution"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 2.9.3: Contributors</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Contributors</clariah:explanation>
+					<Element name="personName"><clariah:label xml:lang="en">Level 2.9.3.1: Person Name</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Person-Name</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="organisationName"><clariah:label xml:lang="en">Level 2.9.3.2: Organisation Name</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Organisation-Name</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="descriptionContribution"><clariah:label xml:lang="en">Level 2.9.3.3: Description Contribution</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Description-Contribution</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
                 <Component name="Funders">
-                    <clariah:label xml:lang="en">2.8.4. Funders</clariah:label>
-                    <Element name="funderName"><!--cues--></Element>
-                    <Element name="orcidId"><!--cues--></Element>
-                    <Element name="rorId"><!--cues--></Element>
-                    <Element name="description"><!--cues--></Element>
-                    <Element name="link"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 2.9.4: Funders</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Funders</clariah:explanation>
+					<Element name="funderName"><clariah:label xml:lang="en">Level 2.9.4.1: Funder Name</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Funder-Name</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="orcidId"><clariah:label xml:lang="en">Level 2.9.4.2: Orcid Id</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Orcid-Id</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="rorId"><clariah:label xml:lang="en">Level 2.9.4.3: Ror Id</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Ror-Id</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="description" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 2.9.4.4: Description</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Description</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="link"><clariah:label xml:lang="en">Level 2.9.4.5: Link</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Link</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
                 <Component name="PublishingOrganisation">
-                    <clariah:label xml:lang="en">2.8.9. Publishing Organisation</clariah:label>
-                    <Element name="organisationName"><!--cues--></Element>
-                    <Element name="rorId"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 2.9.5: Publishing Organisation</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Publishing-Organisation</clariah:explanation>
+					<Element name="organisationName"><clariah:label xml:lang="en">Level 2.9.5.1: Organisation Name</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Organisation-Name</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="rorId"><clariah:label xml:lang="en">Level 2.9.5.2: Ror Id</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Ror-Id</clariah:explanation>
+						<!--cues--></Element>
                     <Component name="OrganisationType">
-                        <Element name="controlledTerm"></Element>
+                        <clariah:label xml:lang="en">Level 2.9.5.3: Organisation Type</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Organisation-Type</clariah:explanation>
+						<Element name="controlledTerm">
+                            
+                        <clariah:label xml:lang="en">Level 2.9.5.3.1: Controlled Term</clariah:label>
+							<clariah:explanation>See documentation at: https://edu.nl/atqm8#Controlled-Term</clariah:explanation>
+							</Element>
                         <Component name="otherTerm">
-                            <Element name="term"><!--cues--></Element>
-                            <Element name="termUri"><!--cues--></Element>
+                            <clariah:label xml:lang="en">Level 2.9.5.3.2: Other Term</clariah:label>
+							<clariah:explanation>See documentation at: https://edu.nl/atqm8#Other-Term</clariah:explanation>
+							<Element name="term"><clariah:label xml:lang="en">Level 2.9.5.3.2.1: Term</clariah:label>
+								<clariah:explanation>See documentation at: https://edu.nl/atqm8#Term</clariah:explanation>
+								<!--cues--></Element>
+                            <Element name="termUri"><clariah:label xml:lang="en">Level 2.9.5.3.2.2: Term Uri</clariah:label>
+								<clariah:explanation>See documentation at: https://edu.nl/atqm8#Term-Uri</clariah:explanation>
+								<!--cues--></Element>
                         </Component>
                     </Component>
                 </Component>
 			</Component>
             <Component name="Distribution">
-                <clariah:label xml:lang="en">2.9. Distribution</clariah:label>
-                <Element name="datasetLink"><!--cues--></Element>
-                <Element name="repository"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 2.10: Distribution</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Distribution</clariah:explanation>
+				<Element name="datasetLink"><clariah:label xml:lang="en">Level 2.10.1: Dataset Link</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Dataset-Link</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="repository"><clariah:label xml:lang="en">Level 2.10.2: Repository</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Repository</clariah:explanation>
+					<!--cues--></Element>
                 <Component name="Download">
-                    <Element name="link"><!--cues--></Element>
-                    <Element name="filetype"><!--cues--></Element>
-                    <Element name="filesize"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 2.10.3: Download</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Download</clariah:explanation>
+					<Element name="link"><clariah:label xml:lang="en">Level 2.10.3.1: Link</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Link</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="filetype"><clariah:label xml:lang="en">Level 2.10.3.2: Filetype</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Filetype</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="filesize"><clariah:label xml:lang="en">Level 2.10.3.3: Filesize</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Filesize</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
                 <Component name="Citation">
-                    <Element name="citationInformation"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 2.10.4: Citation</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Citation</clariah:explanation>
+					<Element name="citationInformation"><clariah:label xml:lang="en">Level 2.10.4.1: Citation Information</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Citation-Information</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
             </Component>
             <Component name="RightsStatement">
+				<clariah:label xml:lang="en">Level 2.11: Rights Statement</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Rights-Statement</clariah:explanation>
 				<Component name="License">
-					<Element name="licenseLabel"><!--cues--></Element>
-					<Element name="uri"><!--cues--></Element>
+					<clariah:label xml:lang="en">Level 2.11.1: License</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#License</clariah:explanation>
+					<Element name="licenseLabel"><clariah:label xml:lang="en">Level 2.11.1.1: License Label</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#License-Label</clariah:explanation>
+						<!--cues--></Element>
+					<Element name="uri"><clariah:label xml:lang="en">Level 2.11.1.2: Uri</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Uri</clariah:explanation>
+						<!--cues--></Element>
 				</Component>
 				<Component name="AccessDetails">
-					<Element name="accessLevel"></Element>
-					<Element name="description"><!--cues--></Element>
-					<Element name="url"><!--cues--></Element>
-					<Element name="contactEmail"><!--cues--></Element>
-					<Element name="accessPrerequisites"><!--cues--></Element>
+					<clariah:label xml:lang="en">Level 2.11.2: Access Details</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Access-Details</clariah:explanation>
+					<Element name="accessLevel">
+						
+					<clariah:label xml:lang="en">Level 2.11.2.1: Access Level</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Access-Level</clariah:explanation>
+						</Element>
+					<Element name="description"><clariah:label xml:lang="en">Level 2.11.2.2: Description</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Description</clariah:explanation>
+						<!--cues--></Element>
+					<Element name="url"><clariah:label xml:lang="en">Level 2.11.2.3: Url</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Url</clariah:explanation>
+						<!--cues--></Element>
+					<Element name="contactEmail"><clariah:label xml:lang="en">Level 2.11.2.4: Contact Email</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Contact-Email</clariah:explanation>
+						<!--cues--></Element>
+					<Element name="accessPrerequisites"><clariah:label xml:lang="en">Level 2.11.2.5: Access Prerequisites</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Access-Prerequisites</clariah:explanation>
+						<!--cues--></Element>
 				</Component>
             </Component>
             <Component name="VersionMaintenance">
-                <Component name="Version">
-                    <Element name="currentVersion"><!--cues--></Element>
-					<Element name="lastUpdated"><!--cues--></Element>
-                    <Element name="releaseDate"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 2.12: Version Maintenance</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Version-Maintenance</clariah:explanation>
+				<Component name="Version">
+                    <clariah:label xml:lang="en">Level 2.12.1: Version</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Version</clariah:explanation>
+					<Element name="currentVersion"><clariah:label xml:lang="en">Level 2.12.1.1: Current Version</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Current-Version</clariah:explanation>
+						<!--cues--></Element>
+					<Element name="lastUpdated"><clariah:label xml:lang="en">Level 2.12.1.2: Last Updated</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Last-Updated</clariah:explanation>
+						<!--cues--></Element>
+					<Element name="releaseDate"><clariah:label xml:lang="en">Level 2.12.1.3: Release Date</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Release-Date</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
                 <Component name="Maintenance">
-                    <Element name="maintenanceStatus"></Element>
+                    <clariah:label xml:lang="en">Level 2.12.2: Maintenance</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Maintenance</clariah:explanation>
+					<Element name="maintenanceStatus">
+                        
+                    <clariah:label xml:lang="en">Level 2.12.2.1: Maintenance Status</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Maintenance-Status</clariah:explanation>
+						</Element>
                 </Component>
                 <Component name="MaintenancePlan">
-                    <Element name="updates"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 2.12.3: Maintenance Plan</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Maintenance-Plan</clariah:explanation>
+					<Element name="updates" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 2.12.3.1: Updates</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Updates</clariah:explanation>
+						<!--cues--></Element>
 					<Component name="Comments">
-						<Element name="comment"><!--cues--></Element>
+						<clariah:label xml:lang="en">Level 2.12.3.2: Comments</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comments</clariah:explanation>
+						<Element name="comment" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 2.12.3.2.1: Comment</clariah:label>
+							<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comment</clariah:explanation>
+							<!--cues--></Element>
 					</Component>
                 </Component>
                 <Component name="NextUpdate">
-                    <Element name="versionAffected"><!--cues--></Element>
-                    <Element name="nextUpdate"><!--cues--></Element>
-                    <Element name="nextVersion"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 2.12.4: Next Update</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Next-Update</clariah:explanation>
+					<Element name="versionAffected"><clariah:label xml:lang="en">Level 2.12.4.1: Version Affected</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Version-Affected</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="nextUpdate"><clariah:label xml:lang="en">Level 2.12.4.2: Next Update</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Next-Update</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="nextVersion"><clariah:label xml:lang="en">Level 2.12.4.3: Next Version</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Next-Version</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
             </Component>
             <Component name="Comments">
-                <Element name="comment"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 2.13: Comments</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comments</clariah:explanation>
+				<Element name="comment" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 2.13.1: Comment</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comment</clariah:explanation>
+					<!--cues--></Element>
             </Component>
         </Component>
         <Component name="Data">
             <clariah:label xml:lang="en">Level 3: Data</clariah:label>
-            <Component name="DataResourceDescription">
-                <Element name="nameOfResource"><!--cues--></Element>
-                <Element name="description"><!--cues--></Element>
-                <Element name="path"><!--cues--></Element>
-                <Element name="format"><!--cues--></Element>
-                <Element name="size"><!--cues--></Element>
-                <Element name="date"><!--cues--></Element>
-                <Element name="language"><!--cues--></Element>
-                <Element name="encoding"><!--cues--></Element>
+			<clariah:explanation>See documentation at: https://edu.nl/atqm8#Data</clariah:explanation>
+			<Component name="DataResourceDescription">
+                <clariah:label xml:lang="en">Level 3.1: Data Resource Description</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Data-Resource-Description</clariah:explanation>
+				<Element name="nameOfResource"><clariah:label xml:lang="en">Level 3.1.1: Name Of Resource</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Name-Of-Resource</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="description" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 3.1.2: Description</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Description</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="path"><clariah:label xml:lang="en">Level 3.1.3: Path</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Path</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="format"><clariah:label xml:lang="en">Level 3.1.4: Format</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Format</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="size"><clariah:label xml:lang="en">Level 3.1.5: Size</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Size</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="date"><clariah:label xml:lang="en">Level 3.1.6: Date</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Date</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="language"><clariah:label xml:lang="en">Level 3.1.7: Language</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Language</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="encoding"><clariah:label xml:lang="en">Level 3.1.8: Encoding</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Encoding</clariah:explanation>
+					<!--cues--></Element>
                 <Component name="DataSubjects">
-                    <Element name="subjects"></Element>
-                    <Element name="other"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 3.1.9: Data Subjects</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Data-Subjects</clariah:explanation>
+					<Element name="subjects">
+                        
+                    <clariah:label xml:lang="en">Level 3.1.9.1: Subjects</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Subjects</clariah:explanation>
+						</Element>
+                    <Element name="other"><clariah:label xml:lang="en">Level 3.1.9.2: Other</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Other</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
                 <Component name="DataModality">
-                    <Element name="modality"></Element>
+                    <clariah:label xml:lang="en">Level 3.1.10: Data Modality</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Data-Modality</clariah:explanation>
+					<Element name="modality">
+                        
+                    <clariah:label xml:lang="en">Level 3.1.10.1: Modality</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Modality</clariah:explanation>
+						</Element>
                     <Component name="otherTerm">
-                        <Element name="term"><!--cues--></Element>
-                        <Element name="termUri"><!--cues--></Element>
+                        <clariah:label xml:lang="en">Level 3.1.10.2: Other Term</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Other-Term</clariah:explanation>
+						<Element name="term"><clariah:label xml:lang="en">Level 3.1.10.2.1: Term</clariah:label>
+							<clariah:explanation>See documentation at: https://edu.nl/atqm8#Term</clariah:explanation>
+							<!--cues--></Element>
+                        <Element name="termUri"><clariah:label xml:lang="en">Level 3.1.10.2.2: Term Uri</clariah:label>
+							<clariah:explanation>See documentation at: https://edu.nl/atqm8#Term-Uri</clariah:explanation>
+							<!--cues--></Element>
                     </Component>
                 </Component>
                 <Component name="DescriptiveStatistics">
-                    <Element name="statistics"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 3.1.11: Descriptive Statistics</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Descriptive-Statistics</clariah:explanation>
+					<Element name="statistics"><clariah:label xml:lang="en">Level 3.1.11.1: Statistics</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Statistics</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
             </Component>
             <Component name="DataFields">
-                <Component name="ExternalSchema">
-                    <Element name="externalSchemaLink"><!--cues--></Element>
-                    <Element name="externalSchemaNote"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 3.2: Data Fields</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Data-Fields</clariah:explanation>
+				<Component name="ExternalSchema">
+                    <clariah:label xml:lang="en">Level 3.2.1: External Schema</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#External-Schema</clariah:explanation>
+					<Element name="externalSchemaLink"><clariah:label xml:lang="en">Level 3.2.1.1: External Schema Link</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#External-Schema-Link</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="externalSchemaNote"><clariah:label xml:lang="en">Level 3.2.1.2: External Schema Note</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#External-Schema-Note</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
                 <Component name="DataField">
-                    <Element name="dataFieldName"><!--cues--></Element>
-                    <Element name="dataFieldType"><!--cues--></Element>
-                    <Element name="descriptionField"><!--cues--></Element>
-                    <Element name="sensitivity"><!--cues--></Element>
-                    <Element name="notableFeatures"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 3.2.2: Data Field</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Data-Field</clariah:explanation>
+					<Element name="dataFieldName"><clariah:label xml:lang="en">Level 3.2.2.1: Data Field Name</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Data-Field-Name</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="dataFieldType"><clariah:label xml:lang="en">Level 3.2.2.2: Data Field Type</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Data-Field-Type</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="descriptionField" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 3.2.2.3: Description Field</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Description-Field</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="sensitivity"><clariah:label xml:lang="en">Level 3.2.2.4: Sensitivity</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Sensitivity</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="notableFeatures"><clariah:label xml:lang="en">Level 3.2.2.5: Notable Features</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Notable-Features</clariah:explanation>
+						<!--cues--></Element>
                     <Component name="UsedVocabularies">
-                        <Element name="vocabulary"><!--cues--></Element>
-                        <Element name="vocabularyLink"><!--cues--></Element>
+                        <clariah:label xml:lang="en">Level 3.2.2.6: Used Vocabularies</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Used-Vocabularies</clariah:explanation>
+						<Element name="vocabulary"><clariah:label xml:lang="en">Level 3.2.2.6.1: Vocabulary</clariah:label>
+							<clariah:explanation>See documentation at: https://edu.nl/atqm8#Vocabulary</clariah:explanation>
+							<!--cues--></Element>
+                        <Element name="vocabularyLink"><clariah:label xml:lang="en">Level 3.2.2.6.2: Vocabulary Link</clariah:label>
+							<clariah:explanation>See documentation at: https://edu.nl/atqm8#Vocabulary-Link</clariah:explanation>
+							<!--cues--></Element>
                     </Component>
                 </Component>
             </Component>
             <Component name="DataExamples">
-                <Component name="TypicalExample">
-                    <Element name="description"><!--cues--></Element>
-                    <Element name="link"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 3.3: Data Examples</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Data-Examples</clariah:explanation>
+				<Component name="TypicalExample">
+                    <clariah:label xml:lang="en">Level 3.3.1: Typical Example</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Typical-Example</clariah:explanation>
+					<Element name="description" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 3.3.1.1: Description</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Description</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="link"><clariah:label xml:lang="en">Level 3.3.1.2: Link</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Link</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
                 <Component name="AtypicalExample">
-                    <Element name="atypdescription"><!--cues--></Element>
-                    <Element name="atyplink"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 3.3.2: Atypical Example</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Atypical-Example</clariah:explanation>
+					<Element name="atypdescription" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 3.3.2.1: Atypdescription</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Atypdescription</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="atyplink"><clariah:label xml:lang="en">Level 3.3.2.2: Atyplink</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Atyplink</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
             </Component>
             <Component name="Errors">
-                <Element name="errordescription"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 3.4: Errors</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Errors</clariah:explanation>
+				<Element name="errordescription" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 3.4.1: Errordescription</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Errordescription</clariah:explanation>
+					<!--cues--></Element>
             </Component>
             <Component name="ExternalResources">
-                <Element name="resources">
+                <clariah:label xml:lang="en">Level 3.5: External Resources</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#External-Resources</clariah:explanation>
+				<Element name="resources">
                     
-                </Element>
-                <Element name="extResourcesDescription"><!--cues--></Element>
-                <Element name="extResources"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 3.5.1: Resources</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Resources</clariah:explanation>
+					</Element>
+                <Element name="extResourcesDescription"><clariah:label xml:lang="en">Level 3.5.2: Ext Resources Description</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Ext-Resources-Description</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="extResources"><clariah:label xml:lang="en">Level 3.5.3: Ext Resources</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Ext-Resources</clariah:explanation>
+					<!--cues--></Element>
             </Component>
             <Component name="Annotations">
-                <Component name="AnnotationCharacteristics">
-                    <Element name="annotationWorkforceType"></Element>
-                    <Element name="others"><!--cues--></Element>
-                    <Element name="description"><!--cues--></Element>
-                    <Element name="totalAnnotations"><!--cues--></Element>
-                    <Element name="totalTokens"><!--cues--></Element>
-                    <Element name="avgTokensAnnotations"><!--cues--></Element>
-                    <Element name="metric"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 3.6: Annotations</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Annotations</clariah:explanation>
+				<Component name="AnnotationCharacteristics">
+                    <clariah:label xml:lang="en">Level 3.6.1: Annotation Characteristics</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Annotation-Characteristics</clariah:explanation>
+					<Element name="annotationWorkforceType">
+                        
+                    <clariah:label xml:lang="en">Level 3.6.1.1: Annotation Workforce Type</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Annotation-Workforce-Type</clariah:explanation>
+						</Element>
+                    <Element name="others"><clariah:label xml:lang="en">Level 3.6.1.2: Others</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Others</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="description"><clariah:label xml:lang="en">Level 3.6.1.3: Description</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Description</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="totalAnnotations"><clariah:label xml:lang="en">Level 3.6.1.4: Total Annotations</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Total-Annotations</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="totalTokens"><clariah:label xml:lang="en">Level 3.6.1.5: Total Tokens</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Total-Tokens</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="avgTokensAnnotations"><clariah:label xml:lang="en">Level 3.6.1.6: Avg Tokens Annotations</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Avg-Tokens-Annotations</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="metric"><clariah:label xml:lang="en">Level 3.6.1.7: Metric</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Metric</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
             </Component>
             <Component name="SocialImpact">
-                <Component name="Safety">
-                    <Element name="disclaimer"></Element>
-                    <Element name="specify"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 3.7: Social Impact</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Social-Impact</clariah:explanation>
+				<Component name="Safety">
+                    <clariah:label xml:lang="en">Level 3.7.1: Safety</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Safety</clariah:explanation>
+					<Element name="disclaimer">
+                        
+                    <clariah:label xml:lang="en">Level 3.7.1.1: Disclaimer</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Disclaimer</clariah:explanation>
+						</Element>
+                    <Element name="specify"><clariah:label xml:lang="en">Level 3.7.1.2: Specify</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Specify</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
                 <Component name="Confidentiality">
-                    <Element name="confidentialityBin">
+                    <clariah:label xml:lang="en">Level 3.7.2: Confidentiality</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Confidentiality</clariah:explanation>
+					<Element name="confidentialityBin">
                         
-                    </Element>
-                    <Element name="specify"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 3.7.2.1: Confidentiality Bin</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Confidentiality-Bin</clariah:explanation>
+						</Element>
+                    <Element name="specify"><clariah:label xml:lang="en">Level 3.7.2.2: Specify</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Specify</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
                 <Component name="Biases">
-                    <Element name="knownBiases"><!--cues--></Element>
-                    <Element name="stepsToReduceBias"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 3.7.3: Biases</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Biases</clariah:explanation>
+					<Element name="knownBiases" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 3.7.3.1: Known Biases</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Known-Biases</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="stepsToReduceBias" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 3.7.3.2: Steps To Reduce Bias</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Steps-To-Reduce-Bias</clariah:explanation>
+						<!--cues--></Element>
                     <Component name="SensAttributes">
-                        <Element name="sensitiveAttribute">
+                        <clariah:label xml:lang="en">Level 3.7.3.3: Sens Attributes</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Sens-Attributes</clariah:explanation>
+						<Element name="sensitiveAttribute">
                             
-                        </Element>
-                        <Element name="specify"><!--cues--></Element>
-                        <Element name="unintentionalAttribute"><!--cues--></Element>
+                        <clariah:label xml:lang="en">Level 3.7.3.3.1: Sensitive Attribute</clariah:label>
+							<clariah:explanation>See documentation at: https://edu.nl/atqm8#Sensitive-Attribute</clariah:explanation>
+							</Element>
+                        <Element name="specify"><clariah:label xml:lang="en">Level 3.7.3.3.2: Specify</clariah:label>
+							<clariah:explanation>See documentation at: https://edu.nl/atqm8#Specify</clariah:explanation>
+							<!--cues--></Element>
+                        <Element name="unintentionalAttribute" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 3.7.3.3.3: Unintentional Attribute</clariah:label>
+							<clariah:explanation>See documentation at: https://edu.nl/atqm8#Unintentional-Attribute</clariah:explanation>
+							<!--cues--></Element>
                     </Component>
                 </Component>
                 <Component name="EthicalReview">
-                    <Element name="review"></Element>
-                    <Element name="description"><!--cues--></Element>
-                    <Element name="outcomes"><!--cues--></Element>
-                    <Element name="link"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 3.7.4: Ethical Review</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Ethical-Review</clariah:explanation>
+					<Element name="review">
+                        
+                    <clariah:label xml:lang="en">Level 3.7.4.1: Review</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Review</clariah:explanation>
+						</Element>
+                    <Element name="description"><clariah:label xml:lang="en">Level 3.7.4.2: Description</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Description</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="outcomes" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 3.7.4.3: Outcomes</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Outcomes</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="link"><clariah:label xml:lang="en">Level 3.7.4.4: Link</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Link</clariah:explanation>
+						<!--cues--></Element>
                     <Component name="ReviewContact">
-                        <Element name="name"><!--cues--></Element>
-                        <Element name="affiliation"><!--cues--></Element>
-                        <Element name="contact"><!--cues--></Element>
+                        <clariah:label xml:lang="en">Level 3.7.4.5: Review Contact</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Review-Contact</clariah:explanation>
+						<Element name="name"><clariah:label xml:lang="en">Level 3.7.4.5.1: Name</clariah:label>
+							<clariah:explanation>See documentation at: https://edu.nl/atqm8#Name</clariah:explanation>
+							<!--cues--></Element>
+                        <Element name="affiliation"><clariah:label xml:lang="en">Level 3.7.4.5.2: Affiliation</clariah:label>
+							<clariah:explanation>See documentation at: https://edu.nl/atqm8#Affiliation</clariah:explanation>
+							<!--cues--></Element>
+                        <Element name="contact"><clariah:label xml:lang="en">Level 3.7.4.5.3: Contact</clariah:label>
+							<clariah:explanation>See documentation at: https://edu.nl/atqm8#Contact</clariah:explanation>
+							<!--cues--></Element>
                     </Component>
                 </Component>
             </Component>
             <Component name="DataProvenance">
-                <Element name="name"><!--cues--></Element>
-                <Element name="path"><!--cues--></Element>
-                <Element name="description"><!--cues--></Element>
-                <Element name="creatorName"><!--cues--></Element>
-                <Element name="creatorOrganisation"><!--cues--></Element>
-                <Element name="yearPublication"><!--cues--></Element>
-                <Element name="language"><!--cues--></Element>
-                <Element name="temporalScope"><!--cues--></Element>
-                <Element name="geographicalScope"><!--cues--></Element>
-                <Element name="notableFeatures"><!--cues--></Element>
-                <Element name="datasheetEnvelope"><!--cues--></Element>
-                <Element name="dataSelection"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 3.8: Data Provenance</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Data-Provenance</clariah:explanation>
+				<Element name="name"><clariah:label xml:lang="en">Level 3.8.1: Name</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Name</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="path"><clariah:label xml:lang="en">Level 3.8.2: Path</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Path</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="description" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 3.8.3: Description</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Description</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="creatorName"><clariah:label xml:lang="en">Level 3.8.4: Creator Name</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Creator-Name</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="creatorOrganisation"><clariah:label xml:lang="en">Level 3.8.5: Creator Organisation</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Creator-Organisation</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="yearPublication"><clariah:label xml:lang="en">Level 3.8.6: Year Publication</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Year-Publication</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="language"><clariah:label xml:lang="en">Level 3.8.7: Language</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Language</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="temporalScope"><clariah:label xml:lang="en">Level 3.8.8: Temporal Scope</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Temporal-Scope</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="geographicalScope"><clariah:label xml:lang="en">Level 3.8.9: Geographical Scope</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Geographical-Scope</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="notableFeatures" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 3.8.10: Notable Features</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Notable-Features</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="datasheetEnvelope"><clariah:label xml:lang="en">Level 3.8.11: Datasheet Envelope</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Datasheet-Envelope</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="dataSelection"><clariah:label xml:lang="en">Level 3.8.12: Data Selection</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Data-Selection</clariah:explanation>
+					<!--cues--></Element>
             </Component>
             <Component name="Digitisation">
-                <Element name="digitalisationPipeline"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 3.9: Digitisation</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Digitisation</clariah:explanation>
+				<Element name="digitalisationPipeline"><clariah:label xml:lang="en">Level 3.9.1: Digitalisation Pipeline</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Digitalisation-Pipeline</clariah:explanation>
+					<!--cues--></Element>
             </Component>
             <Component name="Comments">
-                <Element name="comment"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 3.10: Comments</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comments</clariah:explanation>
+				<Element name="comment" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Level 3.10.1: Comment</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comment</clariah:explanation>
+					<!--cues--></Element>
             </Component>            
         </Component>
         <Component name="Uses">
             <clariah:label xml:lang="en">Level 4: Uses</clariah:label>
-            <Element name="purposes"></Element>
-            <Element name="other"><!--cues--></Element>
-            <Element name="domains"><!--cues--></Element>
-            <Element name="motivation"><!--cues--></Element>
+			<clariah:explanation>See documentation at: https://edu.nl/atqm8#Uses</clariah:explanation>
+			<Element name="purposes">
+                
+            <clariah:label xml:lang="en">Level 4.1: Purposes</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Purposes</clariah:explanation>
+				</Element>
+            <Element name="other"><clariah:label xml:lang="en">Level 4.2: Other</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Other</clariah:explanation>
+				<!--cues--></Element>
+            <Element name="domains"><clariah:label xml:lang="en">Level 4.3: Domains</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Domains</clariah:explanation>
+				<!--cues--></Element>
+            <Element name="motivation" cue:inputWidth="80" cue:inputHeight="6"><clariah:label xml:lang="en">Level 4.4: Motivation</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Motivation</clariah:explanation>
+				<!--cues--></Element>
             <Component name="Use">
-                <Element name="datasetUse"></Element>
-                <Element name="datasetUseSpecify"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 4.5: Use</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Use</clariah:explanation>
+				<Element name="datasetUse">
+                    
+                <clariah:label xml:lang="en">Level 4.5.1: Dataset Use</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Dataset-Use</clariah:explanation>
+					</Element>
+                <Element name="datasetUseSpecify"><clariah:label xml:lang="en">Level 4.5.2: Dataset Use Specify</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Dataset-Use-Specify</clariah:explanation>
+					<!--cues--></Element>
                 <Component name="LinksToRelatedItems">
-                    <Element name="publications"><!--cues--></Element>
-                    <Element name="relatedDatasets"><!--cues--></Element>
-                    <Element name="modelTrainedByDataset"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 4.5.3: Links To Related Items</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Links-To-Related-Items</clariah:explanation>
+					<Element name="publications"><clariah:label xml:lang="en">Level 4.5.3.1: Publications</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Publications</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="relatedDatasets"><clariah:label xml:lang="en">Level 4.5.3.2: Related Datasets</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Related-Datasets</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="modelTrainedByDataset"><clariah:label xml:lang="en">Level 4.5.3.3: Model Trained By Dataset</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Model-Trained-By-Dataset</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
                 <Component name="SuitableUseCase">
-                    <Element name="suitableUseCase"><!--cues--></Element>
-                    <Element name="additionalNotes"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 4.5.4: Suitable Use Case</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Suitable-Use-Case</clariah:explanation>
+					<Element name="suitableUseCase" cue:inputWidth="80" cue:inputHeight="6"><clariah:label xml:lang="en">Level 4.5.4.1: Suitable Use Case</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Suitable-Use-Case</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="additionalNotes" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 4.5.4.2: Additional Notes</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Additional-Notes</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
                 <Component name="UnsuitableUseCase">
-                    <Element name="unsuitableUseCase"><!--cues--></Element>
-                    <Element name="additionalNotes"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 4.5.5: Unsuitable Use Case</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Unsuitable-Use-Case</clariah:explanation>
+					<Element name="unsuitableUseCase"><clariah:label xml:lang="en">Level 4.5.5.1: Unsuitable Use Case</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Unsuitable-Use-Case</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="additionalNotes"><clariah:label xml:lang="en">Level 4.5.5.2: Additional Notes</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Additional-Notes</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
             </Component>
             <Component name="UseWithOtherData">
-                <Element name="safetyLevel"></Element>
-                <Element name="safetyLevelOther"><!--cues--></Element>
-                <Element name="knownSafeDatasetsDataTypes"><!--cues--></Element>
-                <Element name="knownUnsafeDatasetsDataTypes"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 4.6: Use With Other Data</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Use-With-Other-Data</clariah:explanation>
+				<Element name="safetyLevel">
+                    
+                <clariah:label xml:lang="en">Level 4.6.1: Safety Level</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Safety-Level</clariah:explanation>
+					</Element>
+                <Element name="safetyLevelOther"><clariah:label xml:lang="en">Level 4.6.2: Safety Level Other</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Safety-Level-Other</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="knownSafeDatasetsDataTypes" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 4.6.3: Known Safe Datasets Data Types</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Known-Safe-Datasets-Data-Types</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="knownUnsafeDatasetsDataTypes" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 4.6.4: Known Unsafe Datasets Data Types</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Known-Unsafe-Datasets-Data-Types</clariah:explanation>
+					<!--cues--></Element>
             </Component>
             <Component name="UseInMLOrAISystems">
-                <Element name="datasetUses"></Element>
-                <Element name="otherDatasetUses"><!--cues--></Element>
-                <Element name="notableFeatures"><!--cues--></Element>
-                <Element name="knownCorrelations"><!--cues--></Element>
-                <Element name="usageGuidelines"><!--cues--></Element>
-                <Element name="dataSplits"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 4.7: Use In ML Or AI Systems</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Use-In-ML-Or-AI-Systems</clariah:explanation>
+				<Element name="datasetUses">
+                    
+                <clariah:label xml:lang="en">Level 4.7.1: Dataset Uses</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Dataset-Uses</clariah:explanation>
+					</Element>
+                <Element name="otherDatasetUses" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 4.7.2: Other Dataset Uses</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Other-Dataset-Uses</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="notableFeatures" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 4.7.3: Notable Features</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Notable-Features</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="knownCorrelations" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 4.7.4: Known Correlations</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Known-Correlations</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="usageGuidelines" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 4.7.5: Usage Guidelines</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Usage-Guidelines</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="dataSplits" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 4.7.6: Data Splits</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Data-Splits</clariah:explanation>
+					<!--cues--></Element>
             </Component>
             <Component name="Sampling">
-                <Element name="safetyLevel"></Element>
-                <Element name="otherSafetyLevel"><!--cues--></Element>
-                <Element name="acceptableSamplingMethods"></Element>
-                <Element name="otherAcceptableSamplingMethods"><!--cues--></Element>
-                <Element name="bestPractices"><!--cues--></Element>
-                <Element name="risksAndMitigations"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 4.8: Sampling</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Sampling</clariah:explanation>
+				<Element name="safetyLevel">
+                    
+                <clariah:label xml:lang="en">Level 4.8.1: Safety Level</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Safety-Level</clariah:explanation>
+					</Element>
+                <Element name="otherSafetyLevel"><clariah:label xml:lang="en">Level 4.8.2: Other Safety Level</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Other-Safety-Level</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="acceptableSamplingMethods">
+                    
+                <clariah:label xml:lang="en">Level 4.8.3: Acceptable Sampling Methods</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Acceptable-Sampling-Methods</clariah:explanation>
+					</Element>
+                <Element name="otherAcceptableSamplingMethods"><clariah:label xml:lang="en">Level 4.8.4: Other Acceptable Sampling Methods</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Other-Acceptable-Sampling-Methods</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="bestPractices" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 4.8.5: Best Practices</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Best-Practices</clariah:explanation>
+					<!--cues--></Element>
+                <Element name="risksAndMitigations" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 4.8.6: Risks And Mitigations</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Risks-And-Mitigations</clariah:explanation>
+					<!--cues--></Element>
             </Component>
             <Component name="Comments">
-                <Element name="comment"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 4.9: Comments</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comments</clariah:explanation>
+				<Element name="comment" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 4.9.1: Comment</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comment</clariah:explanation>
+					<!--cues--></Element>
             </Component>
         </Component>
         <Component name="HumanPerspective">
             <clariah:label xml:lang="en">Level 5: Human Perspective</clariah:label>
-            <Component name="HumanAnnotators">
-                <Element name="annotatorDescription"><!--cues--></Element>
+			<clariah:explanation>See documentation at: https://edu.nl/atqm8#Human-Perspective</clariah:explanation>
+			<Component name="HumanAnnotators">
+                <clariah:label xml:lang="en">Level 5.1: Human Annotators</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Human-Annotators</clariah:explanation>
+				<Element name="annotatorDescription"><clariah:label xml:lang="en">Level 5.1.1: Annotator Description</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Annotator-Description</clariah:explanation>
+					<!--cues--></Element>
                 <Component name="AnnotationType">
-                    <Element name="taskType"><!--cues--></Element>
-                    <Element name="numberOfUniqueAnnotators"><!--cues--></Element>
-                    <Element name="avgannotations"><!--cues--></Element>
-                    <Element name="expertiseOfAnnotators"><!--cues--></Element>
-                    <Element name="descriptionOfAnnotators"><!--cues--></Element>
-                    <Element name="compensation"><!--cues--></Element>
-                    <Element name="languageDistributionOfAnnotators"><!--cues--></Element>
-                    <Element name="numLanguageDistrib"><!--cues--></Element>
-                    <Element name="ageDistributionOfAnnotators"><!--cues--></Element>
-                    <Element name="numAgeDistrib"><!--cues--></Element>
-                    <Element name="geographicDistributionOfAnnotators"><!--cues--></Element>
-                    <Element name="genderDistributionOfAnnotators"><!--cues--></Element>
-                    <Element name="socioEconomicDistribOfAnnotators"><!--cues--></Element>
-                    <Element name="summaryOfAnnotationInstructions"><!--cues--></Element>
-                    <Element name="annotationPlatforms"><!--cues--></Element>
-                    <Element name="additionalNotes"><!--cues--></Element>
+                    <clariah:label xml:lang="en">Level 5.1.2: Annotation Type</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Annotation-Type</clariah:explanation>
+					<Element name="taskType"><clariah:label xml:lang="en">Level 5.1.2.1: Task Type</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Task-Type</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="numberOfUniqueAnnotators"><clariah:label xml:lang="en">Level 5.1.2.2: Number Of Unique Annotators</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Number-Of-Unique-Annotators</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="avgannotations"><clariah:label xml:lang="en">Level 5.1.2.3: Avgannotations</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Avgannotations</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="expertiseOfAnnotators"><clariah:label xml:lang="en">Level 5.1.2.4: Expertise Of Annotators</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Expertise-Of-Annotators</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="descriptionOfAnnotators" cue:inputWidth="80" cue:inputHeight="6"><clariah:label xml:lang="en">Level 5.1.2.5: Description Of Annotators</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Description-Of-Annotators</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="compensation" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 5.1.2.6: Compensation</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Compensation</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="languageDistributionOfAnnotators"><clariah:label xml:lang="en">Level 5.1.2.7: Language Distribution Of Annotators</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Language-Distribution-Of-Annotators</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="numLanguageDistrib"><clariah:label xml:lang="en">Level 5.1.2.8: Num Language Distrib</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Num-Language-Distrib</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="ageDistributionOfAnnotators"><clariah:label xml:lang="en">Level 5.1.2.9: Age Distribution Of Annotators</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Age-Distribution-Of-Annotators</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="numAgeDistrib"><clariah:label xml:lang="en">Level 5.1.2.10: Num Age Distrib</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Num-Age-Distrib</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="geographicDistributionOfAnnotators" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 5.1.2.11: Geographic Distribution Of Annotators</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Geographic-Distribution-Of-Annotators</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="genderDistributionOfAnnotators"><clariah:label xml:lang="en">Level 5.1.2.12: Gender Distribution Of Annotators</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Gender-Distribution-Of-Annotators</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="socioEconomicDistribOfAnnotators"><clariah:label xml:lang="en">Level 5.1.2.13: Socio Economic Distrib Of Annotators</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Socio-Economic-Distrib-Of-Annotators</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="summaryOfAnnotationInstructions" cue:inputWidth="80" cue:inputHeight="6"><clariah:label xml:lang="en">Level 5.1.2.14: Summary Of Annotation Instructions</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Summary-Of-Annotation-Instructions</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="annotationPlatforms"><clariah:label xml:lang="en">Level 5.1.2.15: Annotation Platforms</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Annotation-Platforms</clariah:explanation>
+						<!--cues--></Element>
+                    <Element name="additionalNotes" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 5.1.2.16: Additional Notes</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Additional-Notes</clariah:explanation>
+						<!--cues--></Element>
                 </Component>
             </Component>
             <Component name="Creators">
-                <Element name="creatorPositionality"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 5.2: Creators</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Creators</clariah:explanation>
+				<Element name="creatorPositionality" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 5.2.1: Creator Positionality</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Creator-Positionality</clariah:explanation>
+					<!--cues--></Element>
             </Component>
             <Component name="Comments">
-                <Element name="comment"><!--cues--></Element>
+                <clariah:label xml:lang="en">Level 5.3: Comments</clariah:label>
+				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comments</clariah:explanation>
+				<Element name="comment" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Level 5.3.1: Comment</clariah:label>
+					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Comment</clariah:explanation>
+					<!--cues--></Element>
             </Component>
         </Component>
     </Component>
