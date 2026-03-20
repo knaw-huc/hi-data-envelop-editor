@@ -1,0 +1,377 @@
+.compLevel1, .compLevel2, .compLevel3, .compLevel4, .compLevel5, .compLevel6, .compLevel7, .compLevel8, .compLevel9 {
+    background-color: #B28147 !important;
+}
+
+[data-name="DataEnvelopeMetadata"] .componentHeader {
+    background-color: #B28147 !important;
+}
+
+[data-name="DatasetMetadata"] .componentHeader {
+    background-color: #00cccc !important;
+}
+
+[data-name="Data"] .componentHeader {
+    background-color: #e6e600 !important;
+}
+
+[data-name="Uses"] .componentHeader {
+    background-color: #8585ad !important;
+}
+
+[data-name="HumanPerspective"] .componentHeader {
+    background-color: #ff8080 !important;
+}
+
+/*.compLevel2 {*/
+/*    background-color:#A63A50 !important;*/
+/*}*/
+
+/*.compLevel3 {*/
+/*    background-color:#56A3A6 !important;*/
+/*}*/
+
+/*.compLevel4 {*/
+/*    background-color:#5EF38C !important;*/
+/*}*/
+
+/*.compLevel5 {*/
+/*    background-color:#FD96A9 !important;*/
+/*}*/
+
+/*.compLevel6 {*/
+/*    background-color:#D4C5E2 !important;*/
+/*}*/
+
+/*.compLevel7 {*/
+/*    background-color:#D4E09B !important;*/
+/*}*/
+
+/*.compLevel8 {*/
+/*    background-color:#EDF060 !important;*/
+/*}*/
+
+/*.compLevel9 {*/
+/*    background-color:#704C5E !important;*/
+/*}*/
+
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    width: auto;
+    height: 28px;
+    color: #444;
+    background-color: #ccc;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    padding: 14px 0 14px 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #aaa;
+}
+
+#user {
+    display: inline-block;
+    font-size: 14px;
+    text-align: right;
+    position: absolute;
+    right: 100px;
+    top: 20px;
+    background-image: url('../img/user.png');
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+h2 {
+    color: #444;
+    font-size: 18px;
+}
+
+#menu {
+    position: absolute;
+    left: 400px;
+    top: 20px;
+}
+
+a:link {
+    color: #000;
+    font-weight: bold;
+}
+
+a:visited {
+    color: #555;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.odd {
+    background-color: #ddd;
+}
+
+#content {
+    margin: 10px 20px;
+}
+
+.blader {
+    font-size: 12px;
+}
+
+#links {
+    text-align: right;
+}
+
+#nav {
+    height: 50px;
+}
+
+#lijst tr td {
+    padding: 2px 4px;
+}
+
+#lijst tr td .ext {
+    min-width: 300px;
+}
+
+#extStatusNewBtn,
+#extStatusForm {
+    margin-top: 20px;
+}
+
+#extStatusForm {
+    display: none;
+}
+
+th {
+    text-align: left;
+    font-family: arial, sans-serif;
+    font-size: 15px;
+}
+
+.label {
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+.inline_table {
+    border-collapse: collapse;
+}
+
+.inline_cell {
+    width: 160px;
+}
+
+table tr td {
+    vertical-align: top;
+}
+
+#resultTable {
+    border-collapse: collapse;
+}
+
+#resultTable tr {
+    border-top: 1px solid #555;
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+}
+
+#resultTable tr:hover {
+    color: #777;
+}
+
+#resultTable tr:last-child {
+    border-bottom: 1px solid #555;
+}
+
+#resultTable tr td,
+#resultTable tr th {
+    padding: 4px 16px 4px 6px;
+}
+
+#resultTable tr th {
+    color: #fff;
+    background-color: #444;
+}
+
+.itemGrid {
+    display: table;
+}
+
+.itemGridRow {
+    display: table-row;
+
+    margin: 1px;
+}
+
+.itemGridCell {
+    display: table-cell;
+    padding: 4px 6px;
+    border-top: 1px solid #555;
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+    background-color: #eee;
+}
+
+.itemGridRow:last-child .itemGridCell {
+    border-bottom: 1px solid #555;
+}
+
+.labelCell {
+    color: #fff;
+    background-color: #444;
+}
+
+.viewText {
+    width: 100%;
+    min-height: 100px;
+    height: 406px;
+}
+
+#profileDataNavigator {
+    border-bottom: 1px solid #999;
+    margin: 40px 0 20px 0;
+    list-style: none;
+}
+
+#profileDataNavigator li {
+    border-radius: 8px 8px 0 0;
+    border-left: 1px solid #999;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    display: inline-block;
+    padding: 2px 4px 0 4px;
+    background-color: #ddd;
+    color: #666;
+}
+
+.profileDataActiveTab {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+#metadataRecs {
+    margin-top: 40px;
+}
+
+.noView {
+    display: none;
+}
+
+#homeBtn {
+    position: absolute;
+    top: 15px;
+    right: 260px;
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/home.png');
+    background-repeat: no-repeat;
+}
+
+#addRec {
+    color: #fff;
+    font-size: 1.1em;
+}
+
+#newRecTab {
+    display: table;
+    margin: 30px 0 10px 0;
+}
+
+.newRecRow {
+    display: table-row;
+    height: 40px;
+}
+
+.newRecLab {
+    display: table-cell;
+    width: 80px;
+    font-weight: bold;
+}
+
+.newRecField {
+    display: table-cell;
+}
+
+
+table.sortable tbody tr:nth-child(2n) td {
+    background: white;
+}
+table.sortable tbody tr:nth-child(2n+1) td {
+    background: #ddd;
+}
+
+.parallelForms {
+}
+
+.otherForms {
+
+}
+
+.lang {
+    font-size:smaller;
+}
+
+.lang::before {
+    content: "\00a0(";
+}
+
+.lang::after {
+    content: ")";
+}
+
+.type {
+}
+
+.type::before {
+    content: "\00a0(";
+}
+
+.type::after {
+    content: ")";
+}
+
+.ent {
+    font-size:smaller;
+}
+
+.ent::before {
+    content: "\00a0(";
+}
+
+.ent::after {
+    content: ")";
+}
+
+a.rel {
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+span.here {
+    font-weight: bold;
+}
+
+span.here::before {
+    content: 'You\'re here:';
+}
+
+h3 {
+    font-weight: normal;
+    font-style:italic;
+}
