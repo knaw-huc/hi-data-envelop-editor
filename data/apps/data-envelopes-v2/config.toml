@@ -20,7 +20,7 @@ label_plural_en="envelopes"
 
 [app.prof.envelopv2.list.nr]
 xpath="replace(//*:MdSelfLink,'unl://','')"
-label="nr"
+label="record-nr"
 sort="true"
 filter="true"
 
