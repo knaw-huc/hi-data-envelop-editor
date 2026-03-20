@@ -7,10 +7,10 @@ cmdi_version="1.2"
 
 [app.access]
 #users="./htp.test" # location of the htpassword file, i.e. the "users" and "owner"
-read="any" # or "users" or "owner"
-write="any" # or "users" or "owner"
-#read="users"
-#write="owner"
+#read="any" # or "users" or "owner"
+#write="any" # or "users" or "owner"
+read="users"
+write="owner"
 
 [app.prof.envelopv2]
 prof="clarin.eu:cr1:p_1770289476181"

@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<config>
+  <app>
+    <name>data-envelopes-v2</name>
+    <title>Data-envelopes-v2 Editor</title>
+    <def_prof>clarin.eu:cr1:p_1770289476181</def_prof>
+    <cmdi_version>1.2</cmdi_version>
+    <access>
+      <read>any</read>
+      <write>any</write>
+    </access>
+    <prof>
+      <envelopv2>
+        <prof>clarin.eu:cr1:p_1770289476181</prof>
+        <title>string((/cmd:CMD/cmd:Components//cmdp:*[empty(cmdp:*)][normalize-space(text())!=''])[1])</title>
+        <label_en>envelop</label_en>
+        <label_plural_en>envelopes</label_plural_en>
+        <list>
+          <nr>
+            <xpath>replace(//*:MdSelfLink,'unl://','')</xpath>
+            <label>record-nr</label>
+            <sort>true</sort>
+            <filter>true</filter>
+          </nr>
+          <titleEnvelope>
+            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DataEnvelopeMetadata/(cmdp:title[@xml:lang='en'],cmdp:title)[1])</xpath>
+            <label>DataEnvelope Title</label>
+            <sort>true</sort>
+            <filter>true</filter>
+          </titleEnvelope>
+          <titleDataset>
+            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/(cmdp:title[@xml:lang='en'],cmdp:title)[1])</xpath>
+            <label>Dataset Title</label>
+            <sort>true</sort>
+            <filter>true</filter>
+          </titleDataset>
+          <versionEnvelope>
+            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DataEnvelopeMetadata/cmdp:Version/cmdp:versionNumber)</xpath>
+            <label>Envelope Version</label>
+            <sort>true</sort>
+            <filter>'select'</filter>
+          </versionEnvelope>
+          <versionDataset>
+            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:VersionMaintenance/cmdp:Version/cmdp:currentVersion)</xpath>
+            <label>Dataset Version</label>
+            <sort>true</sort>
+            <filter>'select'</filter>
+          </versionDataset>
+          <mixedDatesFrom>
+            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:Dates/cmdp:dateFrom)</xpath>
+            <label>Mixed dates-from</label>
+            <sort>true</sort>
+            <filter>'select'</filter>
+          </mixedDatesFrom>
+          <mixedDatesTo>
+            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:Dates/cmdp:dateTo)</xpath>
+            <label>Mixed dates-to</label>
+            <sort>true</sort>
+            <filter>'select'</filter>
+          </mixedDatesTo>
+          <mixedDatesPublished>
+            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:Dates/cmdp:datePublished)</xpath>
+            <label>Mixed dates-published</label>
+            <sort>true</sort>
+            <filter>'select'</filter>
+          </mixedDatesPublished>
+        </list>
+      </envelopv2>
+    </prof>
+    <html>
+      <style>envelopesv2.css</style>
+    </html>
+  </app>
+</config>
