@@ -9,6 +9,8 @@ cmdi_version="1.2"
 #users="./htp.test" # location of the htpassword file, i.e. the "users" and "owner"
 read="any" # or "users" or "owner"
 write="any" # or "users" or "owner"
+#read="users"
+#write="owner"
 
 [app.prof.envelopv2]
 prof="clarin.eu:cr1:p_1770289476181"
@@ -27,7 +29,7 @@ filter="true"
 #label="Status"
 #sort="true"
 #filter="'select'"
-
+#
 [app.prof.envelopv2.list.titleEnvelope]
 xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DataEnvelopeMetadata/(cmdp:title[@xml:lang='en'],cmdp:title)[1])"
 label="DataEnvelope Title"
@@ -51,10 +53,30 @@ xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmd
 label="Dataset Version"
 sort="true"
 filter="'select'"
+
+[app.prof.envelopv2.list.mixedDatesFrom]
+xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:Dates/cmdp:dateFrom)"
+label="Mixed dates-from"
+sort="true"
+filter="'select'"
+
+[app.prof.envelopv2.list.mixedDatesTo]
+xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:Dates/cmdp:dateTo)"
+label="Mixed dates-to"
+sort="true"
+filter="'select'"
+
+[app.prof.envelopv2.list.mixedDatesPublished]
+xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:Dates/cmdp:datePublished)"
+label="Mixed dates-published"
+sort="true"
+filter="'select'"
 #
 #[app.prof.envelop.list.temporalyear]
 #xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:BasicMetadata/cmdp:Snapshot/cmdp:TemporalCoverage/cmdp:year)"
 #label="year"
 #sort="true"
 #filter="'select'"
-                
+
+[app.html]
+style="envelopesv2.css"
