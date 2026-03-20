@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<config>
+  <app>
+    <name>data-envelopes</name>
+    <title>HI Data Envelopes Editor</title>
+    <def_prof>clarin.eu:cr1:p_1708423613607</def_prof>
+    <cmdi_version>1.2</cmdi_version>
+    <access>
+      <users>./htp</users>
+      <read>users</read>
+      <write>owner</write>
+    </access>
+    <html>
+      <style>data-envelopes.css</style>
+    </html>
+    <prof>
+      <envelop>
+        <prof>clarin.eu:cr1:p_1708423613607</prof>
+        <title>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:BasicInformation/(cmdp:title[@xml:lang='en'],cmdp:title)[1])</title>
+        <label_en>envelop</label_en>
+        <label_plural_en>envelopes</label_plural_en>
+        <list>
+          <title>
+            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:BasicInformation/(cmdp:title[@xml:lang='en'],cmdp:title)[1])</xpath>
+            <label>Dataset</label>
+            <sort>true</sort>
+            <filter>true</filter>
+          </title>
+          <status>
+            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:status)</xpath>
+            <label>Status</label>
+            <sort>true</sort>
+            <filter>'select'</filter>
+          </status>
+        </list>
+      </envelop>
+    </prof>
+  </app>
+</config>
