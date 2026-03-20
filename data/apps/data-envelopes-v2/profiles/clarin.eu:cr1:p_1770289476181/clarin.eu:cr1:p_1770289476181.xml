@@ -54,7 +54,7 @@
         <Component name="DatasetMetadata" CardinalityMin="1" CardinalityMax="1">
             <Element name="title" ConceptLink="http://purl.org/dc/terms/title" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Multilingual="true" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
             <Element name="description" ConceptLink="http://purl.org/dc/terms/description" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
-            <Component name="Genre" ConceptLink="http://www.w3.org/ns/dcat#theme" CardinalityMin="1" CardinalityMax="1">
+			<Component name="Genre" ConceptLink="http://www.w3.org/ns/dcat#theme" CardinalityMin="1" CardinalityMax="1">
                 <Element name="controlledTerm" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
                 <Component name="otherTerm" CardinalityMin="0" CardinalityMax="unbounded">
                     <Element name="term" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
@@ -68,6 +68,11 @@
                     <Element name="termUri" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
                 </Component>
             </Component>
+			<Component name="Dates" CardinalityMin="1" CardinalityMax="1">
+				<Element name="dateFrom" ValueScheme="date" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+				<Element name="dateTo" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
+				<Element name="datePublished" ConceptLink="http://purl.org/dc/terms/issued" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
+			</Component>
             <Component name="TemporalCoverage" ConceptLink="http://purl.org/dc/terms/temporal" CardinalityMin="1" CardinalityMax="1">
 				<Component name="CoveragePeriod" ConceptLink="http://purl.org/dc/terms/PeriodOfTime" CardinalityMin="0" CardinalityMax="unbounded">
 					<Element name="dateStart" ValueScheme="gYear" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
@@ -77,11 +82,6 @@
                 <Component name="Comments" CardinalityMin="0" CardinalityMax="1">
                     <Element name="comment" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
                 </Component>
-				<Component name="DatesToCheckOrMove" CardinalityMin="1" CardinalityMax="1">
-					<Element name="dateFrom" ValueScheme="date" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
-					<Element name="dateTo" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
-					<Element name="datePublished" ConceptLink="http://purl.org/dc/terms/issued" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
-				</Component>
             </Component>
             <Component name="GeographicalCoverage" ConceptLink="http://purl.org/dc/terms/spatial" CardinalityMin="1" CardinalityMax="1">
                 <Element name="controlledTerm" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded"/>
