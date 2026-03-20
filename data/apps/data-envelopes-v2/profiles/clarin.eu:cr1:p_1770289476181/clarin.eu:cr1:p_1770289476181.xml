@@ -32,7 +32,6 @@
         </Element>
         <Component name="DataEnvelopeMetadata" CardinalityMin="1" CardinalityMax="1">
             <Element name="title" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Multilingual="true" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
-				<Documentation>For describing the internal curation/editorial process.</Documentation>
 			</Element>
             <Component name="Version" CardinalityMin="1" CardinalityMax="1">
                 <Element name="versionNumber" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
