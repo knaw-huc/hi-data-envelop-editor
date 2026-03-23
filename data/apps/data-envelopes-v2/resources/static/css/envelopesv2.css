@@ -1,25 +1,25 @@
 .compLevel1, .compLevel2, .compLevel3, .compLevel4, .compLevel5, .compLevel6, .compLevel7, .compLevel8, .compLevel9 {
-    background-color: #B28147 !important;
+    background-color: #85B7EB !important;
 }
 
 [data-name="DataEnvelopeMetadata"] .componentHeader {
-    background-color: #B28147 !important;
+    background-color: #5DCAA5 !important;
 }
 
 [data-name="DatasetMetadata"] .componentHeader {
-    background-color: #00cccc !important;
+    background-color: #085041 !important;
 }
 
 [data-name="Data"] .componentHeader {
-    background-color: #e6e600 !important;
+    background-color: #BA7517 !important;
 }
 
 [data-name="Uses"] .componentHeader {
-    background-color: #8585ad !important;
+    background-color: #AFA9EC !important;
 }
 
 [data-name="HumanPerspective"] .componentHeader {
-    background-color: #ff8080 !important;
+    background-color: #F5C4B3 !important;
 }
 
 /*.compLevel2 {*/
