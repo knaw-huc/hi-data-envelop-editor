@@ -7,7 +7,7 @@ cmdi_version="1.2"
 [app.access]
 users="./htp"
 read="users"
-write="owner" 
+write="owner"
 
 [app.html]
 style="data-envelopes.css"
