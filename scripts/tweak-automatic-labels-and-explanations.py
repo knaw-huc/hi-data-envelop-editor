@@ -21,9 +21,9 @@ from lxml import etree
 # ============================================================
 V1_TWEAK_PATH = "/Users/lilianam/workspace/hi-data-envelop-editor/data/apps/data-envelopes/profiles/clarin.eu:cr1:p_1708423613607/tweaks/tweak-1.xml"
 V2_TWEAK_PATH = "/Users/lilianam/workspace/hi-data-envelop-editor/data/apps/data-envelopes-v2/profiles/clarin.eu:cr1:p_1770289476181/tweaks/tweak-0.xml"
-V2_SCHEMA_PATH = "/Users/lilianam/workspace/hi-data-envelop-editor/data/apps/data-envelopes-v2/profiles/clarin.eu:cr1:p_1770289476181/clarin.eu:cr1:p_1770289476181.xml"
+# V2_SCHEMA_PATH removed - ValueScheme belongs in schema, not tweak
 MAPPING_CSV_PATH = "/Users/lilianam/workspace/hi-data-envelop-editor/scripts/output/column-mapping-v1-to-v2.csv"
-OUTPUT_PATH = "/Users/lilianam/workspace/hi-data-envelop-editor/data/apps/data-envelopes-v2/profiles/clarin.eu:cr1:p_1770289476181/tweaks"
+OUTPUT_PATH = "/Users/lilianam/workspace/hi-data-envelop-editor/data/apps/data-envelopes-v2/profiles/clarin.eu:cr1:p_1770289476181/tweaks/tweak-1.xml"
 
 BASE_URL = "https://edu.nl/atqm8"
 START_FROM = "DataEnvelopeMetadata"
@@ -181,30 +181,10 @@ def extract_v1_cues(v1_tree, full_mapping):
     return v2_cues
 
 
-def extract_value_schemes(schema_path):
-    """Extract non-string ValueScheme attributes from the v2 schema.
-    Returns dict: v2_element_path → ValueScheme string (e.g. 'date', 'anyURI', 'int')
-    """
-    tree = etree.parse(schema_path)
-    schemes = {}
-    for elem in tree.iter("Element"):
-        vs = elem.get("ValueScheme", "")
-        if vs and vs != "string":
-            parts = []
-            p = elem
-            while p is not None:
-                if p.tag == "Component" and p.get("name"):
-                    parts.insert(0, p.get("name"))
-                p = p.getparent()
-            path = "/" + "/".join(parts) + "/" + elem.get("name")
-            schemes[path] = vs
-    return schemes
-
-
 # ============================================================
 # Main processing
 # ============================================================
-def process_node(elem, counters, depth, is_top_level, v2_explanations, v2_cues, v2_schemes):
+def process_node(elem, counters, depth, is_top_level, v2_explanations, v2_cues):
     """Add label, explanation, autoComplete, and cues to a Component or Element."""
     name = elem.get("name", "")
     if not name:
@@ -269,14 +249,14 @@ def process_node(elem, counters, depth, is_top_level, v2_explanations, v2_cues, 
     for child in list(elem):
         if child.tag == "Component":
             comp_counter += 1
-            process_node(child, counters + [comp_counter], depth + 1, False, v2_explanations, v2_cues, v2_schemes)
+            process_node(child, counters + [comp_counter], depth + 1, False, v2_explanations, v2_cues)
         elif child.tag == "Element":
             # Elements don't get section numbers — pass None as counters
-            process_element(child, depth + 1, v2_explanations, v2_cues, v2_schemes)
+            process_element(child, depth + 1, v2_explanations, v2_cues)
 
 
-def process_element(elem, depth, v2_explanations, v2_cues, v2_schemes):
-    """Add label, explanation, autoComplete, cues, and ValueScheme to an Element."""
+def process_element(elem, depth, v2_explanations, v2_cues):
+    """Add label, explanation, autoComplete, and cues to an Element."""
     name = elem.get("name", "")
     if not name:
         return
@@ -328,10 +308,6 @@ def process_element(elem, depth, v2_explanations, v2_cues, v2_schemes):
         if h:
             elem.set(f"{{{CUE_NS}}}inputHeight", h)
 
-    # --- ValueScheme from schema ---
-    if v2_path in v2_schemes:
-        elem.set("ValueScheme", v2_schemes[v2_path])
-
 
 def main():
     print(f"V1 tweak: {V1_TWEAK_PATH}")
@@ -347,10 +323,8 @@ def main():
     v1_tree = etree.parse(V1_TWEAK_PATH)
     v2_explanations = extract_v1_explanations(v1_tree, full_mapping)
     v2_cues = extract_v1_cues(v1_tree, full_mapping)
-    v2_schemes = extract_value_schemes(V2_SCHEMA_PATH)
     print(f"V1 explanations mapped: {len(v2_explanations)}")
     print(f"V2 cues (v1 + extra): {len(v2_cues)}")
-    print(f"V2 ValueSchemes (non-string): {len(v2_schemes)}")
 
     # Parse v2
     v2_tree = etree.parse(V2_TWEAK_PATH)
@@ -376,7 +350,7 @@ def main():
                 started = True
             if started:
                 top_counter += 1
-                process_node(child, [top_counter], 2, True, v2_explanations, v2_cues, v2_schemes)
+                process_node(child, [top_counter], 2, True, v2_explanations, v2_cues)
 
     # Write
     output = etree.tostring(v2_tree, xml_declaration=True, encoding="UTF-8", pretty_print=True).decode()
@@ -390,7 +364,6 @@ def main():
     autocompletes = list(v2_root.iter(f"{{{CLARIAH_NS}}}autoCompleteURI"))
     cue_count = sum(1 for e in v2_root.iter("Element")
                     if e.get(f"{{{CUE_NS}}}inputWidth") or e.get(f"{{{CUE_NS}}}inputHeight"))
-    vs_count = sum(1 for e in v2_root.iter("Element") if e.get("ValueScheme"))
     merged = sum(1 for e in expls if e.text and "See documentation" in e.text and not e.text.startswith("See"))
 
     print(f"\nVerification:")
@@ -398,7 +371,6 @@ def main():
     print(f"  Explanations: {len(expls)} ({merged} with v1 text merged)")
     print(f"  autoCompleteURIs: {len(autocompletes)}")
     print(f"  Elements with cues: {cue_count}")
-    print(f"  Elements with ValueScheme: {vs_count}")
     if labels:
         print(f"  First: {labels[0].text}")
         # Show first few section headers
