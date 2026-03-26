@@ -101,79 +101,85 @@
     <xsl:template match="old:BasicMetadata">
         <cmdp:DatasetMetadata>
             <xsl:apply-templates select="old:Snapshot/old:title"/>
-            <xsl:apply-templates select="old:Snapshot/old:description"/>
-            <!-- Genre -->
-            <xsl:if test="old:Snapshot/old:genre | old:Snapshot/old:genreOther">
-                <cmdp:Genre>
-                    <xsl:for-each select="old:Snapshot/old:genre">
-                        <cmdp:controlledTerm>
-                            <xsl:copy-of select="@cmd:valueConceptLink"/>
-                            <xsl:value-of select="."/>
-                        </cmdp:controlledTerm>
-                    </xsl:for-each>
-                    <xsl:for-each select="old:Snapshot/old:genreOther">
-                        <cmdp:otherTerm><cmdp:term><xsl:value-of select="."/></cmdp:term></cmdp:otherTerm>
-                    </xsl:for-each>
-                </cmdp:Genre>
-            </xsl:if>
-            <!-- Topic -->
-            <xsl:if test="old:Snapshot/old:topic | old:Snapshot/old:topicOther">
-                <cmdp:Topic>
-                    <xsl:for-each select="old:Snapshot/old:topic">
-                        <cmdp:controlledTerm>
-                            <xsl:copy-of select="@cmd:valueConceptLink"/>
-                            <xsl:value-of select="."/>
-                        </cmdp:controlledTerm>
-                    </xsl:for-each>
-                    <xsl:for-each select="old:Snapshot/old:topicOther">
-                        <cmdp:otherTerm><cmdp:term><xsl:value-of select="."/></cmdp:term></cmdp:otherTerm>
-                    </xsl:for-each>
-                </cmdp:Topic>
-            </xsl:if>
-            <!-- Dates (BasicMetadata/Dates → DatasetMetadata/Dates) -->
-            <xsl:if test="old:Dates/*">
-                <cmdp:Dates>
-                    <xsl:for-each select="old:Dates/old:dateFrom">
-                        <cmdp:dateFrom><xsl:value-of select="."/></cmdp:dateFrom>
-                    </xsl:for-each>
-                    <xsl:for-each select="old:Dates/old:dateTo">
-                        <cmdp:dateTo><xsl:value-of select="."/></cmdp:dateTo>
-                    </xsl:for-each>
-                    <xsl:for-each select="old:Dates/old:datasetPublicationDate">
-                        <cmdp:datePublished><xsl:value-of select="."/></cmdp:datePublished>
-                    </xsl:for-each>
-                </cmdp:Dates>
-            </xsl:if>
-            <!-- TemporalCoverage (restructured) -->
-            <xsl:apply-templates select="old:Snapshot/old:TemporalCoverage"/>
-            <!-- GeographicalCoverage -->
-            <xsl:if test="old:Snapshot/old:GeographicalCoverage | old:Snapshot/old:GeographicalCoverageOther">
-                <cmdp:GeographicalCoverage>
-                    <xsl:for-each select="old:Snapshot/old:GeographicalCoverage">
-                        <cmdp:controlledTerm>
-                            <xsl:copy-of select="@cmd:valueConceptLink"/>
-                            <xsl:value-of select="."/>
-                        </cmdp:controlledTerm>
-                    </xsl:for-each>
-                    <xsl:for-each select="old:Snapshot/old:GeographicalCoverageOther">
-                        <cmdp:otherTerm><cmdp:term><xsl:value-of select="."/></cmdp:term></cmdp:otherTerm>
-                    </xsl:for-each>
-                </cmdp:GeographicalCoverage>
-            </xsl:if>
-            <!-- Languages -->
-            <xsl:if test="old:Snapshot/old:languages | old:Snapshot/old:languageOther">
-                <cmdp:Languages>
-                    <xsl:for-each select="old:Snapshot/old:languages">
-                        <cmdp:controlledTerm>
-                            <xsl:copy-of select="@cmd:valueConceptLink"/>
-                            <xsl:value-of select="."/>
-                        </cmdp:controlledTerm>
-                    </xsl:for-each>
-                    <xsl:for-each select="old:Snapshot/old:languageOther">
-                        <cmdp:otherTerm><cmdp:term><xsl:value-of select="."/></cmdp:term></cmdp:otherTerm>
-                    </xsl:for-each>
-                </cmdp:Languages>
-            </xsl:if>
+            <!-- DescriptiveMetadata wrapper (NEW in v2) -->
+            <cmdp:DescriptiveMetadata>
+                <xsl:apply-templates select="old:Snapshot/old:description"/>
+                <!-- Languages -->
+                <xsl:if test="old:Snapshot/old:languages | old:Snapshot/old:languageOther">
+                    <cmdp:Languages>
+                        <xsl:for-each select="old:Snapshot/old:languages">
+                            <cmdp:controlledTerm>
+                                <xsl:copy-of select="@cmd:valueConceptLink"/>
+                                <xsl:value-of select="."/>
+                            </cmdp:controlledTerm>
+                        </xsl:for-each>
+                        <xsl:for-each select="old:Snapshot/old:languageOther">
+                            <cmdp:otherTerm><cmdp:term><xsl:value-of select="."/></cmdp:term></cmdp:otherTerm>
+                        </xsl:for-each>
+                    </cmdp:Languages>
+                </xsl:if>
+                <!-- Dates (BasicMetadata/Dates → DescriptiveMetadata/Dates) -->
+                <xsl:if test="old:Dates/*">
+                    <cmdp:Dates>
+                        <xsl:for-each select="old:Dates/old:dateFrom">
+                            <cmdp:dateFrom><xsl:value-of select="."/></cmdp:dateFrom>
+                        </xsl:for-each>
+                        <xsl:for-each select="old:Dates/old:dateTo">
+                            <cmdp:dateTo><xsl:value-of select="."/></cmdp:dateTo>
+                        </xsl:for-each>
+                        <xsl:for-each select="old:Dates/old:datasetPublicationDate">
+                            <cmdp:datePublished><xsl:value-of select="."/></cmdp:datePublished>
+                        </xsl:for-each>
+                    </cmdp:Dates>
+                </xsl:if>
+            </cmdp:DescriptiveMetadata>
+            <!-- SubjectMetadata wrapper (NEW in v2) -->
+            <cmdp:SubjectMetadata>
+                <!-- Genre → GenreOrForm (renamed) -->
+                <xsl:if test="old:Snapshot/old:genre | old:Snapshot/old:genreOther">
+                    <cmdp:GenreOrForm>
+                        <xsl:for-each select="old:Snapshot/old:genre">
+                            <cmdp:controlledTerm>
+                                <xsl:copy-of select="@cmd:valueConceptLink"/>
+                                <xsl:value-of select="."/>
+                            </cmdp:controlledTerm>
+                        </xsl:for-each>
+                        <xsl:for-each select="old:Snapshot/old:genreOther">
+                            <cmdp:otherTerm><cmdp:term><xsl:value-of select="."/></cmdp:term></cmdp:otherTerm>
+                        </xsl:for-each>
+                    </cmdp:GenreOrForm>
+                </xsl:if>
+                <!-- Topic -->
+                <xsl:if test="old:Snapshot/old:topic | old:Snapshot/old:topicOther">
+                    <cmdp:Topic>
+                        <xsl:for-each select="old:Snapshot/old:topic">
+                            <cmdp:controlledTerm>
+                                <xsl:copy-of select="@cmd:valueConceptLink"/>
+                                <xsl:value-of select="."/>
+                            </cmdp:controlledTerm>
+                        </xsl:for-each>
+                        <xsl:for-each select="old:Snapshot/old:topicOther">
+                            <cmdp:otherTerm><cmdp:term><xsl:value-of select="."/></cmdp:term></cmdp:otherTerm>
+                        </xsl:for-each>
+                    </cmdp:Topic>
+                </xsl:if>
+                <!-- TemporalCoverage (restructured) -->
+                <xsl:apply-templates select="old:Snapshot/old:TemporalCoverage"/>
+                <!-- GeographicalCoverage -->
+                <xsl:if test="old:Snapshot/old:GeographicalCoverage | old:Snapshot/old:GeographicalCoverageOther">
+                    <cmdp:GeographicalCoverage>
+                        <xsl:for-each select="old:Snapshot/old:GeographicalCoverage">
+                            <cmdp:controlledTerm>
+                                <xsl:copy-of select="@cmd:valueConceptLink"/>
+                                <xsl:value-of select="."/>
+                            </cmdp:controlledTerm>
+                        </xsl:for-each>
+                        <xsl:for-each select="old:Snapshot/old:GeographicalCoverageOther">
+                            <cmdp:otherTerm><cmdp:term><xsl:value-of select="."/></cmdp:term></cmdp:otherTerm>
+                        </xsl:for-each>
+                    </cmdp:GeographicalCoverage>
+                </xsl:if>
+            </cmdp:SubjectMetadata>
             <!-- ResponsibleAgents -->
             <xsl:choose>
                 <xsl:when test="old:CreatorsContributors">
@@ -379,14 +385,14 @@
         </cmdp:RightsStatement>
     </xsl:template>
     <xsl:template match="old:licensingInformation">
-        <cmdp:License>
+        <cmdp:Licence>
             <xsl:for-each select="old:identifier">
-                <cmdp:licenseLabel><xsl:value-of select="."/></cmdp:licenseLabel>
+                <cmdp:label><xsl:value-of select="."/></cmdp:label>
             </xsl:for-each>
             <xsl:for-each select="old:url">
                 <cmdp:uri><xsl:value-of select="."/></cmdp:uri>
             </xsl:for-each>
-        </cmdp:License>
+        </cmdp:Licence>
     </xsl:template>
     <!-- access → AccessDetails (flattened: accessRestricted children promoted up) -->
     <xsl:template match="old:access">
@@ -551,7 +557,7 @@
     </xsl:template>
     <xsl:template match="old:sensAttributes">
         <xsl:if test="* or normalize-space() != ''">
-            <cmdp:SensAttributes><xsl:apply-templates select="@* | node()"/></cmdp:SensAttributes>
+            <cmdp:SensitivesAttributes><xsl:apply-templates select="@* | node()"/></cmdp:SensitivesAttributes>
         </xsl:if>
     </xsl:template>
     <xsl:template match="old:ethicalReview">
@@ -602,11 +608,6 @@
     <xsl:template match="old:UseWithOtherData/old:SafetyLevel">
         <cmdp:safetyLevel><xsl:apply-templates select="@* | node()"/></cmdp:safetyLevel>
     </xsl:template>
-    <!-- KnownUnsafeDatasetsDataTypes → knownUnsafeDatasetsDataTypes (lowercase) -->
-    <xsl:template match="old:UseWithOtherData/old:KnownUnsafeDatasetsDataTypes">
-        <cmdp:knownUnsafeDatasetsDataTypes><xsl:apply-templates select="@* | node()"/></cmdp:knownUnsafeDatasetsDataTypes>
-    </xsl:template>
-
     <!-- Uses/feedbackElaboration → Comments -->
     <xsl:template match="old:Uses/old:feedbackElaboration">
         <xsl:if test="old:feedbackSectionFour">
@@ -629,6 +630,54 @@
                 </xsl:for-each>
             </cmdp:Comments>
         </xsl:if>
+    </xsl:template>
+
+    <!-- ================================================================
+         Element renames (new in this version of v2)
+         ================================================================ -->
+    <!-- confidentialityBin → IsDatasetConfidential -->
+    <xsl:template match="old:confidentiality/old:confidentialityBin">
+        <cmdp:IsDatasetConfidential><xsl:apply-templates select="@* | node()"/></cmdp:IsDatasetConfidential>
+    </xsl:template>
+
+    <!-- errors/errordescription → Errors/description -->
+    <xsl:template match="old:errors/old:errordescription">
+        <cmdp:description><xsl:apply-templates select="@* | node()"/></cmdp:description>
+    </xsl:template>
+
+    <!-- atypicalExample/atypdescription → AtypicalExample/description -->
+    <xsl:template match="old:atypicalExample/old:atypdescription">
+        <cmdp:description><xsl:apply-templates select="@* | node()"/></cmdp:description>
+    </xsl:template>
+
+    <!-- atypicalExample/atyplink → AtypicalExample/link -->
+    <xsl:template match="old:atypicalExample/old:atyplink">
+        <cmdp:link><xsl:apply-templates select="@* | node()"/></cmdp:link>
+    </xsl:template>
+
+    <!-- dataProvenance/yearPublication → yearOfPublication -->
+    <xsl:template match="old:dataProvenance/old:yearPublication">
+        <cmdp:yearOfPublication><xsl:apply-templates select="@* | node()"/></cmdp:yearOfPublication>
+    </xsl:template>
+
+    <!-- dataProvenance/datasheetEnvelope → datasheetOrEnvelopeLink -->
+    <xsl:template match="old:dataProvenance/old:datasheetEnvelope">
+        <cmdp:datasheetOrEnvelopeLink><xsl:apply-templates select="@* | node()"/></cmdp:datasheetOrEnvelopeLink>
+    </xsl:template>
+
+    <!-- avgannotations → averageNumberOfAnnotations -->
+    <xsl:template match="old:AnnotationType/old:avgannotations">
+        <cmdp:averageNumberOfAnnotations><xsl:apply-templates select="@* | node()"/></cmdp:averageNumberOfAnnotations>
+    </xsl:template>
+
+    <!-- knownSafeDatasetsDataTypes → knownSafeDatasetsOrDataTypes -->
+    <xsl:template match="old:UseWithOtherData/old:knownSafeDatasetsDataTypes">
+        <cmdp:knownSafeDatasetsOrDataTypes><xsl:apply-templates select="@* | node()"/></cmdp:knownSafeDatasetsOrDataTypes>
+    </xsl:template>
+
+    <!-- KnownUnsafeDatasetsDataTypes → knownUnsafeDatasetsOrDataTypes -->
+    <xsl:template match="old:UseWithOtherData/old:KnownUnsafeDatasetsDataTypes">
+        <cmdp:knownUnsafeDatasetsOrDataTypes><xsl:apply-templates select="@* | node()"/></cmdp:knownUnsafeDatasetsOrDataTypes>
     </xsl:template>
 
 </xsl:stylesheet>

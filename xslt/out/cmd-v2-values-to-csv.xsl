@@ -12,11 +12,11 @@
     <!-- XSLTs made by Menzo Windhouwer. Adapted by Liliana Melgar. 
         Used in combination with a jupyter notebook available at the repository to check the correctness of the records transformation between versions -->
     
-    <xsl:param name="cwd" select="'file:../hi-data-envelop-editor'"/>
+    <xsl:param name="cwd" select="'/Users/lilianam/workspace/hi-data-envelop-editor'"/>
     <xsl:param name="app" select="'data-envelopes-v2'"/>
     <xsl:param name="config" select="doc(concat($cwd, '/data/apps/', $app, '/config.xml'))"/>
     
-    <xsl:param name="tweakFile" select="'file:../hi-data-envelop-editor/data/apps/data-envelopes-v2/profiles/clarin.eu:cr1:p_1770289476181/clarin.eu:cr1:p_1770289476181.xml'"/>
+    <xsl:param name="tweakFile" select="'/Users/lilianam/workspace/hi-data-envelop-editor/data/apps/data-envelopes-v2/profiles/clarin.eu:cr1:p_1770289476181/clarin.eu:cr1:p_1770289476181.xml'"/>
     <xsl:param name="tweak" select="document($tweakFile)"/>
     
     <xsl:param name="prof" select="$tweak/ComponentSpec/Header[1]/ID[1]"/>
