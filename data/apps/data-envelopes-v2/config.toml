@@ -54,21 +54,21 @@ label="Dataset Version"
 sort="true"
 filter="'select'"
 
-[app.prof.envelopv2.list.mixedDatesFrom]
-xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:Dates/cmdp:dateFrom)"
-label="Mixed dates-from"
+[app.prof.envelopv2.list.datasetDateFrom]
+xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:DescriptiveMetadata/cmdp:Dates/cmdp:dateFrom)"
+label="Dataset-date-from"
 sort="true"
 filter="'select'"
 
-[app.prof.envelopv2.list.mixedDatesTo]
-xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:Dates/cmdp:dateTo)"
-label="Mixed dates-to"
+[app.prof.envelopv2.list.datasetDateTo]
+xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:DescriptiveMetadata/cmdp:Dates/cmdp:dateTo)"
+label="Dataset-date-to"
 sort="true"
 filter="'select'"
 
-[app.prof.envelopv2.list.mixedDatesPublished]
-xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:Dates/cmdp:datePublished)"
-label="Mixed dates-published"
+[app.prof.envelopv2.list.datasetDatePublished]
+xpath="string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:DescriptiveMetadata/cmdp:Dates/cmdp:datePublished)"
+label="Dataset-date-published"
 sort="true"
 filter="'select'"
 #

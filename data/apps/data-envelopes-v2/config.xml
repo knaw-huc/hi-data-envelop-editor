@@ -46,24 +46,24 @@
             <sort>true</sort>
             <filter>'select'</filter>
           </versionDataset>
-          <mixedDatesFrom>
-            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:Dates/cmdp:dateFrom)</xpath>
-            <label>Mixed dates-from</label>
+          <datasetDateFrom>
+            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:DescriptiveMetadata/cmdp:Dates/cmdp:dateFrom)</xpath>
+            <label>Dataset-date-from</label>
             <sort>true</sort>
             <filter>'select'</filter>
-          </mixedDatesFrom>
-          <mixedDatesTo>
-            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:Dates/cmdp:dateTo)</xpath>
-            <label>Mixed dates-to</label>
+          </datasetDateFrom>
+          <datasetDateTo>
+            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:DescriptiveMetadata/cmdp:Dates/cmdp:dateTo)</xpath>
+            <label>Dataset-date-to</label>
             <sort>true</sort>
             <filter>'select'</filter>
-          </mixedDatesTo>
-          <mixedDatesPublished>
-            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:Dates/cmdp:datePublished)</xpath>
-            <label>Mixed dates-published</label>
+          </datasetDateTo>
+          <datasetDatePublished>
+            <xpath>string(/cmd:CMD/cmd:Components/cmdp:DataEnvelope/cmdp:DatasetMetadata/cmdp:DescriptiveMetadata/cmdp:Dates/cmdp:datePublished)</xpath>
+            <label>Dataset-date-published</label>
             <sort>true</sort>
             <filter>'select'</filter>
-          </mixedDatesPublished>
+          </datasetDatePublished>
         </list>
       </envelopv2>
     </prof>
