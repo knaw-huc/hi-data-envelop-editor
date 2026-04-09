@@ -278,7 +278,7 @@
             <Component name="DataResourceDescription" CardinalityMin="1" CardinalityMax="1">
                 <Element name="nameOfResource" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
                 <Element name="description" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
-                <Element name="path" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="path" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="unbounded"/>
                 <Element name="format" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
                 <Element name="size" ValueScheme="int" CardinalityMin="0" CardinalityMax="1"/>
                 <Element name="date" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
