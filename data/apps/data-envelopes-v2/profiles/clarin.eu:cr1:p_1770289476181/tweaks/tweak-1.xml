@@ -352,7 +352,7 @@
 						<clariah:explanation>Choose one of the following access levels. See documentation at: https://edu.nl/atqm8#Access-Level</clariah:explanation>
 						</Element>
 					<Element name="description" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Description</clariah:label>
-						<clariah:explanation>Provide a description of the access restriction. Include an explanation of why access controls are in place. Also highlight any restrictions or limitations such as geographic restrictions, time-limited access, or requirements of fees, national regulation, etc. Also provide any prerequisites for acceptable use, such as reading data usage policy. See documentation at: https://edu.nl/atqm8#Description</clariah:explanation>
+						<clariah:explanation>Provide a description of how to access the dataset, including any access restrictions. Include an explanation of why access controls are in place. Also highlight any restrictions or limitations such as geographic restrictions, time-limited access, or requirements of fees, national regulation, etc. Also provide any prerequisites for acceptable use, such as reading data usage policy. See documentation at: https://edu.nl/atqm8#Description</clariah:explanation>
 						<!--cues--></Element>
 					<Element name="url"><clariah:label xml:lang="en">Url</clariah:label>
 						<clariah:explanation>Provide the link to instructions and/or page to request access. See documentation at: https://edu.nl/atqm8#Url</clariah:explanation>
@@ -626,7 +626,7 @@
 					<Element name="disclaimer">
                         
                     <clariah:label xml:lang="en">Disclaimer</clariah:label>
-						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Disclaimer</clariah:explanation>
+						<clariah:explanation>Does the resource contain data that, if viewed directly, might be offensive, insulting, threatening, or might otherwise cause anxiety? See documentation at: https://edu.nl/atqm8#Disclaimer</clariah:explanation>
 						</Element>
                     <Element name="specify"><clariah:label xml:lang="en">Specify</clariah:label>
 						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Specify</clariah:explanation>
@@ -654,8 +654,8 @@
 						<clariah:explanation>Describe the steps taken to reduce or mitigate biases in the dataset. See documentation at: https://edu.nl/atqm8#Steps-To-Reduce-Bias</clariah:explanation>
 						<!--cues--></Element>
                     <Component name="SensitivesAttributes">
-                        <clariah:label xml:lang="en">3.7.3.1 Sensitives Attributes</clariah:label>
-						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Sensitives-Attributes</clariah:explanation>
+                        <clariah:label xml:lang="en">3.7.3.1 Sensitive Attributes</clariah:label>
+						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Sensitive-Attributes</clariah:explanation>
 						<Element name="sensitiveAttribute">
                             
                         <clariah:label xml:lang="en">Sensitive Attribute</clariah:label>
@@ -708,13 +708,13 @@
 					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Name</clariah:explanation>
 					<!--cues--></Element>
                 <Element name="path"><clariah:label xml:lang="en">Path</clariah:label>
-					<clariah:explanation>Provide a URL of the source if available: See documentation at: https://edu.nl/atqm8#Path</clariah:explanation>
+					<clariah:explanation>Provide a URL of the source: See documentation at: https://edu.nl/atqm8#Path</clariah:explanation>
 					<!--cues--></Element>
                 <Element name="description" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Description</clariah:label>
 					<clariah:explanation>Provide a brief description of the source and why it was used? See documentation at: https://edu.nl/atqm8#Description</clariah:explanation>
 					<!--cues--></Element>
                 <Element name="creatorName"><clariah:label xml:lang="en">Creator Name</clariah:label>
-					<clariah:explanation>Provide name of individual creators of the source (if known). See documentation at: https://edu.nl/atqm8#Creator-Name</clariah:explanation>
+					<clariah:explanation>Provide name of individual creators of the source. See documentation at: https://edu.nl/atqm8#Creator-Name</clariah:explanation>
 					<!--cues--></Element>
                 <Element name="creatorOrganisation"><clariah:label xml:lang="en">Creator Organisation</clariah:label>
 					<clariah:explanation>Provide name of affiliated organisations or creating organisation. See documentation at: https://edu.nl/atqm8#Creator-Organisation</clariah:explanation>
@@ -726,16 +726,16 @@
 					<clariah:explanation>Provide the languages of the source. See documentation at: https://edu.nl/atqm8#Language</clariah:explanation>
 					<!--cues--></Element>
                 <Element name="temporalScope"><clariah:label xml:lang="en">Temporal Scope</clariah:label>
-					<clariah:explanation>Provide the temporal scope of the resource (if known). See documentation at: https://edu.nl/atqm8#Temporal-Scope</clariah:explanation>
+					<clariah:explanation>Provide the temporal scope of the resource. See documentation at: https://edu.nl/atqm8#Temporal-Scope</clariah:explanation>
 					<!--cues--></Element>
                 <Element name="geographicalScope"><clariah:label xml:lang="en">Geographical Scope</clariah:label>
-					<clariah:explanation>Provide the geographical scope of the resource (if known). See documentation at: https://edu.nl/atqm8#Geographical-Scope</clariah:explanation>
+					<clariah:explanation>Provide the geographical scope of the resource. See documentation at: https://edu.nl/atqm8#Geographical-Scope</clariah:explanation>
 					<!--cues--></Element>
                 <Element name="notableFeatures" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Notable Features</clariah:label>
 					<clariah:explanation>Provide any notable features and known biases and issues with the source. See documentation at: https://edu.nl/atqm8#Notable-Features</clariah:explanation>
 					<!--cues--></Element>
                 <Element name="datasheetOrEnvelopeLink"><clariah:label xml:lang="en">Datasheet Or Envelope Link</clariah:label>
-					<clariah:explanation>Provide a link to a datasheet/data-envelope on the source if available. See documentation at: https://edu.nl/atqm8#Datasheet-Or-Envelope-Link</clariah:explanation>
+					<clariah:explanation>Provide a link to a datasheet/data-envelope on the source. See documentation at: https://edu.nl/atqm8#Datasheet-Or-Envelope-Link</clariah:explanation>
 					<!--cues--></Element>
                 <Element name="dataSelection"><clariah:label xml:lang="en">Data Selection</clariah:label>
 					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Data-Selection</clariah:explanation>
@@ -744,7 +744,7 @@
             <Component name="Digitisation">
                 <clariah:label xml:lang="en">3.9 Digitisation</clariah:label>
 				<clariah:explanation>See documentation at: https://edu.nl/atqm8#Digitisation</clariah:explanation>
-				<Element name="digitalisationPipeline" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Digitalisation Pipeline</clariah:label>
+				<Element name="digitalisationPipeline" cue:inputWidth="60" cue:inputHeight="8"><clariah:label xml:lang="en">Digitisation Pipeline</clariah:label>
 					<clariah:explanation>If applicable, describe in what way digitisation presents another layer of selection of the whole of a collection available in a cultural heritage institution; state if this is not the case. If applicable, provide selection criteria and metrics that demonstrate how this additional layer of selection has influenced the transformation of the original collection or dataset into the current dataset. See documentation at: https://edu.nl/atqm8#Digitalisation-Pipeline</clariah:explanation>
 					<!--cues--></Element>
             </Component>
@@ -800,9 +800,9 @@
                 </Component>
                 <Component name="SuitableUseCase">
                     <clariah:label xml:lang="en">4.1.2 Suitable Use Case</clariah:label>
-					<clariah:explanation>Summarize known suitable and intended use cases of this dataset. See documentation at: https://edu.nl/atqm8#Suitable-Use-Case</clariah:explanation>
+					<clariah:explanation>Summarise known suitable and intended use cases of this dataset. See documentation at: https://edu.nl/atqm8#Suitable-Use-Case</clariah:explanation>
 					<Element name="suitableUseCase" cue:inputWidth="80" cue:inputHeight="6"><clariah:label xml:lang="en">Suitable Use Case</clariah:label>
-						<clariah:explanation>Summarize here. Include links where necessary. See documentation at: https://edu.nl/atqm8#Suitable-Use-Case</clariah:explanation>
+						<clariah:explanation>Summarise here. Include links where necessary. See documentation at: https://edu.nl/atqm8#Suitable-Use-Case</clariah:explanation>
 						<!--cues--></Element>
                     <Element name="additionalNotes" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Additional Notes</clariah:label>
 						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Additional-Notes</clariah:explanation>
@@ -810,7 +810,7 @@
                 </Component>
                 <Component name="UnsuitableUseCase">
                     <clariah:label xml:lang="en">4.1.3 Unsuitable Use Case</clariah:label>
-					<clariah:explanation>Summarize known unsuitable and unintended use cases of this dataset. See documentation at: https://edu.nl/atqm8#Unsuitable-Use-Case</clariah:explanation>
+					<clariah:explanation>Summarise known unsuitable and unintended use cases of this dataset. See documentation at: https://edu.nl/atqm8#Unsuitable-Use-Case</clariah:explanation>
 					<Element name="unsuitableUseCase" cue:inputWidth="80" cue:inputHeight="6"><clariah:label xml:lang="en">Unsuitable Use Case</clariah:label>
 						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Unsuitable-Use-Case</clariah:explanation>
 						<!--cues--></Element>
@@ -828,7 +828,7 @@
 					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Safety-Level</clariah:explanation>
 					</Element>
                 <Element name="safetyLevelOther"><clariah:label xml:lang="en">Safety Level Other</clariah:label>
-					<clariah:explanation>If "Other" was chosen above, please speciify. See documentation at: https://edu.nl/atqm8#Safety-Level-Other</clariah:explanation>
+					<clariah:explanation>If "Other" was chosen above, please specify. See documentation at: https://edu.nl/atqm8#Safety-Level-Other</clariah:explanation>
 					<!--cues--></Element>
                 <Element name="knownSafeDatasetsOrDataTypes" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Known Safe Datasets Or Data Types</clariah:label>
 					<clariah:explanation>List the known datasets (provide link) or data types and corresponding transformations that are safe to join or aggregate this dataset with. See documentation at: https://edu.nl/atqm8#Known-Safe-Datasets-Or-Data-Types</clariah:explanation>
@@ -852,10 +852,10 @@
 					<clariah:explanation>Describe any notable feature distributions or relationships between individual instances made explicit. See documentation at: https://edu.nl/atqm8#Notable-Features</clariah:explanation>
 					<!--cues--></Element>
                 <Element name="knownCorrelations" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Known Correlations</clariah:label>
-					<clariah:explanation>Summarize any known correlations with the indicated features in this dataset. See documentation at: https://edu.nl/atqm8#Known-Correlations</clariah:explanation>
+					<clariah:explanation>Summarise any known correlations with the indicated features in this dataset. See documentation at: https://edu.nl/atqm8#Known-Correlations</clariah:explanation>
 					<!--cues--></Element>
                 <Element name="usageGuidelines" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Usage Guidelines</clariah:label>
-					<clariah:explanation>Summarize or link to usage guidelines or policies that consumers should be aware of in using this dataset for ML purposes. See documentation at: https://edu.nl/atqm8#Usage-Guidelines</clariah:explanation>
+					<clariah:explanation>Summarise or link to usage guidelines or policies that consumers should be aware of in using this dataset for ML purposes. See documentation at: https://edu.nl/atqm8#Usage-Guidelines</clariah:explanation>
 					<!--cues--></Element>
                 <Element name="dataSplits" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Data Splits</clariah:label>
 					<clariah:explanation>Are there recommended data splits (e.g., training, development/validation, testing)? If so, please provide a description of these splits, explaining the rationale behind them. See documentation at: https://edu.nl/atqm8#Data-Splits</clariah:explanation>
@@ -884,7 +884,7 @@
 					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Best-Practices</clariah:explanation>
 					<!--cues--></Element>
                 <Element name="risksAndMitigations" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Risks And Mitigations</clariah:label>
-					<clariah:explanation>Summarize known or residual risks associated with sampling methods when applied to the dataset. See documentation at: https://edu.nl/atqm8#Risks-And-Mitigations</clariah:explanation>
+					<clariah:explanation>Summarise known or residual risks associated with sampling methods when applied to the dataset. See documentation at: https://edu.nl/atqm8#Risks-And-Mitigations</clariah:explanation>
 					<!--cues--></Element>
             </Component>
             <Component name="Comments">
@@ -908,7 +908,7 @@
                     <clariah:label xml:lang="en">5.1.1 Annotation Type</clariah:label>
 					<clariah:explanation>See documentation at: https://edu.nl/atqm8#Annotation-Type</clariah:explanation>
 					<Element name="taskType"><clariah:label xml:lang="en">Task Type</clariah:label>
-						<clariah:explanation>Summarize here. Include links if available. Ideally connect to some existing taxonomy: survey, video annotation, text annotation, image annotation, etc. See documentation at: https://edu.nl/atqm8#Task-Type</clariah:explanation>
+						<clariah:explanation>Summarise here. Include links. Ideally connect to some existing taxonomy: survey, video annotation, text annotation, image annotation, etc. See documentation at: https://edu.nl/atqm8#Task-Type</clariah:explanation>
 						<!--cues--></Element>
                     <Element name="numberOfUniqueAnnotators"><clariah:label xml:lang="en">Number Of Unique Annotators</clariah:label>
 						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Number-Of-Unique-Annotators</clariah:explanation>
@@ -947,10 +947,10 @@
 						<clariah:explanation>For example, 40% identify as lower middle class, 60% as middle class. See documentation at: https://edu.nl/atqm8#Socio-Economic-Distrib-Of-Annotators</clariah:explanation>
 						<!--cues--></Element>
                     <Element name="summaryOfAnnotationInstructions" cue:inputWidth="80" cue:inputHeight="6"><clariah:label xml:lang="en">Summary Of Annotation Instructions</clariah:label>
-						<clariah:explanation>Summarize here. Include links if available, say to the annotation instructions, readme. See documentation at: https://edu.nl/atqm8#Summary-Of-Annotation-Instructions</clariah:explanation>
+						<clariah:explanation>Summarise here. Include links, say to the annotation instructions, readme. See documentation at: https://edu.nl/atqm8#Summary-Of-Annotation-Instructions</clariah:explanation>
 						<!--cues--></Element>
                     <Element name="annotationPlatforms"><clariah:label xml:lang="en">Annotation Platforms</clariah:label>
-						<clariah:explanation>Include link(s) if available. See documentation at: https://edu.nl/atqm8#Annotation-Platforms</clariah:explanation>
+						<clariah:explanation>Include link(s). See documentation at: https://edu.nl/atqm8#Annotation-Platforms</clariah:explanation>
 						<!--cues--></Element>
                     <Element name="additionalNotes" cue:inputWidth="80" cue:inputHeight="3"><clariah:label xml:lang="en">Additional Notes</clariah:label>
 						<clariah:explanation>For example: During the annotation process all annotators were trained to read and understand the original texts by the archival expert and were invited to compare the HTR texts with the scans of the original. This way of working proved instrumental in overcoming limitations of HTR quality. Or any other comments. See documentation at: https://edu.nl/atqm8#Additional-Notes</clariah:explanation>
