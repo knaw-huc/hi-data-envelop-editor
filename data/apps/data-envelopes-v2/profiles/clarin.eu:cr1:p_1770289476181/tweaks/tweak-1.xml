@@ -319,7 +319,7 @@
 						<clariah:explanation>See documentation at: https://edu.nl/atqm8#Filetype</clariah:explanation>
 						<!--cues--></Element>
                     <Element name="filesize"><clariah:label xml:lang="en">Filesize</clariah:label>
-						<clariah:explanation>Provide file size in MB. See documentation at: https://edu.nl/atqm8#Filesize</clariah:explanation>
+						<clariah:explanation>Provide file size including units. See documentation at: https://edu.nl/atqm8#Filesize</clariah:explanation>
 						<!--cues--></Element>
                 </Component>
                 <Component name="Citation">
