@@ -92,7 +92,7 @@
 						<Element name="comment" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
 					</Component>
 				</Component>
-				<Component name="GeographicalCoverage" ConceptLink="http://purl.org/dc/terms/spatial" CardinalityMin="1" CardinalityMax="1">
+				<Component name="GeographicalCoverage" ConceptLink="http://purl.org/dc/terms/spatial" CardinalityMin="0" CardinalityMax="1">
 					<Element name="controlledTerm" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded"/>
 					<Component name="otherTerm" CardinalityMin="0" CardinalityMax="unbounded">
 						<Element name="term" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
@@ -208,7 +208,7 @@
                 <Component name="Download" CardinalityMin="1" CardinalityMax="unbounded">
                     <Element name="link" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="unbounded"/>
                     <Element name="filetype" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
-                    <Element name="filesize" ValueScheme="int" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="filesize" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
                 </Component>
                 <Component name="Citation" CardinalityMin="1" CardinalityMax="1">
                     <Element name="citationInformation" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="true" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
@@ -280,7 +280,7 @@
                 <Element name="description" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
                 <Element name="path" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="unbounded"/>
                 <Element name="format" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
-                <Element name="size" ValueScheme="int" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="size" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
                 <Element name="date" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
                 <Element name="language" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
                 <Element name="encoding" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
