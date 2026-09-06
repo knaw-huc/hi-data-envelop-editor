@@ -8,7 +8,7 @@
     </Header>
     <Component name="DataEnvelope">
 		<clariah:explanation>
-			manuals for [using the editor](https://knaw-huc.github.io/data-envelopes/help_documentation.html) and [filling in a data envelop](https://knaw-huc.github.io/data-envelopes/help_documentation.html)
+			manuals for [using the editor](https://knaw-huc.github.io/data-envelopes/help_documentation.html) and [filling in a data envelop](https://knaw-huc.github.io/data-envelopes/guidelines.html)
 		</clariah:explanation>
         <Element name="institute">
             
