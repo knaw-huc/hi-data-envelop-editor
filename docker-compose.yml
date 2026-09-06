@@ -2,15 +2,23 @@ version: '2'
 
 services:
   sd-editor:
-    image: ghcr.io/knaw-huc/service-huc-editor:2.0-RC9
+    image: ghcr.io/knaw-huc/service-huc-editor:2.0-rc13-alpha
     environment:
       - BASE_URL=http://localhost:1210
+      - CDN_URL=http://localhost:1310/
     volumes:
       - ./data:/home/huc/huc-editor-service/data
     networks:
       - sd-editor
     ports:
       - '1210:1210'
+  sd-editor-cdn:
+    image: ghcr.io/knaw-huc/huc-generic-editor:1.0-RC9-alpha-5
+    restart: unless-stopped
+    ports:
+      - 1310:80
+    networks:
+      - sd-editor
 
 networks:
   sd-editor:
